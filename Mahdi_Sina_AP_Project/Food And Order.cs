@@ -28,7 +28,7 @@ namespace Sina_Mahdi_RestaurantAP
 
         private float rate;  // from 0 to 5
 
-        public int RATE
+        public float RATE
         {
             get { return rate; }
             set { if (value <= 5 && value >= 0) rate = value; }
