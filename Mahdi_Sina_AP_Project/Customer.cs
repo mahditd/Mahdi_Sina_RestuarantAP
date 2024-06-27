@@ -8,7 +8,7 @@ namespace Mahdi_Sina_AP_Project
 {
     class Customer
     {
-        public customer()
+        public Customer()
         {
             string userName;
             string passWord;

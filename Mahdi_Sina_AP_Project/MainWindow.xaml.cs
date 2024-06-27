@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Sina_Mahdi_RestaurantAP;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,7 +19,7 @@ namespace Mahdi_Sina_AP_Project
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

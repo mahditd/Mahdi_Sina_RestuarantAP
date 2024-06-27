@@ -9,20 +9,61 @@ namespace Sina_Mahdi_RestaurantAP
 {
     class Restaurant
     {
-        private string username { get; }
-        private string password { get; }
-        private List<Food> foodList { get; set; }
-        private bool canReserve { get; set; } //completing the get method later
+        private string username;
 
-        private string name { get; set; }
+        public string USERNAME
+        {
+            get { return username; }
+        }
+        private string password;
+
+        public string PASSWORD
+        {
+            get { return password; }
+        }
+        private List<Food> foodList = new List<Food>();
+
+        public List<Food> FOODLIST { get { return foodList; } }
+
+
+        private bool canReserve;
+
+        public bool CANRESERVE
+        {
+            get { return canReserve; }
+            set { if (rate >= 4) { canReserve = value; }}
+        }
+
+        private string name;
+
+        public string NAME { 
+            get { return name; }
+            set { name = value; }
+        }
 
         private int rate { get; set; } //from 0 to 5
 
-        private List<Order> orderList { get; set; }
+        public int RATE
+        {
+            get { return rate; }
+            set { if(value<=5 && value >= 0)  rate = value; }
+        }
 
-        private string address { get; set; }
+        private List<Order> orderList =new List<Order>();
 
-        private List<Reserve> ReserveList { get; set; }
+        public List<Order> ORDERLIST { get { return orderList; } }
+
+        private string address;
+
+        public string ADDRESS
+        {
+            get { return address; }
+            set {  address = value; }
+        }
+
+        private List<Reserve> ReserveList = new List<Reserve>();
+
+        public List<Reserve> RESERVELIST { get { return ReserveList; } }
 
         public Restaurant(string username, string password, string name, string address)
         {
