@@ -23,5 +23,25 @@ namespace Mahdi_Sina_AP_Project
         {
             InitializeComponent();
         }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
