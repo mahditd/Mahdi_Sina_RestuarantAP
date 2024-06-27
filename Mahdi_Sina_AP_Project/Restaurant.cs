@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahdi_Sina_AP_Project;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,21 +8,9 @@ using System.Windows.Controls;
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Restaurant
+    class Restaurant : User
     {
-        private string username;
-
-        public string USERNAME
-        {
-            get { return username; }
-        }
-        private string password;
-
-        public string PASSWORD
-        {
-            get { return password; }
-            set { password = value; }
-        }
+        
         private List<Food> foodList = new List<Food>();
 
         public List<Food> FOODLIST { get { return foodList; } }
@@ -62,14 +51,13 @@ namespace Sina_Mahdi_RestaurantAP
             set {  address = value; }
         }
 
-        //private List<Reserve> ReserveList = new List<Reserve>();
+        private List<Reserve> ReserveList = new List<Reserve>();
 
-        //public List<Reserve> RESERVELIST { get { return ReserveList; } }
+        public List<Reserve> RESERVELIST { get { return ReserveList; } }
 
-        public Restaurant(string username, string password, string name, string address)
+        public Restaurant(string username, string password, string name, string address) : base(username, password)
         {
-            this.username = username;
-            this.password = password;
+           
             this.name = name;
             this.address = address;
 

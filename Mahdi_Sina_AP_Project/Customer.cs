@@ -12,16 +12,8 @@ namespace Mahdi_Sina_AP_Project
     public enum Gender { male , female }
 
     public enum subscribtion {bronze , silver , gold }
-    class Customer
+    class Customer : User
     {
-
-        private string userName; //must be the primary key
-
-        public string USERNAME { get { return userName; } }
-
-        private string password;
-
-        public string PASSWORD { get {  return password; } set { password = value; } }
 
         private string email;
 
@@ -51,10 +43,8 @@ namespace Mahdi_Sina_AP_Project
 
         public subscribtion subscribtion;
 
-        public Customer(string username,string password , string email , string name , string phoneNumber , string? postalCode) 
+        public Customer(string username, string password, string email, string name, string phoneNumber, string? postalCode): base(username,password)
         {
-            this.userName = username;
-            this.password = password;
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.postalCode = postalCode;
