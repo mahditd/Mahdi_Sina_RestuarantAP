@@ -62,9 +62,9 @@ namespace Sina_Mahdi_RestaurantAP
             set {  address = value; }
         }
 
-        private List<Reserve> ReserveList = new List<Reserve>();
+        //private List<Reserve> ReserveList = new List<Reserve>();
 
-        public List<Reserve> RESERVELIST { get { return ReserveList; } }
+        //public List<Reserve> RESERVELIST { get { return ReserveList; } }
 
         public Restaurant(string username, string password, string name, string address)
         {

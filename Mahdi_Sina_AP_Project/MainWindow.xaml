@@ -3,10 +3,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userControl="clr-namespace:Mahdi_Sina_AP_Project"
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="1" Padding="4,2"
+                            BorderBrush="DarkGray" CornerRadius="3"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!--<Setter TargetName="border" Property="BorderBrush" Value="Black" />-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\pexels-robinstickel-70497.jpg" Opacity="0.3"/>
+        </Grid.Background>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="1" PlaceHolder="Email"/>
+        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="2" PlaceHolder="Password"/>
+        <Button x:Name="confirmBtn" Cursor="Hand" Grid.Column="1" Grid.Row="3" Background="Transparent" Content="confirm" FontSize="20" Foreground="Blue" FontWeight="Bold" Click="confirmBtn_Click" />
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Button Cursor="Hand" Style="{StaticResource MyButtonStyle}" Name="signUpBtn" Content="sign up" HorizontalAlignment="Left" Margin="5 ,0 ,0 ,0 " FontWeight="Bold" Foreground="Red" Click="Button_Click_SignUp"  ></Button>
+        </StackPanel>
     </Grid>
 </Window>

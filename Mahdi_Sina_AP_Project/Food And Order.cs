@@ -98,12 +98,12 @@ namespace Sina_Mahdi_RestaurantAP
             }
         }
 
-        private List<Comment> Comments = new List<Comment>();
+        //private List<Comment> Comments = new List<Comment>();
 
-        public List<Comment> COMMENTS
-        {
-            get { return Comments; }
-        }
+        //public List<Comment> COMMENTS
+        //{
+        //    get { return Comments; }
+        //}
         public Order(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients, PaymentMethod method)
             : base(name, price, rate, imagePath, restaurant, ingredients)
         {
