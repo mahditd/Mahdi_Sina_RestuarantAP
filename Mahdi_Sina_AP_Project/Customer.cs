@@ -28,9 +28,10 @@ namespace Mahdi_Sina_AP_Project
 
         public string PHONENUMBER { get { return phoneNumber; } set { phoneNumber = value; } }
 
-        private string? postalCode;
-
-        public string? POSTALCODE { get { return postalCode; } set { postalCode = value; } }
+        //is optional
+        private string postalCode;
+        //is optional
+        public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }
 
         private List<Order> orderList = new List<Order>();
 
@@ -42,8 +43,9 @@ namespace Mahdi_Sina_AP_Project
         public List<Complaint> complaints = new List<Complaint>();
 
         public subscribtion subscribtion;
-
-        public Customer(string username, string password, string email, string name, string phoneNumber, string? postalCode): base(username,password)
+        static List<Customer> customers = new List<Customer>();
+            
+        public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode): base(username,password)
         {
             this.name = name;
             this.phoneNumber = phoneNumber;
@@ -51,6 +53,16 @@ namespace Mahdi_Sina_AP_Project
             this.email = email;
             subscribtion = subscribtion.bronze;
             
+        }
+        public static bool AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode)
+        {
+            //checking for repetition
+            if (customers.FirstOrDefault(x => x.username == _username) == null)
+            {
+                customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                return true;
+            }
+            return false;
         }
 
 

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Mahdi_Sina_AP_Project.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:userControl="clr-namespace:Mahdi_Sina_AP_Project"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
+        mc:Ignorable="d"
+        Title="SignUp" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <userControl:txtBoxWithTxtBlock  x:Name="userName" Grid.Column="1" Grid.Row="1" PlaceHolder="User name"/>
+        <userControl:txtBoxWithTxtBlock x:Name="password" Grid.Column="1" Grid.Row="2" PlaceHolder="password"/>
+        <userControl:txtBoxWithTxtBlock x:Name="passwordConfirm" Grid.Column="1" Grid.Row="3" PlaceHolder="confirm password"/>
+        <!--regex is needed-->
+        <userControl:txtBoxWithTxtBlock x:Name="email" Grid.Column="1" Grid.Row="4" PlaceHolder="Email"/>
+        <userControl:txtBoxWithTxtBlock x:Name="name" Grid.Column="1" Grid.Row="5" PlaceHolder="Name"/>
+        <userControl:txtBoxWithTxtBlock x:Name="phoneNumber" Grid.Column="1" Grid.Row="6" PlaceHolder="Phone number"/>
+        <!--is optional-->
+        <userControl:txtBoxWithTxtBlock x:Name="postalCode" Grid.Column="1" Grid.Row="7" PlaceHolder="Postal code"/>
+        <Button x:Name="confirm" Grid.Column="1" Grid.Row="8" Background="Blue" Content="confirm the informations" Click="confirm_Click"/>
+    </Grid>
+</Window>

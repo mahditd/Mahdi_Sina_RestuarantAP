@@ -24,7 +24,8 @@ namespace Mahdi_Sina_AP_Project
 
         private void Button_Click_SignUp(object sender, RoutedEventArgs e)
         {
-            //signing up operations
+            Window signUpWindow = new SignUp();
+            signUpWindow.Show();
         }
 
         private void confirmBtn_Click(object sender, RoutedEventArgs e)
