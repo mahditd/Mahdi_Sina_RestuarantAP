@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
-11407045341
+2-467385049
 
-8-10206210
+9-388144567
 198-294894759
-MainWindow.xaml;
+MainWindow.xaml;RestaurantPanel.xaml;
 
-False
+True
 
