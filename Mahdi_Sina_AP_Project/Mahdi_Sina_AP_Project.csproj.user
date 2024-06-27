@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="RestaurantPanel.xaml.cs">
+    <Compile Update="txtBoxWithTxtBlock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,7 +15,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="RestaurantPanel.xaml">
+    <Page Update="txtBoxWithTxtBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

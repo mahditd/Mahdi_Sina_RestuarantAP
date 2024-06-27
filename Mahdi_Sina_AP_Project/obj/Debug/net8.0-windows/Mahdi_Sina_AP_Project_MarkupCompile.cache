@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
-2-467385049
+3-1945163415
 
-9-388144567
+12956687453
 198-294894759
-MainWindow.xaml;RestaurantPanel.xaml;
+MainWindow.xaml;RestaurantPanel.xaml;txtBoxWithTxtBlock.xaml;
 
-True
+False
 
