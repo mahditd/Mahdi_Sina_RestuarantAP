@@ -20,6 +20,7 @@ namespace Sina_Mahdi_RestaurantAP
         public string PASSWORD
         {
             get { return password; }
+            set { password = value; }
         }
         private List<Food> foodList = new List<Food>();
 
