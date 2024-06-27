@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 public enum PaymentMethod { Online, OnDelivery }
 
 
@@ -28,7 +30,7 @@ namespace Sina_Mahdi_RestaurantAP
 
         private float rate;  // from 0 to 5
 
-        public int RATE
+        public float RATE
         {
             get { return rate; }
             set { if (value <= 5 && value >= 0) rate = value; }
@@ -56,6 +58,14 @@ namespace Sina_Mahdi_RestaurantAP
         {
             get { return ingredients; }
             set { ingredients = value; }
+        }
+
+        private int foodCount;
+
+        public int FOODCOUNT
+        {
+            get { return foodCount; }
+            set { foodCount = value; }
         }
 
 
@@ -88,6 +98,12 @@ namespace Sina_Mahdi_RestaurantAP
             }
         }
 
+        private List<Comment> Comments = new List<Comment>();
+
+        public List<Comment> COMMENTS
+        {
+            get { return Comments; }
+        }
         public Order(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients, PaymentMethod method)
             : base(name, price, rate, imagePath, restaurant, ingredients)
         {
