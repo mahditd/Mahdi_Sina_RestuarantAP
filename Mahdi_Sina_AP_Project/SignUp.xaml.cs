@@ -26,14 +26,27 @@ namespace Mahdi_Sina_AP_Project
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (Customer.AddNewCustomer(userName.txtBox.Text, password.txtBox.Text, email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text))
+            int result = Customer.AddNewCustomer(userName.txtBox.Text, password.txtBox.Text, email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.txtBox.Text);
+            if (result == 1)
             {
-                MessageBox.Show("successfully added the new user");
+                this.Close();
             }
-            else
+            else if (result == 0)
             {
-                //more detail like regex
-                MessageBox.Show("repetitious userName");
+                //waiting for editing the informations
+            }
+            else 
+            {
+                //it is not used but let's keep it
+                userName.txtBox.Text = "";
+                password.txtBox.Text = "";
+                passwordConfirm.txtBox.Text = "";
+                email.txtBox.Text = "";
+                name.txtBox.Text = "";
+                phoneNumber.txtBox.Text = "";
+                postalCode.txtBox.Text = "";
+
+
             }
         }
     }
