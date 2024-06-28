@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +27,7 @@ namespace Mahdi_Sina_AP_Project
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            int result = Customer.AddNewCustomer(userName.txtBox.Text, password.txtBox.Text, email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.txtBox.Text);
+            int result = Customer.AddNewCustomer(userName.txtBox.Text,password.password.Password , email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.password.Password);
             if (result == 1)
             {
                 this.Close();
@@ -35,12 +36,12 @@ namespace Mahdi_Sina_AP_Project
             {
                 //waiting for editing the informations
             }
-            else 
+            else
             {
                 //it is not used but let's keep it
                 userName.txtBox.Text = "";
-                password.txtBox.Text = "";
-                passwordConfirm.txtBox.Text = "";
+                password.password.Password = "";
+                passwordConfirm.password.Password= "";
                 email.txtBox.Text = "";
                 name.txtBox.Text = "";
                 phoneNumber.txtBox.Text = "";
