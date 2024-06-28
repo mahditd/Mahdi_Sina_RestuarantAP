@@ -47,7 +47,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="1" PlaceHolder="Email"/>
+        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="1" PlaceHolder="UsreName"/>
         <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="2" PlaceHolder="Password"/>
         <Button x:Name="confirmBtn" Cursor="Hand" Grid.Column="1" Grid.Row="3" Background="Transparent" Content="confirm" FontSize="20" Foreground="Blue" FontWeight="Bold" Click="confirmBtn_Click" />
         <StackPanel Grid.Row="4" Grid.Column="1">

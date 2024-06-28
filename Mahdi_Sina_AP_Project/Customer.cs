@@ -5,13 +5,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Text.RegularExpressions;
 
 namespace Mahdi_Sina_AP_Project
 {
 
-    public enum Gender { male , female }
+    public enum Gender { male, female }
 
-    public enum subscribtion {bronze , silver , gold }
+    public enum subscribtion { bronze, silver, gold }
     class Customer : User
     {
 
@@ -28,13 +30,14 @@ namespace Mahdi_Sina_AP_Project
 
         public string PHONENUMBER { get { return phoneNumber; } set { phoneNumber = value; } }
 
-        private string? postalCode;
-
-        public string? POSTALCODE { get { return postalCode; } set { postalCode = value; } }
+        //is optional
+        private string postalCode;
+        //is optional
+        public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }
 
         private List<Order> orderList = new List<Order>();
 
-        public List<Order> OrderList { get {  return orderList; } set {  orderList = value; } }
+        public List<Order> OrderList { get { return orderList; } set { orderList = value; } }
 
 
         public List<Comment> comments = new List<Comment>();
@@ -42,15 +45,45 @@ namespace Mahdi_Sina_AP_Project
         public List<Complaint> complaints = new List<Complaint>();
 
         public subscribtion subscribtion;
+        static List<Customer> customers = new List<Customer>();
 
-        public Customer(string username, string password, string email, string name, string phoneNumber, string? postalCode): base(username,password)
+        public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode) : base(username, password)
         {
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.postalCode = postalCode;
             this.email = email;
             subscribtion = subscribtion.bronze;
-            
+
+        }
+        public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword)
+        {
+            //checking for repetition in username
+            if (_username == "" || _password == "" || _email == "" || _name == "" || _phoneNumber == "" || _confirmPassword == "")
+            {
+                MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
+            }
+
+            if (customers.FirstOrDefault(x => x.username == _username) == null)
+            {
+                if (_password != _confirmPassword)
+                {
+                    MessageBox.Show("confirm password field does not match with password", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
+                if (!ValidateEmail(_email))
+                {
+                    MessageBox.Show("Enter a valid email", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
+
+                customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                MessageBox.Show("successfully added the new user");
+                return 1;
+            }
+            MessageBox.Show("repetitious userName", "", MessageBoxButton.OK, MessageBoxImage.Error);
+            return 0;
         }
 
 
@@ -58,5 +91,14 @@ namespace Mahdi_Sina_AP_Project
 
 
 
+
+
+        public static bool ValidateEmail(string Email_Address)
+        {
+            //I have doubt in this pattern but its ok for now
+            string reg_pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            Regex regex = new Regex(reg_pattern);
+            return regex.IsMatch(Email_Address);
+        }
     }
 }

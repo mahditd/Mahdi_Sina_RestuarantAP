@@ -28,5 +28,11 @@ namespace Mahdi_Sina_AP_Project
             this.username = username;
             this.password = password;
         }
+        static List<User> users = new List<User>();
+        //it can be used by sign up plan and by admin
+        public static void AddNewUser(User user)
+        {
+            users.Add(user);
+        }
     }
 }
