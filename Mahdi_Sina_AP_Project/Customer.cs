@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -77,7 +78,11 @@ namespace Mahdi_Sina_AP_Project
                     MessageBox.Show("Enter a valid email", "", MessageBoxButton.OK, MessageBoxImage.Error);
                     return 0;
                 }
-
+                int verifyCode = SendVerificationEmail(_email);
+                if (verifyCode != 0)
+                {
+                    //inja benevis codesho
+                }
                 customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
                 MessageBox.Show("successfully added the new user");
                 return 1;
@@ -99,6 +104,39 @@ namespace Mahdi_Sina_AP_Project
             string reg_pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             Regex regex = new Regex(reg_pattern);
             return regex.IsMatch(Email_Address);
+        }
+
+        public static int SendVerificationEmail(string CustomerEmail)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("restaurantapproject@gmail.com");
+                mail.To.Add(CustomerEmail);
+                mail.Subject = "Verification Code";
+
+                Random random = new Random();
+                int verifyCode = random.Next(100000, 999999);
+
+                mail.Body = "Your Vertification Code is "+verifyCode.ToString();
+
+
+                SmtpClient smtp = new SmtpClient();
+
+                smtp.Host = "smtp.gmail.com";
+                smtp.UseDefaultCredentials = false;
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("restaurantapproject@gmail.com", "sxzl vjzv zlmx ntnb");
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+                return verifyCode;
+            }
+            catch
+            {
+                MessageBox.Show("couldn't send the verification","",MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
+            }
         }
     }
 }
