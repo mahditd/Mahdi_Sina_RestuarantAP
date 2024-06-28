@@ -6,44 +6,41 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="RestaurantPanel" Height="450" Width="800">
-    
-    <Window.Resources>
-    <Style x:Key="MyButtonStyle" TargetType="Button">
-        <Setter Property="OverridesDefaultStyle" Value="True"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Name="border" BorderThickness="1" Padding="4,2"
-                        BorderBrush="DarkGray" CornerRadius="3"
-                        Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <!--<Setter TargetName="border" Property="BorderBrush" Value="Black" />-->
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    </Window.Resources>
-
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\yellowbackground.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\yellowbackground2.jpg" Opacity="1"/>
         </Grid.Background>
-        <StackPanel Margin="95,74,339,81">
-            <Button Content="Changing Menu" Width="200" Height="30" Margin="20" Background="OrangeRed"  Click="Button1_Click"/>
-            <Button Content="Food inventory" Width="200" Height="30" Margin="20" Background="OrangeRed" Click="Button2_Click"/>
-            <Button Content="Activating Reserve" Width="200" Height="30" Margin="20" Background="OrangeRed" Click="Button3_Click"/>
-            <Button Content="Orders And Reserves History" Width="200" Height="30" Margin="20" Background="OrangeRed"  Click="Button4_Click"/>
-        </StackPanel>
 
-        
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ChangeButton" Grid.Column="0" Grid.Row="1" Content="Changing Menu" Margin="40,30,40,30" Background="OrangeRed"  Click="ChangeMenuButton_Click"/>
+            <Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>
+            <Button x:Name="HistoryButton" Grid.Column="0" Grid.Row="3" Content="Orders And Reserves History" Margin="40,30,40,30" Background="OrangeRed"  Click="HistoryButton_Click"/>
+            <Button x:Name="CircleButton" Grid.Column="1" Grid.Row="2" Height="80" Click="ReserveButton_Click"  Content="Reserve Button" Margin="24,3,56,3">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="Gold"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
     </Grid>
-    
+
 
 
 </Window>

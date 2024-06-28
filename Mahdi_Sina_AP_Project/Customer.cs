@@ -17,6 +17,7 @@ namespace Mahdi_Sina_AP_Project
     public enum subscribtion { bronze, silver, gold }
     class Customer : User
     {
+        public static Customer currentCustomer; 
 
         private string email;
 

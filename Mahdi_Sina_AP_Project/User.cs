@@ -8,6 +8,8 @@ namespace Mahdi_Sina_AP_Project
 {
     internal class User
     {
+        public static User currentUser;
+
         protected string username;
 
         public string USERNAME

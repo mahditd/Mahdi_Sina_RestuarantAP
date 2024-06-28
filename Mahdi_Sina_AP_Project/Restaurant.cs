@@ -10,6 +10,8 @@ namespace Sina_Mahdi_RestaurantAP
 {
     class Restaurant : User
     {
+
+        public static Restaurant currentRestaurant;
         
         private List<Food> foodList = new List<Food>();
 

@@ -24,22 +24,25 @@ namespace Mahdi_Sina_AP_Project
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        
+
+        private void ChangeMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window ChangeMenu = new RestaurantMenuChanging();
+            ChangeMenu.Show();
+            this.Close();
+        }
+
+        private void FoodInventoryButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
+        private void ReserveButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
