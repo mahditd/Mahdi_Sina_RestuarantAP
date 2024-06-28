@@ -8,7 +8,7 @@
         Title="RestaurantPanel" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\yellowbackground2.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\yellowbackground2.jpg" Opacity="1"/>
         </Grid.Background>
 
         <Grid >
@@ -28,11 +28,11 @@
             <Button x:Name="ChangeButton" Grid.Column="0" Grid.Row="1" Content="Changing Menu" Margin="40,30,40,30" Background="OrangeRed"  Click="ChangeMenuButton_Click"/>
             <Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>
             <Button x:Name="HistoryButton" Grid.Column="0" Grid.Row="3" Content="Orders And Reserves History" Margin="40,30,40,30" Background="OrangeRed"  Click="HistoryButton_Click"/>
-            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click">
+            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click" Loaded="CircleButton_Loaded">
                 <Button.Template>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate  TargetType="Button">
                         <Grid>
-                            <Ellipse x:Name="circleEllipse" Fill="OrangeRed"/>
+                            <Ellipse x:Name="circleEllipse" Fill="{Binding Color}"/>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </ControlTemplate>
