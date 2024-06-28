@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using System.Runtime.CompilerServices;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -57,8 +58,9 @@ namespace Mahdi_Sina_AP_Project
             subscribtion = subscribtion.bronze;
 
         }
-        public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword)
+        public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Window parent)
         {
+
             //checking for repetition in username
             if (_username == "" || _password == "" || _email == "" || _name == "" || _phoneNumber == "" || _confirmPassword == "")
             {
@@ -79,18 +81,29 @@ namespace Mahdi_Sina_AP_Project
                     return 0;
                 }
                 int verifyCode = SendVerificationEmail(_email);
-                if (verifyCode != 0)
+                if (verifyCode != 0)//when it will be 0??
                 {
-                    //inja benevis codesho
+                    Window window = new Confirming_email(verifyCode.ToString(), parent);
+                    window.ShowDialog();
                 }
-                customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
-                MessageBox.Show("successfully added the new user");
-                return 1;
+                if (EmailConfirmed)
+                {
+                    customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    MessageBox.Show("successfully added the new user");
+                    return 1;
+                }
+                else
+                {
+                    MessageBox.Show("Wrong verify code", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
             }
+
             MessageBox.Show("repetitious userName", "", MessageBoxButton.OK, MessageBoxImage.Error);
             return 0;
         }
 
+        public static bool EmailConfirmed { get; set; } = false;
 
 
 
@@ -118,7 +131,7 @@ namespace Mahdi_Sina_AP_Project
                 Random random = new Random();
                 int verifyCode = random.Next(100000, 999999);
 
-                mail.Body = "Your Vertification Code is "+verifyCode.ToString();
+                mail.Body = "Your Vertification Code is " + verifyCode.ToString();
 
 
                 SmtpClient smtp = new SmtpClient();
@@ -134,7 +147,7 @@ namespace Mahdi_Sina_AP_Project
             }
             catch
             {
-                MessageBox.Show("couldn't send the verification","",MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("couldn't send the verification", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 0;
             }
         }

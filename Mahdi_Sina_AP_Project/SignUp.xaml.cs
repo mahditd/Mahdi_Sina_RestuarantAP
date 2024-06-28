@@ -27,7 +27,7 @@ namespace Mahdi_Sina_AP_Project
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            int result = Customer.AddNewCustomer(userName.txtBox.Text,password.password.Password , email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.password.Password);
+            int result = Customer.AddNewCustomer(userName.txtBox.Text,password.password.Password , email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.password.Password, this);
             if (result == 1)
             {
                 this.Close();
