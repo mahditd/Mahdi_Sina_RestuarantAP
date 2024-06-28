@@ -28,11 +28,11 @@
             <Button x:Name="ChangeButton" Grid.Column="0" Grid.Row="1" Content="Changing Menu" Margin="40,30,40,30" Background="OrangeRed"  Click="ChangeMenuButton_Click"/>
             <Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>
             <Button x:Name="HistoryButton" Grid.Column="0" Grid.Row="3" Content="Orders And Reserves History" Margin="40,30,40,30" Background="OrangeRed"  Click="HistoryButton_Click"/>
-            <Button x:Name="CircleButton" Grid.Column="1" Grid.Row="2" Height="80" Click="ReserveButton_Click"  Content="Reserve Button" Margin="24,3,56,3">
+            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click">
                 <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Ellipse Fill="Gold"/>
+                            <Ellipse x:Name="circleEllipse" Fill="OrangeRed"/>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </ControlTemplate>
