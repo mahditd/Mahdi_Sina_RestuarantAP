@@ -28,21 +28,30 @@ namespace Mahdi_Sina_AP_Project
             Restaurant.currentRestaurant = new Restaurant("", "", "", "");
             Restaurant.currentRestaurant.RATE = 5;
             Restaurant.currentRestaurant.CANRESERVE = true;
-            var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
-
 
             if (Restaurant.currentRestaurant.CANRESERVE == true)
             {
-               
                 CircleButton.Content = "Reserve ON";
             }
-            else if(Restaurant.currentRestaurant.CANRESERVE == false)
+            else if (Restaurant.currentRestaurant.CANRESERVE == false)
             {
-                
                 CircleButton.Content = "Reserve OFF";
             }
 
         }
+        private SolidColorBrush color;
+
+        public SolidColorBrush Color
+        {
+            get { return color; }
+            set
+            {
+                color = value;
+                var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
+                ellipse.Fill = color;
+            }
+        }
+
 
 
 
@@ -64,42 +73,49 @@ namespace Mahdi_Sina_AP_Project
 
         private void CircleButton_Click(object sender, RoutedEventArgs e)
         {
-           
-            if (Restaurant.currentRestaurant != null && Restaurant.currentRestaurant.RATE >=4)
+            Color = new SolidColorBrush(Colors.Red);
+            if (Restaurant.currentRestaurant != null && Restaurant.currentRestaurant.RATE >= 4)
             {
-                if (Restaurant.currentRestaurant.CANRESERVE == true) 
+                if (Restaurant.currentRestaurant.CANRESERVE == true)
                 {
                     isPressed = false;
                 }
-                else if(Restaurant.currentRestaurant.CANRESERVE == false)
+                else if (Restaurant.currentRestaurant.CANRESERVE == false)
                 {
                     isPressed = true;
                 }
 
-                var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
+               // var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
 
-                if (ellipse != null)
-                {
+
+               // if (ellipse != null)
+                //{
                     if (!isPressed)
                     {
-                        ellipse.Fill = new SolidColorBrush(Colors.White);
+                        Color = new SolidColorBrush(Colors.White);
                         Restaurant.currentRestaurant.CANRESERVE = false;
                         CircleButton.Content = "Reserve OFF";
                     }
                     else
                     {
-                        ellipse.Fill = new SolidColorBrush(Colors.Gold);
+                        Color = new SolidColorBrush(Colors.Gold);
                         Restaurant.currentRestaurant.CANRESERVE = true;
                         CircleButton.Content = "Reserve ON";
                     }
 
                     isPressed = !isPressed;
-                }
+               // }
             }
             else
             {
-                MessageBox.Show("You can not use reservation for your restaurant because your rate is less than 4","",MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("You can not use reservation for your restaurant because your rate is less than 4", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void CircleButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            Color = new SolidColorBrush(Colors.Gold);
+
         }
     }
 }

@@ -32,7 +32,8 @@ namespace Mahdi_Sina_AP_Project
 
         private void confirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            //starting the program
+            Window window = new RestaurantPanel();
+            window.Show();
         }
     }
 }

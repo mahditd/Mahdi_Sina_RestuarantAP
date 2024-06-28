@@ -14,6 +14,14 @@ namespace Sina_Mahdi_RestaurantAP
         public static Restaurant currentRestaurant;
         
         private List<Food> foodList = new List<Food>();
+        private string color;
+
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
+
 
         public List<Food> FOODLIST { get { return foodList; } }
 
