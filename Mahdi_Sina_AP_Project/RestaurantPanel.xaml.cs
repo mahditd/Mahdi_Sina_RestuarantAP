@@ -28,15 +28,17 @@ namespace Mahdi_Sina_AP_Project
             Restaurant.currentRestaurant = new Restaurant("", "", "", "");
             Restaurant.currentRestaurant.RATE = 5;
             Restaurant.currentRestaurant.CANRESERVE = true;
-            //var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
+            var ellipse = CircleButton.Template.FindName("circleEllipse", CircleButton) as Ellipse;
 
 
             if (Restaurant.currentRestaurant.CANRESERVE == true)
             {
+               
                 CircleButton.Content = "Reserve ON";
             }
             else if(Restaurant.currentRestaurant.CANRESERVE == false)
             {
+                
                 CircleButton.Content = "Reserve OFF";
             }
 
