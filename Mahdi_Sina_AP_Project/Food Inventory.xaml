@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="Food_Inventory" Height="450" Width="800">
-    <Grid>
+    <!--<Grid>
         <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="2.3*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -16,14 +18,20 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/food_photos/yellowbackground.jpg" Opacity="1"/>
         </Grid.Background>
-        <ComboBox x:Name="MyComboBox" Height="30" Margin="0,27,0,30" SelectionChanged="MyComboBox_SelectionChanged" Grid.Column="1"/>
-    </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="0">
+            <ListBox Name="myListBox" Background="Transparent" SelectionChanged="myListBox_SelectionChanged" FontSize="30" BorderBrush="Black">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding}" Margin="5" VerticalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </Grid>-->
 </Window>
