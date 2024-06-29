@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sina_Mahdi_RestaurantAP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,25 @@ namespace Mahdi_Sina_AP_Project
         public Food_Inventory()
         {
             InitializeComponent();
+            List<Food> foods = new List<Food>();
+            Food food1 = new Food("Kebab1",12.5,3,"",Restaurant.currentRestaurant,"  ");
+            Food food2 = new Food("Kebab2",12.5,3,"",Restaurant.currentRestaurant,"  ");
+            Food food3 = new Food("Kebab3",12.5,3,"",Restaurant.currentRestaurant,"  ");
+            Food food4 = new Food("Kebab4",12.5,3,"",Restaurant.currentRestaurant,"  ");
+            foods.Add(food1);
+            foods.Add(food2);
+            foods.Add(food3);
+            foods.Add(food4);
+            var foodNames = foods.Select(x => x.NAME);
+            MyComboBox.ItemsSource = foodNames;
+        }
+
+        private void MyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(MyComboBox.SelectedItem == "Kebab1")
+            {
+                MessageBox.Show(MyComboBox.SelectedItem.ToString(),"",MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

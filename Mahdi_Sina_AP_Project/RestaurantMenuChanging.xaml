@@ -8,7 +8,7 @@
         Title="RestaurantMenuChanging" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\yellowbackground.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="/food_photos/yellowbackground.jpg" Opacity="1"/>
         </Grid.Background>
     </Grid>
 </Window>

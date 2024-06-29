@@ -9,7 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="food_photos\pexels-robinstickel-70497.jpg" />
+    <None Remove="food_photos\yellowbackground.jpg" />
+    <None Remove="food_photos\yellowbackground2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="food photos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="food_photos\pexels-robinstickel-70497.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\yellowbackground.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\yellowbackground2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

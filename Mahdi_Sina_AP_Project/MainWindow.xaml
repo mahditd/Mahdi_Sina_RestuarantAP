@@ -32,7 +32,7 @@
     </Window.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food photos\pexels-robinstickel-70497.jpg" Opacity="0.3"/>
+            <ImageBrush ImageSource="/food_photos/pexels-robinstickel-70497.jpg" Opacity="0.3"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
