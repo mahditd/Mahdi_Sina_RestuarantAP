@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="RestaurantMenuChanging" Height="450" Width="800">
-    <Grid>
+    <!--used pages instead-->
+    <!--<Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/food_photos/yellowbackground.jpg" Opacity="1"/>
         </Grid.Background>
-    </Grid>
+    </Grid>-->
 </Window>

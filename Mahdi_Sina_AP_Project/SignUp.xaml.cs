@@ -25,30 +25,30 @@ namespace Mahdi_Sina_AP_Project
             InitializeComponent();
         }
 
-        private void confirm_Click(object sender, RoutedEventArgs e)
-        {
-            int result = Customer.AddNewCustomer(userName.txtBox.Text,password.password.Password , email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.password.Password, this);
-            if (result == 1)
-            {
-                this.Close();
-            }
-            else if (result == 0)
-            {
-                //waiting for editing the informations
-            }
-            else
-            {
-                //it is not used but let's keep it
-                userName.txtBox.Text = "";
-                password.password.Password = "";
-                passwordConfirm.password.Password= "";
-                email.txtBox.Text = "";
-                name.txtBox.Text = "";
-                phoneNumber.txtBox.Text = "";
-                postalCode.txtBox.Text = "";
+        //private void confirm_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int result = Customer.AddNewCustomer(userName.txtBox.Text,password.password.Password , email.txtBox.Text, name.txtBox.Text, phoneNumber.txtBox.Text, postalCode.txtBox.Text, passwordConfirm.password.Password, this);
+        //    if (result == 1)
+        //    {
+        //        this.Close();
+        //    }
+        //    else if (result == 0)
+        //    {
+        //        //waiting for editing the informations
+        //    }
+        //    else
+        //    {
+        //        //it is not used but let's keep it
+        //        userName.txtBox.Text = "";
+        //        password.password.Password = "";
+        //        passwordConfirm.password.Password= "";
+        //        email.txtBox.Text = "";
+        //        name.txtBox.Text = "";
+        //        phoneNumber.txtBox.Text = "";
+        //        postalCode.txtBox.Text = "";
 
 
-            }
-        }
+        //    }
+        //}
     }
 }

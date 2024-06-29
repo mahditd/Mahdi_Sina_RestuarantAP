@@ -8,7 +8,8 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="SignUp" Height="450" Width="800">
-    <Grid>
+    <!--used pages instead-->
+   <!-- <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -34,5 +35,5 @@
         <userControl:txtBoxWithTxtBlock x:Name="phoneNumber" Grid.Column="1" Grid.Row="6" PlaceHolder="Phone number"/>
         <userControl:txtBoxWithTxtBlock x:Name="postalCode" Grid.Column="1" Grid.Row="7" PlaceHolder="Postal code"/>
         <Button x:Name="confirm" Grid.Column="1" Grid.Row="8" Background="Blue" Content="confirm the informations" Click="confirm_Click"/>
-    </Grid>
+    </Grid>-->
 </Window>

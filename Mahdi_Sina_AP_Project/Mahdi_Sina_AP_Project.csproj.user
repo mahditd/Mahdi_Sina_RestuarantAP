@@ -13,6 +13,21 @@
     <Compile Update="Food Inventory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Food Inventory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Log_In_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RestaurantMenuChanging.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RestaurantPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PasswordWithTextBlock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,10 +48,28 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Food Inventory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Log_In_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RestaurantMenuChanging.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RestaurantPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="PasswordWithTextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="txtBoxWithTxtBlock.xaml">
