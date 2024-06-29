@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mahdi_Sina_AP_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec4f101cb0e57311b4b54f85c163d8c340402aba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbdd7631bcee5b4fb5a299d2dbbc28d7e22c329c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mahdi_Sina_AP_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mahdi_Sina_AP_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
