@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\
 Mahdi_Sina_AP_Project
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
-81084464404
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
+14238552378
 
-201259521656
-24739379216
-Confirming email.xaml;Food Inventory.xaml;MainWindow.xaml;PasswordWithTextBlock.xaml;RestaurantMenuChanging.xaml;RestaurantPanel.xaml;SignUp.xaml;txtBoxWithTxtBlock.xaml;
+27-1720875566
+2021521864258
+Confirming email.xaml;Food Inventory.xaml;MainWindow.xaml;Pages\Food Inventory.xaml;Pages\Log_In_Page.xaml;Pages\RestaurantMenuChanging.xaml;Pages\RestaurantPanel.xaml;Pages\SignUp.xaml;PasswordWithTextBlock.xaml;RestaurantMenuChanging.xaml;RestaurantPanel.xaml;SignUp.xaml;Themes\Generic.xaml;txtBoxWithTxtBlock.xaml;
 
-False
+True
 

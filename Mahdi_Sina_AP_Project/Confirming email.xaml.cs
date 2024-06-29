@@ -20,8 +20,8 @@ namespace Mahdi_Sina_AP_Project
     public partial class Confirming_email : Window
     {
         string verificationCode;
-        Window parent;
-        public Confirming_email(string _verificationCode, Window _parent)
+        Page parent;
+        public Confirming_email(string _verificationCode, Page _parent)
         {
             verificationCode = _verificationCode;
             parent = _parent;

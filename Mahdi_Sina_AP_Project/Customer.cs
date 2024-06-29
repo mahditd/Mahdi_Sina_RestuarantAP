@@ -9,6 +9,7 @@ using System.Windows;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -59,7 +60,7 @@ namespace Mahdi_Sina_AP_Project
             subscribtion = subscribtion.bronze;
 
         }
-        public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Window parent)
+        public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Page parent)
         {
 
             //checking for repetition in username

@@ -8,6 +8,7 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -30,7 +31,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+   <!--<Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/food_photos/pexels-robinstickel-70497.jpg" Opacity="0.3"/>
         </Grid.Background>
@@ -53,5 +54,8 @@
         <StackPanel Grid.Row="4" Grid.Column="1">
             <Button Cursor="Hand" Style="{StaticResource MyButtonStyle}" Name="signUpBtn" Content="sign up" HorizontalAlignment="Left" Margin="5 ,0 ,0 ,0 " FontWeight="Bold" Foreground="Red" Click="Button_Click_SignUp"  ></Button>
         </StackPanel>
+    </Grid>-->
+    <Grid>
+        <Frame Source="/Pages/Log_In_Page.xaml" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
