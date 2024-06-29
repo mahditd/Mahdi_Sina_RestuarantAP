@@ -64,7 +64,9 @@ namespace Mahdi_Sina_AP_Project
 
         private void FoodInventoryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Window InventoryMenu = new Food_Inventory();
+            InventoryMenu.Show();
+            this.Close();
         }
         private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
