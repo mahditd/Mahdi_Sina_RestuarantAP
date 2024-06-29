@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mahdi_Sina_AP_Project"
         mc:Ignorable="d"
         Title="Food_Inventory" Height="450" Width="800">
-    <Grid>
+    <!--<Grid>
         <Grid.ColumnDefinitions>
             
             <ColumnDefinition Width="2.3*"/>
@@ -33,5 +33,5 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
-    </Grid>
+    </Grid>-->
 </Window>
