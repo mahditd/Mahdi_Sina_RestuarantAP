@@ -69,6 +69,7 @@ namespace Mahdi_Sina_AP_Project
                 MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 0;
             }
+            
 
             if (customers.FirstOrDefault(x => x.username == _username) == null)
             {
