@@ -11,7 +11,7 @@ public enum PaymentMethod { Online, OnDelivery }
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Food
+    public class Food
     {
         private string name;
 
@@ -81,7 +81,7 @@ namespace Sina_Mahdi_RestaurantAP
 
         }
     }
-    class Order : Food
+    public class Order : Food
     {
         private DateTime orderDateTime = new DateTime();
 

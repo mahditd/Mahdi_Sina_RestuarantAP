@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Restaurant : User
+    public class Restaurant : User
     {
 
         public static Restaurant currentRestaurant;

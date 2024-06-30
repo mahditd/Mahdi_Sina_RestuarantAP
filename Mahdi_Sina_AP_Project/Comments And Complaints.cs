@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
-    internal class Comment
+    public class Comment
     {
         public string text;
 
@@ -54,11 +54,11 @@ namespace Mahdi_Sina_AP_Project
         {
             this.replyedText = replyText;
         }
-        
+
 
     }
 
-    internal class Complaint
+    public class Complaint
     {
         public string text;
 

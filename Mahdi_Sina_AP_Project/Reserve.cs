@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
-    internal class Reserve
+    public class Reserve
     {
         public Customer Customer;
 

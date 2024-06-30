@@ -23,6 +23,17 @@ namespace Mahdi_Sina_AP_Project.Pages
     /// </summary>
     public partial class Food_Inventory : Page
     {
+        private ImageSource imagePath;
+
+        public ImageSource ImagePath
+        {
+            get { return imagePath; }
+            set { imagePath = value;
+                
+                MyImage.Source = imagePath;
+            }
+        }
+
         public Food_Inventory()
         {
 
@@ -84,7 +95,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
             bitmap.EndInit();
-            MyImage.Source = bitmap;
+            ImagePath = bitmap;
         }
         public string SpaceMaker(string foodName)
         {
@@ -97,11 +108,12 @@ namespace Mahdi_Sina_AP_Project.Pages
             }
             return spaces;
         }
+        public Food ChosenFood;
 
         private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
        
-        Food ChosenFood;
+
             List<Food> Foods = new List<Food>();
             Food food1 = new Food("cheeseburger", 12.5, 3, "\\food_photos\\cheesburger.jpg", Restaurant.currentRestaurant,"  ");
             Food food2 = new Food("pizza", 12.5, 3, "\\food_photos\\chickenburger.jpg", Restaurant.currentRestaurant, "  ");
@@ -142,7 +154,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         }
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
         {
-            Window UploadImage = new Upload_Image();
+            Window UploadImage = new Upload_Image(this);
             UploadImage.Show();
         }
 

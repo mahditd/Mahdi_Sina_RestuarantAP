@@ -17,7 +17,7 @@ namespace Mahdi_Sina_AP_Project
     public enum Gender { male, female }
 
     public enum subscribtion { bronze, silver, gold }
-    class Customer : User
+    public class Customer : User
     {
         public static Customer currentCustomer; 
 

@@ -22,9 +22,11 @@ namespace Mahdi_Sina_AP_Project
     public partial class Upload_Image : Window
     {
         public BitmapImage SelectedImage { get; private set; }
-        public Upload_Image()
+        Pages.Food_Inventory Food_Inventory;
+        public Upload_Image(Pages.Food_Inventory foodInventory)
         {
             InitializeComponent();
+            Food_Inventory = foodInventory;
         }
 
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)
@@ -40,27 +42,27 @@ namespace Mahdi_Sina_AP_Project
                 PreviewImage.Source = bitmap;
                 SelectedImage = bitmap;
             }
+
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
         }
-        private void UploadImageButton_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
         private void SaveImageButton_Click(object sender, RoutedEventArgs e)
         {
             if (PreviewImage.Source != null)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "JPEG Image|*.jpg|PNG Image|*.png";
-                if (saveFileDialog.ShowDialog() == true)
-                {
-                    string filePath = saveFileDialog.FileName;
-                    SaveImageToFile((BitmapImage)PreviewImage.Source, filePath);
-                }
+                //SaveFileDialog saveFileDialog = new SaveFileDialog();
+                //saveFileDialog.Filter = "JPEG Image|*.jpg|PNG Image|*.png";
+                //if (saveFileDialog.ShowDialog() == true)
+                //{
+                //string filePath = saveFileDialog.FileName;
+                //SaveImageToFile((BitmapImage)PreviewImage.Source, filePath);
+                //inja bayad basheh?
+                Food_Inventory.ChosenFood.IMAGEPATH = "C:/Users/mahditd/source/repos/Mahdi_Sina_RestuarantAP/Mahdi_Sina_AP_Project/food_photoschickenburger.jpg";
+                Food_Inventory.ImagePath = (PreviewImage.Source);
+                //}
             }
             else
             {
@@ -68,28 +70,14 @@ namespace Mahdi_Sina_AP_Project
             }
         }
 
-         private void SaveImageToFile(BitmapImage bitmapImage, string filePath)
+        private string ConvertImageSourceToString(ImageSource imageSource)
         {
-            BitmapEncoder encoder;
-            if (filePath.EndsWith(".jpg"))
+            if (imageSource is BitmapImage bitmapImage && bitmapImage.UriSource != null)
             {
-                encoder = new JpegBitmapEncoder();
+                return bitmapImage.UriSource.LocalPath;
             }
-            else if (filePath.EndsWith(".png"))
-            {
-                encoder = new PngBitmapEncoder();
-            }
-            else
-            {
-                throw new NotSupportedException("File extension is not supported");
-            }
-
-            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                encoder.Save(fileStream);
-            }
+            return null;
         }
+        
     }
 }

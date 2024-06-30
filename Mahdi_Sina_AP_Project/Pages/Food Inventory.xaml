@@ -46,7 +46,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Name="MyImage" Grid.Row="0" />
+            <Image Name="MyImage" Grid.Row="0" Source="{Binding ImagePath}"/>
             <Button Name="ChangeImageButton" Background="OrangeRed"  Content="Change Image" Width="100" Height="30" VerticalAlignment="Top" Click="ChangeImageButton_Click" Grid.Row="1"/>
         </Grid>
     </Grid>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
-    internal class User
+    public class User
     {
         public static User currentUser;
 

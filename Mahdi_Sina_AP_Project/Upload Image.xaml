@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="Upload_Image" Height="450" Width="400">
     <Grid>
-        <Button Name="SelectImageButton" Content="Select Image" Width="100" Height="30" VerticalAlignment="Top" Click="SelectImageButton_Click" Margin="125,153,175,0" />
+        <Button Name="SelectImageButton" Content="Select Image" Width="100" Height="30" VerticalAlignment="Top" Click="SelectImageButton_Click" Margin="125,217,175,0" />
         <Image Name="PreviewImage" Width="200" Height="150" VerticalAlignment="Top" Margin="75,0,125,0" />
-        <Button Name="UploadImageButton" Content="Upload Image" Width="100" Height="30" VerticalAlignment="Top" Margin="125,217,175,0" Click="UploadImageButton_Click" />
         <Button Name="SaveImageButton" Content="Save Image" Width="100" Height="30" VerticalAlignment="Top" Margin="125,285,175,0" Click="SaveImageButton_Click" />
     </Grid>
 </Window>
