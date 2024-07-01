@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Admin : User
+    public class Admin : User
     {
         public static Admin currentAdmin;
 

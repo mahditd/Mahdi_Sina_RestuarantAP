@@ -33,6 +33,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 MyImage.Source = imagePath;
             }
         }
+        
 
         public Food_Inventory()
         {
@@ -85,7 +86,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             foods.Add(food22);
             var foodNames = foods.Select(x => x.NAME + SpaceMaker(x.NAME) + x.Price + "$");
             myListBox.ItemsSource = foodNames;
-
+            
 
         }
 
@@ -131,6 +132,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             Foods.Add(food6);
             Foods.Add(food7);
             Foods.Add(food8);
+            
             Restaurant.currentRestaurant.foodList.Add(food1);
             Restaurant.currentRestaurant.foodList.Add(food2);
             Restaurant.currentRestaurant.foodList.Add(food3);
@@ -158,9 +160,6 @@ namespace Mahdi_Sina_AP_Project.Pages
             Window UploadImage = new Upload_Image(this);
             UploadImage.Show();
         }
-
-
-
     }
 
 }
