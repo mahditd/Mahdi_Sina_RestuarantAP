@@ -10,6 +10,10 @@ namespace Mahdi_Sina_AP_Project
     {
         public static User currentUser;
 
+        protected int id;
+
+        public int ID {  get; set; }
+
         protected string username;
 
         public string USERNAME
@@ -25,6 +29,7 @@ namespace Mahdi_Sina_AP_Project
             set { password = value; }
         }
 
+        public User() { }
         public User(string username , string password)
         {
             this.username = username;

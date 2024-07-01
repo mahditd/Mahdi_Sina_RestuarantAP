@@ -34,6 +34,7 @@ namespace Mahdi_Sina_AP_Project
 
         public DateTime CREATEDTIME { get { return createdTime; } }
 
+        public Comment() { }
         public Comment(string Text, Food RelatedFood, Customer RelatedCustomer)
         {
             this.text = Text;
@@ -85,7 +86,7 @@ namespace Mahdi_Sina_AP_Project
 
         public DateTime CREATEDTIME { get { return createdTime; } }
 
-
+        public Complaint() { }
         public Complaint(string Text, Order RelatedOrder, Customer RelatedCustomer)
         {
             this.text = Text;

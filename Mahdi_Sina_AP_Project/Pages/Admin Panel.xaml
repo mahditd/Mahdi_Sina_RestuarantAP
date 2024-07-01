@@ -1,0 +1,102 @@
+﻿<Page x:Class="Mahdi_Sina_AP_Project.Pages.Admin_Panel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mahdi_Sina_AP_Project.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Admin_Panel">
+
+    <Page.Resources>
+        <!-- Custom Button Style -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF45A2FF" Offset="0"/>
+                        <GradientStop Color="#FF3B8EEB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#FF69B2FF" Offset="0"/>
+                                            <GradientStop Color="#FF5897E6" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#FF2376C7" Offset="0"/>
+                                            <GradientStop Color="#FF1F67B1" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#FFC0C0C0"/>
+                                <Setter Property="Foreground" Value="#FF9A9A9A"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/> 
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="\food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg" Opacity="1"/>
+        </Grid.Background>
+
+        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold" Grid.Column="3" Grid.Row="1" Margin ="5 15 5 15" Click="Adding_Restaurant_Click">
+            Adding Restaurant
+        </Button>
+        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold"  Grid.Column="3" Grid.Row="2" Margin ="5 15 5 15" Click="All_Restaurants_Click">
+            All Restaurants
+        </Button>
+        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold"  Grid.Column="3" Grid.Row="3" Margin ="5 15 5 15" Click="Complaints_Click">
+            Complaints
+        </Button>
+    </Grid>
+</Page>

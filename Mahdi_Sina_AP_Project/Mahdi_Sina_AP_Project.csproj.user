@@ -13,6 +13,9 @@
     <Compile Update="Food Inventory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Admin Panel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Food Inventory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Admin Panel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Food Inventory.xaml">

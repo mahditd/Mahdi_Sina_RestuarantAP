@@ -60,13 +60,21 @@ namespace Mahdi_Sina_AP_Project
                 //string filePath = saveFileDialog.FileName;
                 //SaveImageToFile((BitmapImage)PreviewImage.Source, filePath);
                 //inja bayad basheh?
-                Food_Inventory.ChosenFood.IMAGEPATH = "C:/Users/mahditd/source/repos/Mahdi_Sina_RestuarantAP/Mahdi_Sina_AP_Project/food_photoschickenburger.jpg";
-                Food_Inventory.ImagePath = (PreviewImage.Source);
+                if (Food_Inventory.ChosenFood != null)
+                {
+                    Food_Inventory.ChosenFood.IMAGEPATH = "C:/Users/mahditd/source/repos/Mahdi_Sina_RestuarantAP/Mahdi_Sina_AP_Project/food_photoschickenburger.jpg";
+                    Food_Inventory.ImagePath = (PreviewImage.Source);
+                }
+                else
+                {
+                    MessageBox.Show("No food is chosen to change it's image"," ",MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 //}
             }
             else
             {
                 MessageBox.Show("No image to save", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
             }
         }
 

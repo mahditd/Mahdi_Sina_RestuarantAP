@@ -13,7 +13,7 @@ namespace Sina_Mahdi_RestaurantAP
 
         public static Restaurant currentRestaurant;
         
-        private List<Food> foodList = new List<Food>();
+        public List<Food> foodList = new List<Food>();
         private string color;
 
         public string Color
@@ -22,8 +22,6 @@ namespace Sina_Mahdi_RestaurantAP
             set { color = value; }
         }
 
-
-        public List<Food> FOODLIST { get { return foodList; } }
 
 
         private bool canReserve;
@@ -61,10 +59,10 @@ namespace Sina_Mahdi_RestaurantAP
             set {  address = value; }
         }
 
-        private List<Reserve> ReserveList = new List<Reserve>();
+        public List<Reserve> ReserveList = new List<Reserve>();
 
-        public List<Reserve> RESERVELIST { get { return ReserveList; } }
 
+        public Restaurant() { }
         public Restaurant(string username, string password, string name, string address) : base(username, password)
         {
            
