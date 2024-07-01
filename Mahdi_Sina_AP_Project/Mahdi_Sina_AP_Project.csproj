@@ -9,17 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Vintage.otf" />
     <None Remove="food_photos\cheesburger.jpg" />
     <None Remove="food_photos\chickenburger.jpg" />
     <None Remove="food_photos\pexels-robinstickel-70497.jpg" />
     <None Remove="food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg" />
     <None Remove="food_photos\yellowbackground.jpg" />
     <None Remove="food_photos\yellowbackground2.jpg" />
+    <None Remove="Icons\profile-user_64572.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="food photos\" />
+	  <Folder Include="Icons\"/>
   </ItemGroup>
+	<ItemGroup>
+		<Resource Include="food_photos\*.png" />
+		<Resource Include="food_photos\*.jpg" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0-preview.5.24306.3">
@@ -34,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Vintage.otf" />
     <Resource Include="food_photos\cheesburger.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -52,6 +60,7 @@
     <Resource Include="food_photos\yellowbackground2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icons\profile-user_64572.png" />
   </ItemGroup>
 
 </Project>

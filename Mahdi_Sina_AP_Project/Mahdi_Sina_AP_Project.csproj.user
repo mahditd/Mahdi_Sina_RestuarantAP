@@ -10,6 +10,12 @@
     <Compile Update="Confirming email.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\CustomerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\UserProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Admin Panel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Confirming email.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fonts\Dictionaries\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CustomerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UserProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
