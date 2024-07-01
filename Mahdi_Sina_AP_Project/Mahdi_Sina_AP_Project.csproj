@@ -9,33 +9,72 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="food_photos\pexels-robinstickel-70497.jpg" />
-    <None Remove="food_photos\yellowbackground.jpg" />
-    <None Remove="food_photos\yellowbackground2.jpg" />
+    <None Remove="food_photos\cheesburger.jpg" />
+    <None Remove="food_photos\chickenalfredopizza.jpg" />
+    <None Remove="food_photos\crispymushroom.jpg" />
+    <None Remove="Icons\profile-user_64572.png" />
   </ItemGroup>
 
+
+
   <ItemGroup>
+    <Resource Include="Fonts\Vintage.otf" />
+	  <!--    <Resource Include="food_photos\pexels-robinstickel-70497.jpg" />
+    <Resource Include="food_photos\thumb-1920-1019276.jpg" />
+    <Resource Include="food_photos\yellowbackground.jpg" />
+    <Resource Include="food_photos\yellowbackground2.jpg" />-->
+
+  </ItemGroup>
+		<ItemGroup>
+		<Resource Include="food_photos\*.png" />
+		<Resource Include="food_photos\*.jpg" />
+		<Resource Include="food_photos\*.gif" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Icons\*.png" />
+		<Resource Include="Icons\*.jpg" />
+		<Resource Include="Icons\*.gif" />
+	</ItemGroup>
+
+	<ItemGroup>
     <Folder Include="food photos\" />
+		<Folder Include="Icons" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.5.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
+	</ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Vintage.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\cheesburger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\crispymushroom.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\profile-user_64572.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+	  <!--
+    <Resource Include="food_photos\chickenalfredopizza.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>-->
+	  <!--    <Resource Include="food_photos\doubleburger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="food_photos\pexels-robinstickel-70497.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\thumb-1920-1019276.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="food_photos\yellowbackground.jpg">
@@ -45,5 +84,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Resource Update="food_photos\sezarsalad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+	-->
+  </ItemGroup>
+
 
 </Project>
