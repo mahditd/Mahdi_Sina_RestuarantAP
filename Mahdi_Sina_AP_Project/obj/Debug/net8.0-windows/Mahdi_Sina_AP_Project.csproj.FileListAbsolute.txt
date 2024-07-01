@@ -301,7 +301,6 @@ C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\bin\
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Mahdi_Sina_AP_Project.csproj.AssemblyReference.cache
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Confirming email.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Food Inventory.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\Food Inventory.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\Log_In_Page.g.cs
@@ -309,9 +308,6 @@ C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\RestaurantPanel.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\SignUp.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\PasswordWithTextBlock.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\RestaurantMenuChanging.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\RestaurantPanel.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\SignUp.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Upload Image.g.cs
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\App.g.cs
@@ -319,7 +315,6 @@ C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Mahdi_Sina_AP_Project_MarkupCompile.cache
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Mahdi_Sina_AP_Project_MarkupCompile.lref
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Confirming email.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Food Inventory.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\Food Inventory.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\Log_In_Page.baml
@@ -327,9 +322,6 @@ C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\RestaurantPanel.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\SignUp.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\PasswordWithTextBlock.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\RestaurantMenuChanging.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\RestaurantPanel.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\SignUp.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Themes\Generic.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Upload Image.baml

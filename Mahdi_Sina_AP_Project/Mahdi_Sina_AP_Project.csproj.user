@@ -10,9 +10,6 @@
     <Compile Update="Confirming email.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Food Inventory.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\Admin Panel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,9 +31,6 @@
     <Compile Update="PasswordWithTextBlock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SignUp.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="txtBoxWithTxtBlock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,9 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Confirming email.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Food Inventory.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -73,9 +64,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PasswordWithTextBlock.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="SignUp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Generic.xaml">
