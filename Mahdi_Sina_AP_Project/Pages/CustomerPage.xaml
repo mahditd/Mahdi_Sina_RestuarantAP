@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                 <userControl:NavButton3 Panel.ZIndex="-1" Grid.Column="0" x:Name="UserProfile" BorderBrush="Transparent" BorderThickness="3" Text="Profile" FontSize="20" FontFamily="{StaticResource Vintage}" NavUri="/Pages/UserProfile.xaml" ButtonBase.Click="UserProfile_Click"/>
-                    <Image Grid.Column="1" Source="\Icons\profile-user_64572.png"/>
+                    <Image Grid.Column="1" Source="/Icons/profile-user_64572.png"/>
                     
                 </Grid>
                 <userControl:NavButton3 BorderBrush="Transparent" BorderThickness="3" Text="Restaurants" FontSize="20" FontFamily="{StaticResource Vintage}"/>

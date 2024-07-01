@@ -1,4 +1,5 @@
-﻿using Sina_Mahdi_RestaurantAP;
+﻿
+using Sina_Mahdi_RestaurantAP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-//using System.Windows.Forms;
+
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,13 +23,25 @@ namespace Mahdi_Sina_AP_Project.Pages
     /// </summary>
     public partial class Food_Inventory : Page
     {
+        private ImageSource imagePath;
+
+        public ImageSource ImagePath
+        {
+            get { return imagePath; }
+            set { imagePath = value;
+                
+                MyImage.Source = imagePath;
+            }
+        }
+        
+
         public Food_Inventory()
         {
 
             InitializeComponent();
             List<Food> foods = new List<Food>();
-            Food food1 = new Food("Kebab1131242", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
-            Food food2 = new Food("Kebab1131242", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food1 = new Food("pizza", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food2 = new Food("cheeseburger", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
             Food food3 = new Food("Kebab3142", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
             Food food4 = new Food("Kebab4142", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
             Food food5 = new Food("Kebab514", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
@@ -73,14 +86,22 @@ namespace Mahdi_Sina_AP_Project.Pages
             foods.Add(food22);
             var foodNames = foods.Select(x => x.NAME + SpaceMaker(x.NAME) + x.Price + "$");
             myListBox.ItemsSource = foodNames;
-
+            
 
         }
 
+        private void SetImage(string imagePath)
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
+            bitmap.EndInit();
+            ImagePath = bitmap;
+        }
         public string SpaceMaker(string foodName)
         {
             string spaces = "";
-            int size = 40 - foodName.Length;
+            int size = 45 - foodName.Length;
 
             for (int i = 0; i < size - foodName.Length; i++)
             {
@@ -88,14 +109,57 @@ namespace Mahdi_Sina_AP_Project.Pages
             }
             return spaces;
         }
+        public Food ChosenFood;
 
         private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+       
+
+            List<Food> Foods = new List<Food>();
+            Food food1 = new Food("cheeseburger", 12.5, 3, "\\food_photos\\cheesburger.jpg", Restaurant.currentRestaurant,"  ");
+            Food food2 = new Food("pizza", 12.5, 3, "\\food_photos\\chickenburger.jpg", Restaurant.currentRestaurant, "  ");
+            Food food3 = new Food("hamburger", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food4 = new Food("lazania", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food5 = new Food("pasta", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food6 = new Food("pizza1", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food7 = new Food("Kebab1", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Food food8 = new Food("steak", 12.5, 3, "", Restaurant.currentRestaurant, "  ");
+            Foods.Add(food1);
+            Foods.Add(food2);
+            Foods.Add(food3);
+            Foods.Add(food4);
+            Foods.Add(food5);
+            Foods.Add(food6);
+            Foods.Add(food7);
+            Foods.Add(food8);
+            
+            Restaurant.currentRestaurant.foodList.Add(food1);
+            Restaurant.currentRestaurant.foodList.Add(food2);
+            Restaurant.currentRestaurant.foodList.Add(food3);
+            Restaurant.currentRestaurant.foodList.Add(food4);
+            Restaurant.currentRestaurant.foodList.Add(food5);
+            Restaurant.currentRestaurant.foodList.Add(food6);
+            Restaurant.currentRestaurant.foodList.Add(food7);
+            Restaurant.currentRestaurant.foodList.Add(food8);
+            string[] foodName = myListBox.SelectedItem.ToString().Split(" ");
+            for(int i = 0;i < Restaurant.currentRestaurant.foodList.Count; i++)
+            {
+                if (foodName[0] == Restaurant.currentRestaurant.foodList[i].NAME)
+                {
+                    ChosenFood = Restaurant.currentRestaurant.foodList[i];
+                    SetImage(ChosenFood.IMAGEPATH);
+                    break;
+                }
+            }
+            
+           
 
         }
-
-
-
+        private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window UploadImage = new Upload_Image(this);
+            UploadImage.Show();
+        }
     }
 
 }

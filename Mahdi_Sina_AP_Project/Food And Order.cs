@@ -11,7 +11,7 @@ public enum PaymentMethod { Online, OnDelivery }
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Food
+    public class Food
     {
         private string name;
 
@@ -69,7 +69,7 @@ namespace Sina_Mahdi_RestaurantAP
             set { foodCount = value; }
         }
 
-
+        public Food() { }
         public Food(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients)
         {
             this.name = name;
@@ -81,7 +81,7 @@ namespace Sina_Mahdi_RestaurantAP
 
         }
     }
-    class Order : Food
+    public class Order : Food
     {
         private DateTime orderDateTime = new DateTime();
 
@@ -99,12 +99,11 @@ namespace Sina_Mahdi_RestaurantAP
             }
         }
 
-        private List<Comment> Comments = new List<Comment>();
+        public List<Comment> Comments = new List<Comment>();
 
-        public List<Comment> COMMENTS
-        {
-            get { return Comments; }
-        }
+        
+
+        public Order() { }
         public Order(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients, PaymentMethod method)
             : base(name, price, rate, imagePath, restaurant, ingredients)
         {

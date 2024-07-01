@@ -35,7 +35,7 @@
 
             <!--<Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>-->
             <Button x:Name="HistoryButton" Grid.Column="0" Grid.Row="3" Content="Orders And Reserves History" Margin="40,30,40,30" Background="OrangeRed"  Click="HistoryButton_Click"/>
-            <!--<Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click" Loaded="CircleButton_Loaded">
+            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click" Loaded="CircleButton_Loaded">
                 <Button.Template>
                     <ControlTemplate  TargetType="Button">
                         <Grid>
@@ -44,46 +44,11 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="circleEllipse" Property="Fill" Value="Red"/>
+                                <Setter TargetName="circleEllipse" Property="Fill" Value="lightBlue"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Button.Template>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>-->
-            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click" Loaded="CircleButton_Loaded">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid Name="grid" >
-                            <Ellipse x:Name="circleEllipse" Fill="{Binding Color}" Panel.ZIndex="-1"/>
-                            <Ellipse x:Name="ellipse2" Panel.ZIndex="0" Fill="Transparent"/>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ellipse2" Property="Fill" Value="lightBlue"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
             </Button>
         </Grid>
     </Grid>

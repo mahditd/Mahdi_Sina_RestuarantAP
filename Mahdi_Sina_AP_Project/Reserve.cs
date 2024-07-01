@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
-    internal class Reserve
+    public class Reserve
     {
         public Customer Customer;
 
@@ -17,6 +17,7 @@ namespace Mahdi_Sina_AP_Project
 
         public DateTime RESERVETIME { get {  return reserveTime; } set {  reserveTime = value; } }
 
+        public Reserve() { }
         public Reserve(Customer customer, Restaurant restaurant, DateTime reserveTime)
         {
             Customer = customer;

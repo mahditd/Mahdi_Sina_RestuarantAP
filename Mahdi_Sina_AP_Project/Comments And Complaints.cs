@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
-    internal class Comment
+    public class Comment
     {
         public string text;
 
@@ -34,6 +34,7 @@ namespace Mahdi_Sina_AP_Project
 
         public DateTime CREATEDTIME { get { return createdTime; } }
 
+        public Comment() { }
         public Comment(string Text, Food RelatedFood, Customer RelatedCustomer)
         {
             this.text = Text;
@@ -54,11 +55,11 @@ namespace Mahdi_Sina_AP_Project
         {
             this.replyedText = replyText;
         }
-        
+
 
     }
 
-    internal class Complaint
+    public class Complaint
     {
         public string text;
 
@@ -85,7 +86,7 @@ namespace Mahdi_Sina_AP_Project
 
         public DateTime CREATEDTIME { get { return createdTime; } }
 
-
+        public Complaint() { }
         public Complaint(string Text, Order RelatedOrder, Customer RelatedCustomer)
         {
             this.text = Text;

@@ -17,7 +17,7 @@ namespace Mahdi_Sina_AP_Project
     public enum Gender { male, female }
 
     public enum subscribtion { bronze, silver, gold }
-    class Customer : User
+    public class Customer : User
     {
         public static Customer currentCustomer; 
 
@@ -51,6 +51,7 @@ namespace Mahdi_Sina_AP_Project
         public subscribtion subscribtion;
         static List<Customer> customers = new List<Customer>();
 
+        public Customer() { }
         public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode) : base(username, password)
         {
             this.name = name;
@@ -69,6 +70,7 @@ namespace Mahdi_Sina_AP_Project
                 MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 0;
             }
+            
 
             if (customers.FirstOrDefault(x => x.username == _username) == null)
             {
