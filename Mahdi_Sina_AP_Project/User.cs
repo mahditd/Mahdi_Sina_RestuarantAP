@@ -10,9 +10,9 @@ namespace Mahdi_Sina_AP_Project
     {
         public static User currentUser;
 
-        protected int id;
-
-        public int ID {  get; set; }
+        //protected int id;
+        
+        public int ID { get; set; }
 
         protected string username;
 

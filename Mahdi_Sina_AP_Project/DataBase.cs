@@ -14,21 +14,15 @@ namespace Mahdi_Sina_AP_Project
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(@"Data Source =C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\DATABASE.db");
+            optionsBuilder.UseSqlite(@"Data Source =D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\DATABASE.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Comment>().HasNoKey();
-            modelBuilder.Entity<Complaint>().HasNoKey();
-            modelBuilder.Entity<Reserve>().HasNoKey();
-            modelBuilder.Entity<Food>().HasNoKey();
-           
-
+            modelBuilder.Entity<Customer>().HasKey(c => c.ID);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Restaurant> Restaurants { get; set;}
-        public DbSet<Admin> admins { get; set; }
 
 
 

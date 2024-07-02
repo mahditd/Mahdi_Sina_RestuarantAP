@@ -18,59 +18,104 @@ namespace Mahdi_Sina_AP_Project
 
     public enum Gender { male, female }
 
-    public enum subscribtion { bronze, silver, gold }
+    public enum Subscribtion { bronze, silver, gold }
     public class Customer : User
     {
         public static Customer currentCustomer;
 
         private string email;
-
-        public string EMAIL { get { return email; } set { email = value; } }
+        
+        public string EMAIL { get { return email; } set { email = value; } }//dataBase
 
         private string name;
 
-        public string NAME { get { return name; } set { name = value; } }
+        public string NAME { get { return name; } set { name = value; } }//dataBase
 
 
-        private string phoneNumber;
+        private string phoneNumber { get; set; } //dataBase
 
-        public string PHONENUMBER { get { return phoneNumber; } set { phoneNumber = value; } }
+        public string PHONENUMBER { get { return phoneNumber; } set { phoneNumber = value; } }//dataBase
 
         //is optional
         private string postalCode;
         //is optional
-        public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }
+        public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }//dataBase
 
         public string orderlistjson { get; set; }
 
         [NotMapped]
-        public List<Order> orders { get => converToList(orderlistjson) ; set => orderlistjson = convertToString(value); }
+        public List<Order> ORDERS { get => listConverter(orderlistjson) ; set => orderlistjson = stringConverter(value); }//changing orderlistjson
+        //Methods for converting list orders to json string
 
-        List<Order> converToList(string orderStr)
+        List<Order> listConverter(string orderStr)
         {
-            if (orderStr != null)
+            if (orderlistjson == null || orderlistjson == "")
             {
-                JsonSerializer.Deserialize<List<Order>>(orderStr);
+                return new List<Order>();
             }
-            return new List<Order>();
+            return JsonSerializer.Deserialize<List<Order>>(orderStr);
         }
-        string convertToString(List<Order> orders)
+        string stringConverter(List<Order> list)
         {
-            if (orders == null)
+            return JsonSerializer.Serialize(list);
+        }
+        //Methods for converting list comments to json string
+
+        List<Comment> listConverterToComment(string orderStr)
+        {
+            if (orderlistjson == null)
             {
-                return "";
-            };
-            return JsonSerializer.Serialize(orders);
+                return new List<Comment>();
+            }
+            return JsonSerializer.Deserialize<List<Comment>>(orderStr);
         }
 
+        string stringConverterToComment(List<Comment> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+
+        public string commentJson { get; set; }//dataBase
+        [NotMapped]
+        public List<Comment> COMMENTS { get => listConverterToComment(commentJson); set => commentJson = stringConverterToComment(value); }
+        List<Complaint> listConverterToComplaint(string orderStr)
+        {
+            if (orderlistjson == null)
+            {
+                return new List<Complaint>();
+            }
+            return JsonSerializer.Deserialize<List<Complaint>>(orderStr);
+        }
+
+        string stringConverterToComplaint(List<Complaint> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+        public string complaintJson { get; set; }
+        [NotMapped]
+        public List<Complaint> COMPLAINTS { get => listConverterToComplaint(complaintJson); set => stringConverterToComplaint(value); }
+
+        public int subscribtion { get; set; }//must be casted every time
+
+        //Methods for converting list customer to json string
+        static List<Customer> listConverterToCustomer(string orderStr)
+        {
+            if (customersJson == null)
+            {
+                return new List<Customer>();
+            }
+            return JsonSerializer.Deserialize<List<Customer>>(orderStr);
+        }
+       static string stringConverterToCustomer(List<Customer> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+        public static string customersJson { get; set; }
+        [NotMapped]
+        static List<Customer> customers { get => listConverterToCustomer(customersJson); set => customersJson= stringConverterToCustomer(value); }
 
 
-        public List<Comment> comments = new List<Comment>();
 
-        public List<Complaint> complaints = new List<Complaint>();
-
-        public subscribtion subscribtion;
-        static List<Customer> customers = new List<Customer>();
 
         public Customer() { }
         public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode) : base(username, password)
@@ -79,7 +124,12 @@ namespace Mahdi_Sina_AP_Project
             this.phoneNumber = phoneNumber;
             this.postalCode = postalCode;
             this.email = email;
-            subscribtion = subscribtion.bronze;
+            subscribtion = (int)(Subscribtion.bronze);
+            EmailConfirmed = false;
+            customersJson = "";
+            orderlistjson = "";
+            commentJson = "";
+            complaintJson = "";
 
         }
         public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Page parent)
@@ -128,7 +178,7 @@ namespace Mahdi_Sina_AP_Project
             return 0;
         }
 
-        public static bool EmailConfirmed { get; set; } = false;
+        public static bool EmailConfirmed { get; set; }
 
 
 
