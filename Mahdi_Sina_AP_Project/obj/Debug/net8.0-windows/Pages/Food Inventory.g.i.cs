@@ -77,7 +77,7 @@ namespace Mahdi_Sina_AP_Project.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;component/pages/food%20inventory.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;V1.0.0.0;component/pages/food%20inventory.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Food Inventory.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
