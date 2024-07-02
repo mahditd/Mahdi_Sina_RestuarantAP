@@ -37,6 +37,11 @@ namespace Mahdi_Sina_AP_Project.Pages
             var ClickedButton = e.OriginalSource as NavButton3;
             NavigationService.Navigate(ClickedButton.NavUri);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 

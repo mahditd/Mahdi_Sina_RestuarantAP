@@ -24,5 +24,10 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

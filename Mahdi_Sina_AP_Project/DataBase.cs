@@ -14,7 +14,7 @@ namespace Mahdi_Sina_AP_Project
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(@"Data Source =D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\DATABASE.db");
+            optionsBuilder.UseSqlite(@"Data Source =C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\DATABASE.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

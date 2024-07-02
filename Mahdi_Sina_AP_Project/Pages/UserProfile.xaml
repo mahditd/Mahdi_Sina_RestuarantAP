@@ -10,6 +10,21 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UserProfile">
 
+    <Page.Resources>
+        <Style x:Key="NoHoverButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid >
         <Grid.Background>
             <ImageBrush  ImageSource="/food_photos/thumb-1920-1019276.jpg" />
@@ -20,7 +35,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0" Name="grid">
-            <Button Content="Back" Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+            <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click"/>
+
 
             <StackPanel Margin="0, 40, 0, 0">
                 <Grid>

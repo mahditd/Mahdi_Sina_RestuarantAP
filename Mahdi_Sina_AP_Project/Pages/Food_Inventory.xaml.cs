@@ -169,6 +169,11 @@ namespace Mahdi_Sina_AP_Project.Pages
             Window UploadImage = new Upload_Image(this);
             UploadImage.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
