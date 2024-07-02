@@ -116,17 +116,20 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         }
 
-        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        private void Changing_Menu_Click(object sender, RoutedEventArgs e)
         {
-            var ClickedButton = e.OriginalSource as NavButton2;
-            NavigationService.Navigate(ClickedButton.NavUri);
+             NavigationService.Navigate(new Food_Inventory());
+           
         }
 
-        private void ChangeButton2_Click(object sender, RoutedEventArgs e)
+        private void Food_Inventory_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RestaurantMenuChanging());
+        }
+
+        private void History_Button_Click(object sender, RoutedEventArgs e)
         {
 
-            var ClickedButton = e.OriginalSource as NavButton2;
-            NavigationService.Navigate(ClickedButton.NavUri);
         }
     }
 }

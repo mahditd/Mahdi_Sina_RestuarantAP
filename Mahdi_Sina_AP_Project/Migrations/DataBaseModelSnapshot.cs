@@ -59,6 +59,14 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("USERNAME")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("orderlistjson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ID");
 
                     b.ToTable("Customers");
@@ -79,6 +87,10 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PASSWORD")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("USERNAME")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -150,6 +162,10 @@ namespace Mahdi_Sina_AP_Project.Migrations
                     b.Property<int>("RATE")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("USERNAME")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ID");
 
                     b.ToTable("Restaurants");
@@ -159,16 +175,11 @@ namespace Mahdi_Sina_AP_Project.Migrations
                 {
                     b.HasBaseType("Sina_Mahdi_RestaurantAP.Food");
 
-                    b.Property<int?>("CustomerID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("METHOD")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("RESTAURANTID")
                         .HasColumnType("INTEGER");
-
-                    b.HasIndex("CustomerID");
 
                     b.HasIndex("RESTAURANTID");
 
@@ -177,10 +188,6 @@ namespace Mahdi_Sina_AP_Project.Migrations
 
             modelBuilder.Entity("Sina_Mahdi_RestaurantAP.Order", b =>
                 {
-                    b.HasOne("Mahdi_Sina_AP_Project.Customer", null)
-                        .WithMany("OrderList")
-                        .HasForeignKey("CustomerID");
-
                     b.HasOne("Sina_Mahdi_RestaurantAP.Restaurant", "RESTAURANT")
                         .WithMany("ORDERLIST")
                         .HasForeignKey("RESTAURANTID")
@@ -188,11 +195,6 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .IsRequired();
 
                     b.Navigation("RESTAURANT");
-                });
-
-            modelBuilder.Entity("Mahdi_Sina_AP_Project.Customer", b =>
-                {
-                    b.Navigation("OrderList");
                 });
 
             modelBuilder.Entity("Sina_Mahdi_RestaurantAP.Restaurant", b =>

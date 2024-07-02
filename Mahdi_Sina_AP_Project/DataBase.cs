@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
@@ -13,7 +14,7 @@ namespace Mahdi_Sina_AP_Project
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(@"Data Source =.\DATABASE.db");
+            optionsBuilder.UseSqlite(@"Data Source =C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\DATABASE.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,6 +23,7 @@ namespace Mahdi_Sina_AP_Project
             modelBuilder.Entity<Complaint>().HasNoKey();
             modelBuilder.Entity<Reserve>().HasNoKey();
             modelBuilder.Entity<Food>().HasNoKey();
+           
 
         }
         public DbSet<Customer> Customers { get; set; }
