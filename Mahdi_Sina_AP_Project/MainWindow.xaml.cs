@@ -20,11 +20,11 @@ namespace Mahdi_Sina_AP_Project
         public MainWindow()
         {
             InitializeComponent();
-            Customer customer = new Customer("Mahdi", "mahdi006", "mahdi005@gmail.com", "mahdi", "09666662", "");
-            DataWork.dataBase.Customers.Add(customer);
-            //customer.ORDERS = new List<Order>() { new Order("first", 0.2,(float)0.3, "", new Restaurant(), "ingredient", PaymentMethod.Online)};
-            DataWork.dataBase.Add(customer);
-            //List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
+            //Customer customer = new Customer("Mahdi", "mahdi006", "mahdi005@gmail.com", "mahdi", "0912", "");
+            //DataWork.dataBase.Customers.Add(customer);
+            //customer.ORDERS = new List<Order>() { new Order("first", 0.2, (float)0.3, "", new Restaurant(), "ingredient", PaymentMethod.Online) };
+            //DataWork.dataBase.Add(customer);
+            List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
             DataWork.dataBase.SaveChanges();
         }
 

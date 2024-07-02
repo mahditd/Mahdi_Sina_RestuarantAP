@@ -21,10 +21,14 @@ namespace Mahdi_Sina_AP_Project
         {
             modelBuilder.Entity<Customer>().HasKey(c => c.ID);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Admin>().HasKey(c => c.ID);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Restaurant>().HasKey(c => c.ID);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Customer> Customers { get; set; }
-
-
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
 
     }
 }
