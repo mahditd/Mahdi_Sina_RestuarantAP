@@ -1,8 +1,10 @@
 ﻿using Mahdi_Sina_AP_Project;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
@@ -12,62 +14,89 @@ namespace Sina_Mahdi_RestaurantAP
     {
 
         public static Restaurant currentRestaurant;
-        
-        public List<Food> foodList = new List<Food>();
-        private string color;
-
-        public string Color
+        List<Food> listConverterToRestaurant(string str)
         {
-            get { return color; }
-            set { color = value; }
+            if (str == null)
+            {
+                return new List<Food>();
+            }
+            return JsonSerializer.Deserialize<List<Food>>(str);
         }
 
+        string stringConverterToRestaurant(List<Food> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+        public string foodListJson { get; set; }//dagaBase
+        [NotMapped]
+        public List<Food> foodList { get => listConverterToRestaurant(foodListJson); set => foodListJson = stringConverterToRestaurant(value); }
+        public string Color { get; set; }
 
 
-        private bool canReserve;
 
-        public bool CANRESERVE
+        public bool canReserve { get; set; }//dataBase
+        [NotMapped]
+        public bool CanReserve
         {
             get { return canReserve; }
             set { if (rate >= 4) { canReserve = value; }}
         }
 
-        private string name;
+        private string Name { get; set; }//dataBase
 
-        public string NAME { 
-            get { return name; }
-            set { name = value; }
-        }
 
-        private int rate { get; set; } //from 0 to 5
-
-        public int RATE
+        public int rate { get; set; } //from 0 to 5 dataBase
+        [NotMapped]
+        public int Rate
         {
             get { return rate; }
             set { if(value<=5 && value >= 0)  rate = value; }
         }
 
-        private List<Order> orderList =new List<Order>();
-
-        public List<Order> ORDERLIST { get { return orderList; } }
-
-        private string address;
-
-        public string ADDRESS
+        List<Order> listConverterToOrder(string str)
         {
-            get { return address; }
-            set {  address = value; }
+            if (str == null)
+            {
+                return new List<Order>();
+            }
+            return JsonSerializer.Deserialize<List<Order>>(str);
         }
 
-        public List<Reserve> ReserveList = new List<Reserve>();
+        string stringConverterToOrder(List<Order> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+        public string orderList { get; set; }//dataBase
+        [NotMapped]
+        public List<Order> ORDERLIST { get => listConverterToOrder(orderList); set => orderList = stringConverterToOrder(value); }
+
+
+        public string Address { get; set; }//dataBase
+ 
+        List<Reserve> listConverterToReserve(string str)
+        {
+            if (str == null)
+            {
+                return new List<Reserve>();
+            }
+            return JsonSerializer.Deserialize<List<Reserve>>(str);
+        }
+
+        string stringConverterToReserve(List<Reserve> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+        public string reserveList { get; set; }
+        [NotMapped]
+        public List<Reserve> ReserveList { get => listConverterToReserve(reserveList); set => reserveList = stringConverterToReserve(value); }
 
 
         public Restaurant() { }
         public Restaurant(string username, string password, string name, string address) : base(username, password)
         {
            
-            this.name = name;
-            this.address = address;
+            this.Name = name;
+            this.Address= address;
 
         }
 

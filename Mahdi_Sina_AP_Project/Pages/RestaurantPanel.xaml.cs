@@ -28,14 +28,14 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             InitializeComponent();
             Restaurant.currentRestaurant = new Restaurant("", "", "", "");
-            Restaurant.currentRestaurant.RATE = 5;
-            Restaurant.currentRestaurant.CANRESERVE = true;
+            Restaurant.currentRestaurant.Rate = 5;
+            Restaurant.currentRestaurant.CanReserve = true;
 
-            if (Restaurant.currentRestaurant.CANRESERVE == true)
+            if (Restaurant.currentRestaurant.CanReserve == true)
             {
                 CircleButton.Content = "Reserve ON";
             }
-            else if (Restaurant.currentRestaurant.CANRESERVE == false)
+            else if (Restaurant.currentRestaurant.CanReserve == false)
             {
                 CircleButton.Content = "Reserve OFF";
             }
@@ -72,13 +72,13 @@ namespace Mahdi_Sina_AP_Project.Pages
         private void CircleButton_Click(object sender, RoutedEventArgs e)
         {
             Color = new SolidColorBrush(Colors.Red);
-            if (Restaurant.currentRestaurant != null && Restaurant.currentRestaurant.RATE >= 4)
+            if (Restaurant.currentRestaurant != null && Restaurant.currentRestaurant.Rate >= 4)
             {
-                if (Restaurant.currentRestaurant.CANRESERVE == true)
+                if (Restaurant.currentRestaurant.CanReserve == true)
                 {
                     isPressed = false;
                 }
-                else if (Restaurant.currentRestaurant.CANRESERVE == false)
+                else if (Restaurant.currentRestaurant.CanReserve == false)
                 {
                     isPressed = true;
                 }
@@ -91,13 +91,13 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (!isPressed)
                 {
                     Color = new SolidColorBrush(Colors.White);
-                    Restaurant.currentRestaurant.CANRESERVE = false;
+                    Restaurant.currentRestaurant.CanReserve = false;
                     CircleButton.Content = "Reserve OFF";
                 }
                 else
                 {
                     Color = new SolidColorBrush(Colors.Gold);
-                    Restaurant.currentRestaurant.CANRESERVE = true;
+                    Restaurant.currentRestaurant.CanReserve = true;
                     CircleButton.Content = "Reserve ON";
                 }
 

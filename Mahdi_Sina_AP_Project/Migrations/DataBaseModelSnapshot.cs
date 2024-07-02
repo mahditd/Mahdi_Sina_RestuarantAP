@@ -65,6 +65,70 @@ namespace Mahdi_Sina_AP_Project.Migrations
 
                     b.ToTable("Customers");
                 });
+
+            modelBuilder.Entity("Sina_Mahdi_RestaurantAP.Admin", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PASSWORD")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("USERNAME")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("Sina_Mahdi_RestaurantAP.Restaurant", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PASSWORD")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("USERNAME")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("canReserve")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("foodListJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("orderList")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("rate")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("reserveList")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Restaurants");
+                });
 #pragma warning restore 612, 618
         }
     }
