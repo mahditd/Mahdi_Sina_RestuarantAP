@@ -203,6 +203,21 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
 
         }
+
+        private void New_Food_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Food_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Comments_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
