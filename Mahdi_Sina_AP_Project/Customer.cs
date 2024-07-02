@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -49,7 +50,7 @@ namespace Mahdi_Sina_AP_Project
         public List<Complaint> complaints = new List<Complaint>();
 
         public subscribtion subscribtion;
-        static List<Customer> customers = new List<Customer>();
+        static List<Customer> customers;
 
         public Customer() { }
         public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode) : base(username, password)
@@ -59,6 +60,7 @@ namespace Mahdi_Sina_AP_Project
             this.postalCode = postalCode;
             this.email = email;
             subscribtion = subscribtion.bronze;
+            
 
         }
         public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Page parent)
@@ -68,11 +70,12 @@ namespace Mahdi_Sina_AP_Project
             if (_username == "" || _password == "" || _email == "" || _name == "" || _phoneNumber == "" || _confirmPassword == "")
             {
                 MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                
                 return 0;
             }
             
 
-            if (customers.FirstOrDefault(x => x.username == _username) == null)
+            if (DataWork.dataBase.Customers.FirstOrDefault(x => x.username == _username) == null)
             {
                 if (_password != _confirmPassword)
                 {
@@ -92,7 +95,8 @@ namespace Mahdi_Sina_AP_Project
                 }
                 if (EmailConfirmed)
                 {
-                    customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    DataWork.dataBase.Customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    DataWork.dataBase.SaveChanges();
                     MessageBox.Show("successfully added the new user");
                     return 1;
                 }
