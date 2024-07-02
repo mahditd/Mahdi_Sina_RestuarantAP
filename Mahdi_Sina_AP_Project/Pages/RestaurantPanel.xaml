@@ -68,6 +68,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="NoHoverButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            </Style>
     </Page.Resources>
     <Grid>
         <Grid.Background>
@@ -89,7 +102,9 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Content="Back" Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+            <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click">
+                
+            </Button>
             <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="1" Margin ="5 15 5 15"  Click="Changing_Menu_Click" Cursor="Hand">
                 Changing Menu
             </Button>
@@ -100,7 +115,7 @@
             </Button>
 
             <!--<Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>-->
-           
+
             <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="3" Margin ="5 15 5 15"  Click="History_Button_Click" Cursor="Hand">
                 Order and Reserve History
             </Button>
