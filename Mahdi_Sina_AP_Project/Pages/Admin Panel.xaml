@@ -3,6 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:userControl="clr-namespace:Mahdi_Sina_AP_Project"
+      
       xmlns:local="clr-namespace:Mahdi_Sina_AP_Project.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -89,7 +91,8 @@
             <ImageBrush ImageSource="\food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg" Opacity="1"/>
         </Grid.Background>
 
-        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold" Grid.Column="3" Grid.Row="1" Margin ="5 15 5 15" Click="Adding_Restaurant_Click">
+
+        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold" Grid.Column="3" Grid.Row="1" Margin ="5 15 5 15"  Click="Adding_Restaurant_Click">
             Adding Restaurant
         </Button>
         <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold"  Grid.Column="3" Grid.Row="2" Margin ="5 15 5 15" Click="All_Restaurants_Click">
@@ -98,5 +101,6 @@
         <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold"  Grid.Column="3" Grid.Row="3" Margin ="5 15 5 15" Click="Complaints_Click">
             Complaints
         </Button>
+        <Button Content="Back" Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
     </Grid>
 </Page>

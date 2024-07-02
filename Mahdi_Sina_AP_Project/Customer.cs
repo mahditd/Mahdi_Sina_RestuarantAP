@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -19,7 +21,7 @@ namespace Mahdi_Sina_AP_Project
     public enum subscribtion { bronze, silver, gold }
     public class Customer : User
     {
-        public static Customer currentCustomer; 
+        public static Customer currentCustomer;
 
         private string email;
 
@@ -39,9 +41,28 @@ namespace Mahdi_Sina_AP_Project
         //is optional
         public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }
 
-        private List<Order> orderList = new List<Order>();
+        public string orderlistjson { get; set; }
 
-        public List<Order> OrderList { get { return orderList; } set { orderList = value; } }
+        [NotMapped]
+        public List<Order> orders { get => converToList(orderlistjson) ; set => orderlistjson = convertToString(value); }
+
+        List<Order> converToList(string orderStr)
+        {
+            if (orderStr != null)
+            {
+                JsonSerializer.Deserialize<List<Order>>(orderStr);
+            }
+            return new List<Order>();
+        }
+        string convertToString(List<Order> orders)
+        {
+            if (orders == null)
+            {
+                return "";
+            };
+            return JsonSerializer.Serialize(orders);
+        }
+
 
 
         public List<Comment> comments = new List<Comment>();
@@ -70,7 +91,7 @@ namespace Mahdi_Sina_AP_Project
                 MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 0;
             }
-            
+
 
             if (customers.FirstOrDefault(x => x.username == _username) == null)
             {

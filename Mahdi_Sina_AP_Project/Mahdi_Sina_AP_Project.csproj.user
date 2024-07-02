@@ -13,13 +13,16 @@
     <Compile Update="Pages\CustomerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Restaurant_Adding_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\UserProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Admin Panel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Food Inventory.xaml.cs">
+    <Compile Update="Pages\Food_Inventory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Log_In_Page.xaml.cs">
@@ -54,6 +57,9 @@
     <Page Update="Pages\CustomerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Restaurant_Adding_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\UserProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -63,7 +69,7 @@
     <Page Update="Pages\Admin Panel.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Food Inventory.xaml">
+    <Page Update="Pages\Food_Inventory.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Log_In_Page.xaml">

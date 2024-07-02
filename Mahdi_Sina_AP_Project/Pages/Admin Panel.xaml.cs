@@ -28,12 +28,12 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void Adding_Restaurant_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Restaurant_Adding_Page());
         }
 
         private void All_Restaurants_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RestaurantPanel());
         }
 
         private void Complaints_Click(object sender, RoutedEventArgs e)
