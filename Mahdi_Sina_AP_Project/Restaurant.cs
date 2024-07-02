@@ -25,11 +25,21 @@ namespace Sina_Mahdi_RestaurantAP
 
         string stringConverterToRestaurant(List<Food> list)
         {
-            return JsonSerializer.Serialize(list);
+            List<Food> list2 = new List<Food>();
+            foreach (Food food in list)
+            {
+                list2.Add(food);
+            }
+            return JsonSerializer.Serialize(list2);
         }
         public string foodListJson { get; set; }//dagaBase
         [NotMapped]
-        public List<Food> foodList { get => listConverterToRestaurant(foodListJson); set => foodListJson = stringConverterToRestaurant(value); }
+        public List<Food> foodList { get =>  listConverterToRestaurant(foodListJson);
+            set {
+                foodListJson = stringConverterToRestaurant(value); 
+                var x = new Customer(); }
+
+        }
         public string Color { get; set; }
 
 

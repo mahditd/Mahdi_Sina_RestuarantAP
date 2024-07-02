@@ -2,7 +2,9 @@
 using Sina_Mahdi_RestaurantAP;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,7 +35,9 @@ namespace Mahdi_Sina_AP_Project.Pages
                 MyImage.Source = imagePath;
             }
         }
-        
+
+        private string _editableText;
+
 
         public Food_Inventory()
         {
@@ -86,11 +90,36 @@ namespace Mahdi_Sina_AP_Project.Pages
             foods.Add(food22);
             var foodNames = foods.Select(x => x.NAME + SpaceMaker(x.NAME) + x.Price + "$");
             myListBox.ItemsSource = foodNames;
-            
-            
+            DataContext = this;
+            if (ChosenFood != null)
+            {
+                EditableText = ChosenFood.Price.ToString();
+            }
+
+
+
+
 
         }
 
+        public string EditableText
+        {
+            get { return _editableText; }
+            set
+            {
+                if (_editableText != value)
+                {
+                    _editableText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         private void SetImage(string imagePath)
         {
             BitmapImage bitmap = new BitmapImage();
@@ -134,25 +163,24 @@ namespace Mahdi_Sina_AP_Project.Pages
             Foods.Add(food7);
             Foods.Add(food8);
             
-            Restaurant.currentRestaurant.foodList.Add(food1);
-            Restaurant.currentRestaurant.foodList.Add(food2);
-            Restaurant.currentRestaurant.foodList.Add(food3);
-            Restaurant.currentRestaurant.foodList.Add(food4);
-            Restaurant.currentRestaurant.foodList.Add(food5);
-            Restaurant.currentRestaurant.foodList.Add(food6);
-            Restaurant.currentRestaurant.foodList.Add(food7);
-            Restaurant.currentRestaurant.foodList.Add(food8);
+            Restaurant.currentRestaurant.foodList = Foods;
+            
             string[] foodName = myListBox.SelectedItem.ToString().Split(" ");
-            for(int i = 0;i < Restaurant.currentRestaurant.foodList.Count; i++)
+            int x = Foods.Count;
+            for (int i = 0;i < x; i++)
             {
-                if (foodName[0] == Restaurant.currentRestaurant.foodList[i].NAME)
+                
+               List< Food > food = Restaurant.currentRestaurant.foodList;
+                Food food9 = food[i];
+                
+                if (foodName[0] == food9.NAME)
                 {
                     ChosenFood = Restaurant.currentRestaurant.foodList[i];
                     SetImage(ChosenFood.IMAGEPATH);
                     break;
                 }
             }
-            if(ChosenFood !=  null)
+            if (ChosenFood != null)
             {
                 ChangeImageButton.Visibility = Visibility.Visible;
             }
@@ -160,8 +188,9 @@ namespace Mahdi_Sina_AP_Project.Pages
             {
                 ChangeImageButton.Visibility = Visibility.Hidden;
             }
-            
-           
+            DataWork.dataBase.SaveChanges();
+
+
 
         }
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
