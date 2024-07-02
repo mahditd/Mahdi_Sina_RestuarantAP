@@ -10,7 +10,8 @@ using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 
 namespace Mahdi_Sina_AP_Project
 {
@@ -20,7 +21,7 @@ namespace Mahdi_Sina_AP_Project
     public enum subscribtion { bronze, silver, gold }
     public class Customer : User
     {
-        public static Customer currentCustomer; 
+        public static Customer currentCustomer;
 
         private string email;
 
@@ -40,9 +41,28 @@ namespace Mahdi_Sina_AP_Project
         //is optional
         public string POSTALCODE { get { return postalCode; } set { postalCode = value; } }
 
-        private List<Order> orderList = new List<Order>();
+        public string orderlistjson { get; set; }
 
-        public List<Order> OrderList { get { return orderList; } set { orderList = value; } }
+        [NotMapped]
+        public List<Order> orders { get => converToList(orderlistjson) ; set => orderlistjson = convertToString(value); }
+
+        List<Order> converToList(string orderStr)
+        {
+            if (orderStr != null)
+            {
+                JsonSerializer.Deserialize<List<Order>>(orderStr);
+            }
+            return new List<Order>();
+        }
+        string convertToString(List<Order> orders)
+        {
+            if (orders == null)
+            {
+                return "";
+            };
+            return JsonSerializer.Serialize(orders);
+        }
+
 
 
         public List<Comment> comments = new List<Comment>();
@@ -50,7 +70,7 @@ namespace Mahdi_Sina_AP_Project
         public List<Complaint> complaints = new List<Complaint>();
 
         public subscribtion subscribtion;
-        static List<Customer> customers;
+        static List<Customer> customers = new List<Customer>();
 
         public Customer() { }
         public Customer(string username, string password, string email, string name, string phoneNumber, string postalCode) : base(username, password)
@@ -60,7 +80,6 @@ namespace Mahdi_Sina_AP_Project
             this.postalCode = postalCode;
             this.email = email;
             subscribtion = subscribtion.bronze;
-            
 
         }
         public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Page parent)
@@ -70,12 +89,11 @@ namespace Mahdi_Sina_AP_Project
             if (_username == "" || _password == "" || _email == "" || _name == "" || _phoneNumber == "" || _confirmPassword == "")
             {
                 MessageBox.Show("fill all fields (postal code is optional)", "", MessageBoxButton.OK, MessageBoxImage.Error);
-                
                 return 0;
             }
-            
 
-            if (DataWork.dataBase.Customers.FirstOrDefault(x => x.username == _username) == null)
+
+            if (customers.FirstOrDefault(x => x.username == _username) == null)
             {
                 if (_password != _confirmPassword)
                 {
@@ -95,8 +113,7 @@ namespace Mahdi_Sina_AP_Project
                 }
                 if (EmailConfirmed)
                 {
-                    DataWork.dataBase.Customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
-                    DataWork.dataBase.SaveChanges();
+                    customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
                     MessageBox.Show("successfully added the new user");
                     return 1;
                 }

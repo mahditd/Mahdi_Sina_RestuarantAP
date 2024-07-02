@@ -9,14 +9,75 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RestaurantPanel">
 
+    <Page.Resources>
+        <!-- Custom Button Style -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF45A2FF" Offset="0"/>
+                        <GradientStop Color="#FF3B8EEB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#FF69B2FF" Offset="0"/>
+                                            <GradientStop Color="#FF5897E6" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#FF2376C7" Offset="0"/>
+                                            <GradientStop Color="#FF1F67B1" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#FFC0C0C0"/>
+                                <Setter Property="Foreground" Value="#FF9A9A9A"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/food_photos/yellowbackground2.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="\food_photos\burger-french-fries-plate-with-copy-space.jpg" Opacity="1"/>
         </Grid.Background>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -29,13 +90,21 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button Content="Back" Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="1" Margin ="5 15 5 15"  Click="Changing_Menu_Click" Cursor="Hand">
+                Changing Menu
+            </Button>
 
-            <userControl:NavButton2 x:Name="ChangeButton" Grid.Column="0" Grid.Row="1" Text="Changing Menu" Margin="40,30,40,30" Background="OrangeRed" ButtonBase.Click="ChangeButton_Click" NavUri="Pages/RestaurantMenuChanging.xaml"/>
-            <userControl:NavButton2 x:Name="ChangeButton2" Grid.Column="0" Grid.Row="2" Text="Food inventory" Margin="40,30,40,30" Background="OrangeRed" ButtonBase.Click="ChangeButton2_Click" NavUri="Pages/Food Inventory.xaml"/>
+
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="2" Margin ="5 15 5 15"  Click="Food_Inventory_Click" Cursor="Hand">
+                Food Inventory
+            </Button>
 
             <!--<Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>-->
-            <Button x:Name="HistoryButton" Grid.Column="0" Grid.Row="3" Content="Orders And Reserves History" Margin="40,30,40,30" Background="OrangeRed"  Click="HistoryButton_Click"/>
-            <Button x:Name="CircleButton" Width="80" Height="80" Grid.Column="1" Grid.Row="1" Click="CircleButton_Click" Loaded="CircleButton_Loaded">
+           
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="3" Margin ="5 15 5 15"  Click="History_Button_Click" Cursor="Hand">
+                Order and Reserve History
+            </Button>
+            <Button x:Name="CircleButton" Margin="30 15 30 15" Grid.Column="2" Grid.Row="2" Click="CircleButton_Click" Loaded="CircleButton_Loaded" Cursor="Hand">
                 <Button.Template>
                     <ControlTemplate  TargetType="Button">
                         <Grid>

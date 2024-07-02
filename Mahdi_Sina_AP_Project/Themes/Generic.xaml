@@ -57,7 +57,7 @@
                     <Border x:Name="border" Background="Red"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="20"
+                            CornerRadius="10"
                             >
                         <Grid x:Name="grid" HorizontalAlignment="Stretch">
                             <TextBlock Text="{TemplateBinding Text}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{TemplateBinding FontFamily}"/>

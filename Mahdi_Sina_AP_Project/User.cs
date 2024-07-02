@@ -19,6 +19,7 @@ namespace Mahdi_Sina_AP_Project
         public string USERNAME
         {
             get { return username; }
+            set { username = value; }
         }
 
         protected string password;
