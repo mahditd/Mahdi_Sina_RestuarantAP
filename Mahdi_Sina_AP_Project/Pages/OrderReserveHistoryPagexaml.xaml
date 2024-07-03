@@ -88,6 +88,17 @@
         <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click">
 
         </Button>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="0">
+            <ListBox Name="myListBox" Background="Transparent" SelectionChanged="myListBox_SelectionChanged" FontSize="30" BorderBrush="Black">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding}" Margin="5" VerticalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2.3*"/>
             <ColumnDefinition Width="2*"/>
@@ -100,16 +111,6 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="0">
-            <ListBox Name="myListBox" Background="Transparent" SelectionChanged="myListBox_SelectionChanged" FontSize="30" BorderBrush="Black">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
-                            <TextBlock Text="{Binding}" Margin="5" VerticalAlignment="Center"/>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </ScrollViewer>-->
+        
     </Grid>
 </Page>
