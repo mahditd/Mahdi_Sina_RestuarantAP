@@ -80,6 +80,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Page.Resources>
     <Grid>
         <Grid.Background>

@@ -10,6 +10,59 @@
       Title="Food_Inventory">
 
     <Page.Resources>
+        <!-- ScrollBar Style -->
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid x:Name="Root" Background="Transparent">
+                            <Track x:Name="PART_Track" IsDirectionReversed="True" SnapsToDevicePixels="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineUpCommand" Style="{StaticResource ScrollBarLineButtonStyle}" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineDownCommand" Style="{StaticResource ScrollBarLineButtonStyle}" />
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource ScrollBarThumbStyle}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Thumb Style -->
+        <Style x:Key="ScrollBarThumbStyle" TargetType="Thumb">
+            <Setter Property="Height" Value="10"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <Rectangle Fill="Gray" RadiusX="2" RadiusY="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- RepeatButton Style -->
+        <Style x:Key="ScrollBarLineButtonStyle" TargetType="RepeatButton">
+            <Setter Property="Width" Value="0"/>
+            <Setter Property="Height" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RepeatButton">
+                        <Grid/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <!-- Custom Button Style -->
             <Style x:Key="NoHoverButtonStyle1" TargetType="Button">
                 <Setter Property="Background" Value="Transparent"/>
@@ -118,6 +171,10 @@
 
         </Button>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="0">
+            <ScrollViewer.Resources>
+                <!-- Apply the custom ScrollBar style -->
+                <Style TargetType="ScrollBar"/>
+            </ScrollViewer.Resources>
             <ListBox Name="myListBox" Background="Transparent" SelectionChanged="myListBox_SelectionChanged" FontSize="30" BorderBrush="Black">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -139,10 +196,10 @@
             <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="YellowGreen" Grid.Column="1" Grid.Row="1" Margin ="25 25 25 25"  Click="New_Food_Click">
                 New Food
             </Button>
-            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Red" Grid.Column="1" Grid.Row="2" Margin ="25 25 25 25"  Click="Delete_Food_Click">
+            <Button x:Name="MyDeleteButton" Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Red" Grid.Column="1" Grid.Row="2" Margin ="25 25 25 25"  Click="Delete_Food_Click">
                 Delete Food
             </Button>
-            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="LightBlue" Grid.Column="1" Grid.Row="3" Margin ="25 25 25 25"  Click="Comments_Click">
+            <Button  x:Name="MyCommentButton" Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="LightBlue" Grid.Column="1" Grid.Row="3" Margin ="25 25 25 25"  Click="Comments_Click">
                 Comments
             </Button>
         </Grid>
@@ -158,19 +215,20 @@
             <Button Style="{StaticResource CustomButtonStyle}" Name="ChangeImageButton" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="1"  Click="ChangeImageButton_Click" VerticalAlignment="Top">
                 Change
             </Button>
-           
-            <TextBox Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
+            
+
+            <TextBox x:Name="TextBox1"  Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                Width="50"
-                     Height="30"
+                 Width="50"
+                 Height="30"
                  Grid.Row="2"
                  FontSize="15"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"
-                 Background="OrangeRed"
+                 Background="OrangeRed" TextChanged="TextBox1_TextChanged"
                 />
-            <TextBox Text="{Binding EditableText2, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox x:Name="TextBox2" Text="{Binding EditableText2, UpdateSourceTrigger=PropertyChanged}"
              HorizontalAlignment="Center"
              VerticalAlignment="Center"
             Width="50"
@@ -183,6 +241,9 @@
      />
 
         </Grid>
+        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Margin="40 10 40 30" Grid.Column="1" Grid.Row="2"  Click="SaveButton_Click" VerticalAlignment="Bottom">
+            Save
+        </Button>
         <Grid Grid.Column="3" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -190,8 +251,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <TextBox Text="{Binding EditableText3, UpdateSourceTrigger=PropertyChanged}"
+
+            <TextBox x:Name="TextBox3" Text="{Binding EditableText3, UpdateSourceTrigger=PropertyChanged}"
       HorizontalAlignment="Center"
       VerticalAlignment="Center"
      Width="50"
@@ -202,7 +263,7 @@
       VerticalContentAlignment="Center"
       Background="OrangeRed"
      />
-            <TextBox Text="{Binding EditableText4, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox x:Name="TextBox4" Text="{Binding EditableText4, UpdateSourceTrigger=PropertyChanged}"
       HorizontalAlignment="Center"
       VerticalAlignment="Center"
      Width="50"
