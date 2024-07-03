@@ -97,11 +97,6 @@ namespace Mahdi_Sina_AP_Project.Pages
             {
                 EditableText = ChosenFood.Price.ToString();
             }
-
-
-
-
-
         }
 
         public string EditableText
