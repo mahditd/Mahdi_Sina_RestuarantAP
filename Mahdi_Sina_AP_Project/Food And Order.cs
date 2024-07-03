@@ -97,10 +97,50 @@ namespace Sina_Mahdi_RestaurantAP
 
         }
     }
-    public class Order : Food
+    public class Order 
     {
         [JsonInclude]
+
+        private string name;
+        [JsonInclude]
+
+        public string NAME
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        [JsonInclude]
+
+        private double price;
+        [JsonInclude]
+
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        [JsonInclude]
+
+        private float rate;  // from 0 to 5
+        [JsonInclude]
+
+        public float RATE
+        {
+            get { return rate; }
+            set { if (value <= 5 && value >= 0) rate = value; }
+        }
+        [JsonInclude]
         private DateTime orderDateTime = new DateTime();
+        [JsonInclude]
+
+        private Restaurant restaurant;
+        [JsonInclude]
+
+        public Restaurant RESTAURANT
+        {
+            get { return restaurant; }
+            set { restaurant = value; }
+        }
         [JsonInclude]
         private PaymentMethod method;
         [JsonInclude]
@@ -117,12 +157,13 @@ namespace Sina_Mahdi_RestaurantAP
         }
         [JsonInclude]
         public List<Comment> Comments = new List<Comment>();
+        [JsonInclude]
 
-
+        public List<Food> Foods = new List<Food>();
 
         public Order() { }
-        public Order(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients, PaymentMethod method)
-            : base(name, price, rate, imagePath, restaurant, ingredients)
+        public Order(string name, double price, float rate, Restaurant restaurant, PaymentMethod method)
+            
         {
             this.orderDateTime = DateTime.Now;
             this.method = method;
