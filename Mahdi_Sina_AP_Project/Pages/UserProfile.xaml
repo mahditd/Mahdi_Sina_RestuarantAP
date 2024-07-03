@@ -53,6 +53,7 @@
                 <userControl:NavButton3 BorderBrush="Transparent" BorderThickness="3" Text="hello" FontSize="20" FontFamily="{StaticResource Vintage}"/>
             </StackPanel>
 
+            <ContentControl Grid.Column="1" x:Name="DynamicContent"/>
 
         </Grid>
 
