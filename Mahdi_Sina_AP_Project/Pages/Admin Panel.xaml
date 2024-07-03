@@ -113,6 +113,8 @@
         </Button>
         <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Gold"  Grid.Column="3" Grid.Row="3" Margin ="5 15 5 15" Click="Complaints_Click">
             Complaints
+            <Button.Triggers>
+            </Button.Triggers>
         </Button>
         <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click">
 
