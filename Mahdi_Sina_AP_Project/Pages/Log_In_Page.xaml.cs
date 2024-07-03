@@ -24,23 +24,8 @@ namespace Mahdi_Sina_AP_Project.Pages
         public Log_In_Page()
         {
             InitializeComponent();
-            //Customer customer = new Customer("1234","qwer","12314","asfcdf","12413532","sdfwad");
-            //Restaurant restaurant = new Restaurant();
-            //Order order1 = new Order("aefseg",123,12,"xadsf",restaurant,"addfa",PaymentMethod.OnDelivery);
-            //Order order2 = new Order("aefseg", 123, 12, "xadsf", restaurant, "addfa", PaymentMethod.OnDelivery);
-            //customer.orders.Add(order1);
-            //customer.orders.Add(order2);
-            //DataWork.dataBase.Customers.Add(customer);
-            //DataWork.dataBase.SaveChanges();
         }
-        //private void Button_Click_SignUp(object sender, RoutedEventArgs e)
-        //{
-        //    var ClickedButton = e.OriginalSource as NavButton2;
 
-        //    NavigationService.Navigate(ClickedButton.NavUri);
-        //    //Window signUpWindow = new SignUp();
-        //    //signUpWindow.Show();
-        //}
 
         int chosenComboItem = 0;
 
@@ -53,8 +38,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void confirmBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            //var ClickedButton = e.OriginalSource as NavButton2;
-            //NavigationService.Navigate(ClickedButton.NavUri);
+  
             string userName = UserName.txtBox.Text;
             string password = Password.password.Password;
             if (chosenComboItem == 1)

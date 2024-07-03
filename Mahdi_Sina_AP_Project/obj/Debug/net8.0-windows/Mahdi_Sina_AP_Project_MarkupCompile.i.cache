@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
-211267536009
+22-923884091
 
-511492651156
+541029749611
 217-1120642871
-Confirming email.xaml;Fonts\Dictionaries\Dictionary1.xaml;MainWindow.xaml;Pages\AddRestaurant.xaml;Pages\Admin Panel.xaml;Pages\AllRestaurants_AdminPage.xaml;Pages\Complaints_AdminPage.xaml;Pages\CustomerPage.xaml;Pages\Food_Inventory.xaml;Pages\Log_In_Page.xaml;Pages\OrderReserveHistoryPagexaml.xaml;Pages\RestaurantMenuChanging.xaml;Pages\RestaurantPanel.xaml;Pages\Restaurant_Adding_Page.xaml;Pages\SignUp.xaml;Pages\userControls\RestaurantInformations.xaml;Pages\UserProfile.xaml;PasswordWithTextBlock.xaml;Themes\Generic.xaml;txtBoxWithTxtBlock.xaml;Upload Image.xaml;
+Confirming email.xaml;Fonts\Dictionaries\Dictionary1.xaml;MainWindow.xaml;Pages\AddRestaurant.xaml;Pages\Admin Panel.xaml;Pages\AllRestaurants_AdminPage.xaml;Pages\Complaints_AdminPage.xaml;Pages\CustomerPage.xaml;Pages\Food_Inventory.xaml;Pages\Log_In_Page.xaml;Pages\OrderReserveHistoryPagexaml.xaml;Pages\RestaurantMenuChanging.xaml;Pages\RestaurantPanel.xaml;Pages\Restaurant_Adding_Page.xaml;Pages\SignUp.xaml;Pages\userControls\AddFood.xaml;Pages\userControls\RestaurantInformations.xaml;Pages\UserProfile.xaml;PasswordWithTextBlock.xaml;Themes\Generic.xaml;txtBoxWithTxtBlock.xaml;Upload Image.xaml;
 
-False
+True
 
