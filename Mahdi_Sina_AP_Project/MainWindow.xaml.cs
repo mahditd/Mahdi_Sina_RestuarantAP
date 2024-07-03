@@ -24,7 +24,9 @@ namespace Mahdi_Sina_AP_Project
             //DataWork.dataBase.Customers.Add(customer);
             //customer.ORDERS = new List<Order>() { new Order("first", 0.2, (float)0.3, "", new Restaurant(), "ingredient", PaymentMethod.Online) };
             //DataWork.dataBase.Add(customer);
-            List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
+            //List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
+            //DataWork.dataBase.SaveChanges();
+            //DataWork.dataBase.Admins.Add(new Admin("sina", "sina006"));
             DataWork.dataBase.SaveChanges();
         }
 

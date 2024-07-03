@@ -98,21 +98,18 @@ namespace Mahdi_Sina_AP_Project
         public int subscribtion { get; set; }//must be casted every time
 
         //Methods for converting list customer to json string
-        static List<Customer> listConverterToCustomer(string orderStr)
-        {
-            if (customersJson == null)
-            {
-                return new List<Customer>();
-            }
-            return JsonSerializer.Deserialize<List<Customer>>(orderStr);
-        }
-       static string stringConverterToCustomer(List<Customer> list)
-        {
-            return JsonSerializer.Serialize(list);
-        }
-        public static string customersJson { get; set; }
-        [NotMapped]
-        static List<Customer> customers { get => listConverterToCustomer(customersJson); set => customersJson= stringConverterToCustomer(value); }
+       // static List<Customer> listConverterToCustomer(string orderStr)
+       // {
+       //     if (customersJson == null)
+       //     {
+       //         return new List<Customer>();
+       //     }
+       //     return JsonSerializer.Deserialize<List<Customer>>(orderStr);
+       // }
+       //static string stringConverterToCustomer(List<Customer> list)
+       // {
+       //     return JsonSerializer.Serialize(list);
+       // }
 
 
 
@@ -126,7 +123,7 @@ namespace Mahdi_Sina_AP_Project
             this.email = email;
             subscribtion = (int)(Subscribtion.bronze);
             EmailConfirmed = false;
-            customersJson = "";
+            //customersJson = "";
             orderlistjson = "";
             commentJson = "";
             complaintJson = "";
@@ -143,7 +140,7 @@ namespace Mahdi_Sina_AP_Project
             }
 
 
-            if (customers.FirstOrDefault(x => x.username == _username) == null)
+            if (DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == _username) == null)
             {
                 if (_password != _confirmPassword)
                 {
@@ -163,7 +160,8 @@ namespace Mahdi_Sina_AP_Project
                 }
                 if (EmailConfirmed)
                 {
-                    customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    DataWork.dataBase.Customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    DataWork.dataBase.SaveChanges();
                     MessageBox.Show("successfully added the new user");
                     return 1;
                 }

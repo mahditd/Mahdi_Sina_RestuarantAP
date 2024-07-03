@@ -25,19 +25,16 @@ namespace Sina_Mahdi_RestaurantAP
 
         string stringConverterToRestaurant(List<Food> list)
         {
-            List<Food> list2 = new List<Food>();
-            foreach (Food food in list)
-            {
-                list2.Add(food);
-            }
-            return JsonSerializer.Serialize(list2);
+            return JsonSerializer.Serialize(list);
         }
-        public string foodListJson { get; set; }//dagaBase
+        public string foodListJson { get; set; }//dataBase
         [NotMapped]
-        public List<Food> foodList { get =>  listConverterToRestaurant(foodListJson);
+        public List<Food> foodList {
+            get =>  listConverterToRestaurant(foodListJson);
             set {
                 foodListJson = stringConverterToRestaurant(value); 
-                var x = new Customer(); }
+                var x = new Customer(); 
+            }
 
         }
         public string Color { get; set; }
@@ -96,7 +93,7 @@ namespace Sina_Mahdi_RestaurantAP
         {
             return JsonSerializer.Serialize(list);
         }
-        public string reserveList { get; set; }
+        public string reserveList { get; set; }//dataBase
         [NotMapped]
         public List<Reserve> ReserveList { get => listConverterToReserve(reserveList); set => reserveList = stringConverterToReserve(value); }
 
@@ -107,7 +104,11 @@ namespace Sina_Mahdi_RestaurantAP
            
             this.Name = name;
             this.Address= address;
-
+            this.canReserve = false;
+            this.orderList = "";
+            this.reserveList = "";
+            this.foodListJson = "";
+            this.rate = 0;
         }
 
 

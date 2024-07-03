@@ -10,6 +10,9 @@
     <Compile Update="Confirming email.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AddRestaurant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\AllRestaurants_AdminPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Restaurant_Adding_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\RestaurantInformations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\UserProfile.xaml.cs">
@@ -63,6 +69,9 @@
     <Page Update="Fonts\Dictionaries\Dictionary1.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\AddRestaurant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\AllRestaurants_AdminPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -76,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Restaurant_Adding_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\RestaurantInformations.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UserProfile.xaml">

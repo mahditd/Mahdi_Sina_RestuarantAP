@@ -42,6 +42,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         //    //signUpWindow.Show();
         //}
 
+        int chosenComboItem = 0;
 
 
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
@@ -52,9 +53,100 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void confirmBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            var ClickedButton = e.OriginalSource as NavButton2;
-            NavigationService.Navigate(ClickedButton.NavUri);
+            //var ClickedButton = e.OriginalSource as NavButton2;
+            //NavigationService.Navigate(ClickedButton.NavUri);
+            string userName = UserName.txtBox.Text;
+            string password = Password.password.Password;
+            if (chosenComboItem == 1)
+            {
+                Customer testCustomer;
+                try
+                {
+                    testCustomer = DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == userName);
+                }
+                catch (Exception)
+                {
+                    testCustomer = null;
+                    MessageBox.Show("Enter a correct username");
+                }
+                if (testCustomer != null)
+                {
+                    if (testCustomer.PASSWORD == password)
+                    {
+                        NavigationService.Navigate(new CustomerPage());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Enter a correct password");
 
+                    }
+                }
+            }
+            else if (chosenComboItem == 2)
+            {
+                Restaurant testRestaurant;
+                try
+                {
+                    testRestaurant = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == userName);
+                }
+                catch (Exception)
+                {
+                    testRestaurant = null;
+                    MessageBox.Show("Enter a correct username");
+                }
+                if (testRestaurant != null)
+                {
+                    if (testRestaurant.PASSWORD == password)
+                    {
+                        NavigationService.Navigate(new RestaurantPanel());
+                    }
+                    else
+                    {
+                    MessageBox.Show("Enter a correct password");
+
+                    }
+                }
+            }
+            else if (chosenComboItem == 3)
+            {
+                Admin testAdmin;
+                try
+                {
+                    testAdmin = DataWork.dataBase.Admins.FirstOrDefault(x => x.USERNAME == userName);
+                }
+                catch (Exception)
+                {
+                    testAdmin = null;
+                    MessageBox.Show("Enter a correct username");
+                }
+                if (testAdmin != null)
+                {
+                    if (testAdmin.PASSWORD == password)
+                    {
+                        NavigationService.Navigate(new Admin_Panel());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Enter a correct password");
+
+                    }
+                }
+            }
+        }
+
+        private void customerCombo_Click(object sender, RoutedEventArgs e)
+        {
+            chosenComboItem = 1;
+        }
+
+        private void restaurantCombo_Click(object sender, RoutedEventArgs e)
+        {
+            chosenComboItem = 2;
+        }
+
+        private void adminCombo_Click(object sender, RoutedEventArgs e)
+        {
+            chosenComboItem = 3;
         }
     }
 }
