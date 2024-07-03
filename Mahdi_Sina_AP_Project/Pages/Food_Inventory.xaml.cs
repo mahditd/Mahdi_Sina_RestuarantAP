@@ -1,8 +1,10 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using Sina_Mahdi_RestaurantAP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -162,20 +164,21 @@ namespace Mahdi_Sina_AP_Project.Pages
             Foods.Add(food6);
             Foods.Add(food7);
             Foods.Add(food8);
-            
-            Restaurant.currentRestaurant.foodList = Foods;
+
+            DataWork.CurrentRestaurant.foodList = Foods; 
+            //Restaurant.currentRestaurant.foodList = Foods;
             
             string[] foodName = myListBox.SelectedItem.ToString().Split(" ");
             int x = Foods.Count;
             for (int i = 0;i < x; i++)
             {
                 
-               List< Food > food = Restaurant.currentRestaurant.foodList;
+               List< Food > food = DataWork.CurrentRestaurant.foodList;
                 Food food9 = food[i];
                 
                 if (foodName[0] == food9.NAME)
                 {
-                    ChosenFood = Restaurant.currentRestaurant.foodList[i];
+                    ChosenFood = DataWork.CurrentRestaurant.foodList[i];
                     SetImage(ChosenFood.IMAGEPATH);
                     break;
                 }
