@@ -26,6 +26,8 @@ namespace Mahdi_Sina_AP_Project
             //DataWork.dataBase.Add(customer);
             //List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
             //DataWork.dataBase.SaveChanges();
+            //DataWork.dataBase.Admins.Add(new Admin("sina", "sina006"));
+            DataWork.dataBase.SaveChanges();
         }
 
         private void Button_Click_SignUp(object sender, RoutedEventArgs e)

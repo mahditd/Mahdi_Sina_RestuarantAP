@@ -62,11 +62,22 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="1" PlaceHolder="UserName"/>
-        <userControl:txtBoxWithTxtBlock Grid.Column="1" Grid.Row="2" PlaceHolder="Password"/>
+        <userControl:txtBoxWithTxtBlock x:Name="UserName" Grid.Column="1" Grid.Row="1" PlaceHolder="UserName"/>
+        <userControl:PasswordWithTextBlock x:Name="Password" Grid.Column="1" Grid.Row="2" PlaceHolder="Password"/>
         <userControl:NavButton2 x:Name="confirmBtn" HorizontalAlignment="Stretch" Cursor="Hand" Grid.Column="1" Grid.Row="3" Background="Transparent" Text="confirm" FontSize="20" Foreground="Blue" FontWeight="Bold" ButtonBase.Click="confirmBtn_Click_1" NavUri="Pages\Admin Panel.xaml" />
         <StackPanel Grid.Row="4" Grid.Column="1">
         <userControl:NavButton2  HorizontalAlignment="Center"  x:Name="signUpBtn" Text="sign up" Foreground="Red"  NavUri="/Pages/SignUp.xaml" Cursor="Hand" ButtonBase.Click="signUpBtn_Click" />
+            <ComboBox>
+                <ComboBoxItem>
+                    <Button x:Name="customerCombo" Content="Customer" Click="customerCombo_Click"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Button x:Name="restaurantCombo" Content="Restaurant" Click="restaurantCombo_Click"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Button x:Name="adminCombo" Content="Admin" Click="adminCombo_Click"/>
+                </ComboBoxItem>
+            </ComboBox>
         </StackPanel>
     </Grid>
 
