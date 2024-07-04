@@ -10,8 +10,9 @@ namespace Mahdi_Sina_AP_Project
     public class Comment
     {
         public string text;
+        
+        public List<string> replyedTexts = new List<string>();
 
-        public string? replyedText;
 
         private Food relatedFood;
 
@@ -42,7 +43,6 @@ namespace Mahdi_Sina_AP_Project
             this.relatedCustomer = RelatedCustomer;
             createdTime = DateTime.Now;
             isEdited = false;
-            replyedText = null;
         }
 
         public void Edit(string newText)
@@ -53,7 +53,7 @@ namespace Mahdi_Sina_AP_Project
 
         public void Reply(string replyText)
         {
-            this.replyedText = replyText;
+            replyedTexts.Add(replyText);
         }
 
 
