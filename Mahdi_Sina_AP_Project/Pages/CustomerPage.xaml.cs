@@ -42,6 +42,16 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
 
         }
+
+        private void restaurants_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new userControls.OrderFood(this);
+
+        }
+        public void NavigationToFoodList(string UserName)
+        {
+            contentControl.Content = new userControls.OrderFood_FoodList_(UserName);
+        }
     }
 
 

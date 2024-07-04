@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\
 Mahdi_Sina_AP_Project
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
-22-923884091
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\App.xaml
+24886520020
 
-541029749611
-217-7139499
-Confirming email.xaml;Fonts\Dictionaries\Dictionary1.xaml;MainWindow.xaml;Pages\AddRestaurant.xaml;Pages\Admin Panel.xaml;Pages\AllRestaurants_AdminPage.xaml;Pages\Complaints_AdminPage.xaml;Pages\CustomerPage.xaml;Pages\Food_Inventory.xaml;Pages\Log_In_Page.xaml;Pages\OrderReserveHistoryPagexaml.xaml;Pages\RestaurantMenuChanging.xaml;Pages\RestaurantPanel.xaml;Pages\Restaurant_Adding_Page.xaml;Pages\SignUp.xaml;Pages\userControls\AddFood.xaml;Pages\userControls\RestaurantInformations.xaml;Pages\UserProfile.xaml;PasswordWithTextBlock.xaml;Themes\Generic.xaml;txtBoxWithTxtBlock.xaml;Upload Image.xaml;
+56-1404523148
+217-1120642871
+Confirming email.xaml;Fonts\Dictionaries\Dictionary1.xaml;MainWindow.xaml;Pages\AddRestaurant.xaml;Pages\Admin Panel.xaml;Pages\AllRestaurants_AdminPage.xaml;Pages\Complaints_AdminPage.xaml;Pages\CustomerPage.xaml;Pages\Food_Inventory.xaml;Pages\Log_In_Page.xaml;Pages\OrderReserveHistoryPagexaml.xaml;Pages\RestaurantMenuChanging.xaml;Pages\RestaurantPanel.xaml;Pages\Restaurant_Adding_Page.xaml;Pages\SignUp.xaml;Pages\userControls\AddFood.xaml;Pages\userControls\OrderFood(FoodList).xaml;Pages\userControls\OrderFood.xaml;Pages\userControls\RestaurantInformations.xaml;Pages\UserProfile.xaml;PasswordWithTextBlock.xaml;Themes\Generic.xaml;txtBoxWithTxtBlock.xaml;Upload Image.xaml;
 
-True
+False
 
