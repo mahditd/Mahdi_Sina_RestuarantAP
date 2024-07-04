@@ -53,10 +53,11 @@ namespace Mahdi_Sina_AP_Project.Pages
             ChangeImageButton.Visibility = Visibility.Hidden;
             MyImage.Visibility = Visibility.Hidden;
             MyDeleteButton.Visibility = Visibility.Hidden;
-            MyCommentButton.Visibility = Visibility.Hidden;
+           
             TextBox1.Visibility = Visibility.Hidden;
             TextBox2.Visibility = Visibility.Hidden;
             TextBox3.Visibility = Visibility.Hidden;
+            MySaveButton.Visibility = Visibility.Hidden;
           
         }
 
@@ -116,7 +117,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                     TextBox1.Text = DataWork.CurrentRestaurant.foodList[i].Price.ToString();
                     TextBox2.Text = DataWork.CurrentRestaurant.foodList[i].RATE.ToString();
                     TextBox3.Text = DataWork.CurrentRestaurant.foodList[i].INGREDIENTS.ToString();
-                   
+
                     var foodNames = DataWork.CurrentRestaurant.foodList.Select(x => x.NAME + SpaceMaker(x.NAME));
                     myListBox.ItemsSource = foodNames;
 
@@ -133,7 +134,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 ChangeImageButton.Visibility = Visibility.Visible;
                 MyImage.Visibility = Visibility.Visible;
                 MyDeleteButton.Visibility = Visibility.Visible;
-                MyCommentButton.Visibility = Visibility.Visible;
+                MySaveButton.Visibility = Visibility.Visible;
                 TextBox1.Visibility = Visibility.Visible;
                 TextBox2.Visibility = Visibility.Visible;
                 TextBox3.Visibility = Visibility.Visible;
@@ -145,7 +146,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 ChangeImageButton.Visibility = Visibility.Hidden;
                 MyImage.Visibility = Visibility.Hidden;
                 MyDeleteButton.Visibility = Visibility.Hidden;
-                MyCommentButton.Visibility = Visibility.Hidden;
+                MySaveButton.Visibility = Visibility.Hidden;
                 TextBox1.Visibility = Visibility.Hidden;
                 TextBox2.Visibility = Visibility.Hidden;
                 TextBox3.Visibility = Visibility.Hidden;
@@ -180,7 +181,11 @@ namespace Mahdi_Sina_AP_Project.Pages
                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this food?","",MessageBoxButton.YesNo,MessageBoxImage.Warning);
                     if(result == MessageBoxResult.Yes)
                     {
-                        DataWork.CurrentRestaurant.foodList.RemoveAt(i);
+                        
+                        List<Food> Foods = DataWork.CurrentRestaurant.foodList; 
+                        Foods.RemoveAt(i);
+                        DataWork.CurrentRestaurant.foodList = Foods;
+                        DataWork.dataBase.SaveChanges();
                     }
                     
                 }
@@ -189,7 +194,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void Comments_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new commentsPage_RestaurantPanel());
         }
 
         private void TextBox1_TextChanged(object sender, TextChangedEventArgs e)
@@ -240,7 +245,11 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         }
 
-       
+        private void TextBox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            
+        }
     }
 
 }

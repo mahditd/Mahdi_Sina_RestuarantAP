@@ -242,7 +242,7 @@
      />
 
         </Grid>
-        <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Margin="40 10 40 30" Grid.Column="1" Grid.Row="2"  Click="SaveButton_Click" VerticalAlignment="Bottom">
+        <Button x:Name="MySaveButton" Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Margin="40 10 40 30" Grid.Column="1" Grid.Row="2"  Click="SaveButton_Click" VerticalAlignment="Bottom">
             Save
         </Button>
         <Grid Grid.Column="3" Grid.Row="1">
@@ -256,13 +256,13 @@
             <TextBox x:Name="TextBox3" Text="{Binding EditableText3, UpdateSourceTrigger=PropertyChanged}"
       HorizontalAlignment="Center"
       VerticalAlignment="Center"
-     Width="50"
-          Height="30"
+     Width="70"
+          Height="70"
       Grid.Row="2"
       FontSize="15"
       HorizontalContentAlignment="Center"
       VerticalContentAlignment="Center"
-      Background="OrangeRed"
+      Background="OrangeRed" TextChanged="TextBox3_TextChanged"
      />
            
         </Grid>

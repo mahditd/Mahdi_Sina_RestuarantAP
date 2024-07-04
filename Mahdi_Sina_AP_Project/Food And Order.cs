@@ -87,11 +87,11 @@ namespace Sina_Mahdi_RestaurantAP
         }
 
         public Food() { }
-        public Food(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients)
+        public Food(string name, double price, string imagePath, Restaurant restaurant, string ingredients)
         {
             this.name = name;
             this.price = price;
-            this.rate = rate;
+            
             this.imagePath = imagePath;
             this.restaurant = restaurant;
             this.ingredients = ingredients;
@@ -157,9 +157,12 @@ namespace Sina_Mahdi_RestaurantAP
         public List<Food> Foods = new List<Food>();
 
         public Order() { }
-        public Order(string name, double price, float rate, Restaurant restaurant, PaymentMethod method)
+        public Order(string name, double price, Restaurant restaurant, PaymentMethod method)
             
         {
+            this.name = name;
+            this.price = price;
+            this.restaurant = restaurant;
             this.orderDateTime = DateTime.Now;
             this.method = method;
         }
