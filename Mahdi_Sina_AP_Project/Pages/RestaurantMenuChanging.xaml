@@ -109,17 +109,17 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
-        <TextBox Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox x:Name="MyTextBox" IsReadOnly="True"  Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Width="100"
                 Height="100"
                  Grid.Column="1"
                 Grid.Row="2"
-                FontSize="20"
+                FontSize="25"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                Background="WhiteSmoke"
+                Background="CornflowerBlue"
         />
         <Grid Grid.Column="2" Grid.Row="1">
             <Grid.RowDefinitions>

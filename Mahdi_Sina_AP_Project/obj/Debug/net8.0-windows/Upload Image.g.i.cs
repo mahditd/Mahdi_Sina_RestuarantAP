@@ -77,7 +77,7 @@ namespace Mahdi_Sina_AP_Project {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;V1.0.0.0;component/upload%20image.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;component/upload%20image.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Upload Image.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

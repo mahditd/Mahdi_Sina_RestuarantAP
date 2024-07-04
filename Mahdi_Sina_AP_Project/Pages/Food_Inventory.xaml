@@ -228,7 +228,8 @@
                  VerticalContentAlignment="Center"
                  Background="OrangeRed" TextChanged="TextBox1_TextChanged"
                 />
-            <TextBox x:Name="TextBox2" Text="{Binding EditableText2, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox x:Name="TextBox2" 
+             IsReadOnly="True"
              HorizontalAlignment="Center"
              VerticalAlignment="Center"
             Width="50"
@@ -263,17 +264,7 @@
       VerticalContentAlignment="Center"
       Background="OrangeRed"
      />
-            <TextBox x:Name="TextBox4" Text="{Binding EditableText4, UpdateSourceTrigger=PropertyChanged}"
-      HorizontalAlignment="Center"
-      VerticalAlignment="Center"
-     Width="50"
-          Height="30"
-      Grid.Row="3"
-      FontSize="15"
-      HorizontalContentAlignment="Center"
-      VerticalContentAlignment="Center"
-      Background="OrangeRed"
-     />
+           
         </Grid>
     </Grid>
 </Page>
