@@ -17,6 +17,7 @@ namespace Sina_Mahdi_RestaurantAP
         [JsonInclude]
 
         private string name;
+
         [JsonInclude]
 
         public string NAME
@@ -99,16 +100,10 @@ namespace Sina_Mahdi_RestaurantAP
     }
     public class Order 
     {
+        //ommited name
         [JsonInclude]
+        public int payed = 0;
 
-        private string name;
-        [JsonInclude]
-
-        public string NAME
-        {
-            get { return name; }
-            set { name = value; }
-        }
         [JsonInclude]
 
         private double price;

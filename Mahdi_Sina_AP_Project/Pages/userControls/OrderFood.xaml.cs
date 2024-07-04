@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using Sina_Mahdi_RestaurantAP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,9 +33,24 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ClickedButton = e.OriginalSource as Button;
-            string RestaurantUserName = ClickedButton.Content.ToString();
-            page.NavigationToFoodList(RestaurantUserName);
+
+            if (DataWork.CurrentCustomer.ORDERS.Where(x => x.payed == 0).ToList().Count >0)
+            {
+                MessageBox.Show("complete your last orders first");
+            }
+            else
+            {
+                var ClickedButton = e.OriginalSource as Button;
+                string RestaurantUserName = ClickedButton.Content.ToString();
+                Order order = new Order();
+                order.RESTAURANT = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == RestaurantUserName);//never will be null
+                DataWork.CurrentCustomer.ORDERS = new List<Order> { order };//order must be filled
+                page.NavigationToFoodList(RestaurantUserName);
+
+            }
+
+
+            
 
         }
     }

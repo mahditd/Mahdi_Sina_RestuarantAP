@@ -100,11 +100,11 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" Grid.Column="0">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <ListBox x:Name="myListBox" Background="#FF222222" BorderThickness="0">
                     <ListBox.ItemContainerStyle>
@@ -115,11 +115,13 @@
                     </ListBox.ItemContainerStyle>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button Background="#FF222222" Content="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Red"/>
+                            <Button Background="#FF222222" Content="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Red" Click="Button_Click"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                <ContentControl Grid.Row="1" Grid.Column="1" x:Name="contentControl"/>
             </Grid>
         </ScrollViewer>
+
     </Grid>
 </UserControl>
