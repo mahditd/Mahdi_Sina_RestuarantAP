@@ -51,7 +51,7 @@
         <userControl:txtBoxWithTxtBlock x:Name="phoneNumber" Grid.Column="1" Grid.Row="6" PlaceHolder="Phone number"/>
         <userControl:txtBoxWithTxtBlock x:Name="postalCode" Grid.Column="1" Grid.Row="7" PlaceHolder="Postal code"/>
         <Button x:Name="confirm" Grid.Column="1" Grid.Row="8" Background="Blue" Content="confirm the informations" Click="confirm_Click"/>
-        <Button Content="Back" Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" Width="53" Background="Transparent" Click="Button_Click"/>
 
     </Grid>
 </Page>
