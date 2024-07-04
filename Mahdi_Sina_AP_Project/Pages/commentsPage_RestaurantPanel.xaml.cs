@@ -33,6 +33,11 @@ namespace Mahdi_Sina_AP_Project.Pages
             myListBox3.Visibility = Visibility.Hidden;
             var CommentTexts = DataWork.CurrentRestaurant.ORDERLIST.Select(x => x.NAME);
             myListBox1.ItemsSource = CommentTexts;
+            List<Order> orders = DataWork.CurrentRestaurant.ORDERLIST;
+            List<Comment> comments = new List<Comment> { new Comment("very good", new Food(), DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == "sina2")), new Comment("very bad", new Food(), DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == "sina2")) };
+            orders[0].Comments = comments;
+            DataWork.CurrentRestaurant.ORDERLIST = orders;
+            DataWork.dataBase.SaveChanges();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

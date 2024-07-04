@@ -3,27 +3,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Mahdi_Sina_AP_Project
 {
     public class Comment
     {
+        [JsonInclude]
         public string text;
-        
+        [JsonInclude]
         public List<string> replyedTexts = new List<string>();
-
-
+        [JsonInclude]
         private Food relatedFood;
-
+        [JsonInclude]
         public Food RELATEDFOOD { get { return relatedFood; } }
-
+        [JsonInclude]
         private Customer relatedCustomer;
-
+        [JsonInclude]
         public Customer RELATEDCUSTOMER { get { return relatedCustomer; } }
-
+        [JsonInclude]
         private bool isEdited;
-
+        [JsonInclude]
         public bool ISEDITED
         {
             get { return isEdited; }
@@ -31,8 +32,10 @@ namespace Mahdi_Sina_AP_Project
             set { isEdited = value; }
         }
 
+        [JsonInclude]
         private DateTime createdTime;
 
+        [JsonInclude]
         public DateTime CREATEDTIME { get { return createdTime; } }
 
         public Comment() { }
@@ -61,18 +64,25 @@ namespace Mahdi_Sina_AP_Project
 
     public class Complaint
     {
+        [JsonInclude]
         public string text;
 
+        [JsonInclude]
         public string? replyedText;
 
+        [JsonInclude]
         private Order relatedOrder;
 
+        [JsonInclude]
         public Order RELATEDORDER { get { return relatedOrder; } }
 
+        [JsonInclude]
         private Customer relatedCustomer;
 
+        [JsonInclude]
         public Customer RELATEDCUSTOMER { get { return relatedCustomer; } }
 
+        [JsonInclude]
         private bool isChecked;
 
         public bool ISCHECKED
@@ -82,8 +92,10 @@ namespace Mahdi_Sina_AP_Project
             set { isChecked = value; }
         }
 
+        [JsonInclude]
         private DateTime createdTime;
 
+        [JsonInclude]
         public DateTime CREATEDTIME { get { return createdTime; } }
 
         public Complaint() { }

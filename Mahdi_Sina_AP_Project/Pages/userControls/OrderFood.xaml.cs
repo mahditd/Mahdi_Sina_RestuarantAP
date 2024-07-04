@@ -43,7 +43,13 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 var ClickedButton = e.OriginalSource as Button;
                 string RestaurantUserName = ClickedButton.Content.ToString();
                 Order order = new Order();
+                order.NAME = "first order";
+
                 order.RESTAURANT = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == RestaurantUserName);//never will be null
+                List<Order> orders = order.RESTAURANT.ORDERLIST;
+                orders.Add(order);
+                order.RESTAURANT.ORDERLIST = orders;
+                DataWork.dataBase.SaveChanges();
                 DataWork.CurrentCustomer.ORDERS = new List<Order> { order };//order must be filled
                 page.NavigationToFoodList(RestaurantUserName);
 
