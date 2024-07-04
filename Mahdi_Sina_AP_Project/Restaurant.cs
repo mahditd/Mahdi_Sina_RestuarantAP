@@ -37,6 +37,7 @@ namespace Sina_Mahdi_RestaurantAP
             }
 
         }
+        [NotMapped]
         public string Color { get; set; }
 
 
@@ -102,13 +103,12 @@ namespace Sina_Mahdi_RestaurantAP
         public Restaurant(string username, string password, string name, string address) : base(username, password)
         {
            
-            this.Name = name;
-            this.Address= address;
-            this.canReserve = false;
-            //this.orderList = "";
-            //this.reserveList = "";
-            //this.foodListJson = "";
-            //this.rate = 0;
+            Name = name;
+            Address= address;
+            canReserve = false;
+            ORDERLIST = new List<Order>();
+            ReserveList = new List<Reserve>();
+            foodList = new List<Food>();
         }
 
 

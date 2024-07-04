@@ -33,7 +33,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void foods_Click(object sender, RoutedEventArgs e)
         {
-
+            contentControl.Content = new userControls.AddFood();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

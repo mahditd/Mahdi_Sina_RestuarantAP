@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Mahdi_Sina_AP_Project.Pages.userControls.AddFood"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mahdi_Sina_AP_Project.Pages.userControls"
+             xmlns:userControl="clr-namespace:Mahdi_Sina_AP_Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" CornerRadius="20" Background="Gray" >
+            <StackPanel >
+                <Grid Margin="0,10,3,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+
+                        <ColumnDefinition Width="0.75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Name" Grid.Column="0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="name" Grid.Column="1" PlaceHolder="Name" Margin="0,0,8,0"/>
+                </Grid>
+                <Grid Margin="0,10,3,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+
+                        <ColumnDefinition Width="0.75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Price" Grid.Column="0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="price" Grid.Column="1" PlaceHolder="Price" Margin="0,0,8,0"/>
+                </Grid>
+                <Grid Margin="0,10,3,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+
+                        <ColumnDefinition Width="0.75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Ingredient" Grid.Column="0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="ingradients" Grid.Column="1" PlaceHolder="Ingradients" Margin="0,0,8,0"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <Button x:Name="ImportImage" Background="Green" Style="{StaticResource CustomButtonStyle}" Content="Image" Click="ImportImage_Click"/>
+                        <Image x:Name="Image" Margin="10" Height="100" Source="{Binding ImagePath, UpdateSourceTrigger =PropertyChanged}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Restaurant name"/>
+                        <userControl:txtBoxWithTxtBlock x:Name="restaurantUserName" PlaceHolder="UserName"/>
+                        <Button Name="confirmBtn" Background="Green"  Style="{StaticResource CustomButtonStyle}" Content="Confirm" Margin="0,20,0,0" Click="confirmBtn_Click"/>
+                    </StackPanel>
+                    
+                </Grid>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

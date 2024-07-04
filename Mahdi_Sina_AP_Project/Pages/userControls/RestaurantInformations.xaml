@@ -30,7 +30,7 @@
                             <ColumnDefinition Width="0.75*"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="UserName" Grid.Column="0"/>
-                        <userControl:txtBoxWithTxtBlock Grid.Column="1" PlaceHolder="UserName" Margin="0,0,8,0"/>
+                        <userControl:txtBoxWithTxtBlock x:Name="userName" Grid.Column="1" PlaceHolder="UserName" Margin="0,0,8,0"/>
                     </Grid>
                     <Grid Margin="0,5,3,0">
                         <Grid.ColumnDefinitions>
@@ -39,16 +39,25 @@
                             <ColumnDefinition Width="0.75*"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="Password" Grid.Column="0"/>
-                    <userControl:txtBoxWithTxtBlock Grid.Column="1" PlaceHolder="Password" Margin="0,0,8,0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="password" Grid.Column="1" PlaceHolder="Password" Margin="0,0,8,0"/>
                     </Grid>
-                    <Grid Margin="0,5,3,0">
+                <Grid Margin="0,5,3,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+
+                        <ColumnDefinition Width="0.75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Confirm Password" Grid.Column="0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="confirmPassword" Grid.Column="1" PlaceHolder="Confirm Password" Margin="0,0,8,0"/>
+                </Grid>
+                <Grid Margin="0,5,3,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.25*"/>
 
                             <ColumnDefinition Width="0.75*"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="Adress" Grid.Column="0"/>
-                    <userControl:txtBoxWithTxtBlock Grid.Column="1" PlaceHolder="Adress" Margin="0,0,8,0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="adress" Grid.Column="1" PlaceHolder="Adress" Margin="0,0,8,0"/>
                     </Grid>
                 <Grid Margin="0,5,3,0">
                     <Grid.ColumnDefinitions>
@@ -57,7 +66,15 @@
                         <ColumnDefinition Width="0.75*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Name" Grid.Column="0"/>
-                    <userControl:txtBoxWithTxtBlock Grid.Column="1" PlaceHolder="Name" Margin="0,0,8,0"/>
+                    <userControl:txtBoxWithTxtBlock x:Name="name" Grid.Column="1" PlaceHolder="Name" Margin="0,0,8,0"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="confirmBtn" Grid.Column="1" Style="{StaticResource CustomButtonStyle}"  Content="confirm" Background="Yellow" Click="confirmBtn_Click" />
                 </Grid>
             </StackPanel>
 
