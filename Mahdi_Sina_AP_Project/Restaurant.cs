@@ -105,10 +105,10 @@ namespace Sina_Mahdi_RestaurantAP
             this.Name = name;
             this.Address= address;
             this.canReserve = false;
-            this.orderList = "";
-            this.reserveList = "";
-            this.foodListJson = "";
-            this.rate = 0;
+            //this.orderList = "";
+            //this.reserveList = "";
+            //this.foodListJson = "";
+            //this.rate = 0;
         }
 
 

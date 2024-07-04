@@ -126,11 +126,6 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-       
-
-            
-           
-
             DataWork.CurrentRestaurant.foodList = Foods; 
             //Restaurant.currentRestaurant.foodList = Foods;
             
