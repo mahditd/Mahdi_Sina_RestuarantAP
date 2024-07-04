@@ -47,11 +47,11 @@
     </Page.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/food_photos/pexels-robinstickel-70497.jpg" Opacity="0.3"/>
+            <ImageBrush ImageSource="/food_photos/Log_In.jpg" Opacity="1"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -62,12 +62,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <userControl:txtBoxWithTxtBlock x:Name="UserName" Grid.Column="1" Grid.Row="1" PlaceHolder="UserName"/>
+        <userControl:txtBoxWithTxtBlock Foreground="Red" x:Name="UserName" Grid.Column="1" Grid.Row="1" PlaceHolder="UserName"/>
         <userControl:PasswordWithTextBlock x:Name="Password" Grid.Column="1" Grid.Row="2" PlaceHolder="Password"/>
         <userControl:NavButton2 x:Name="confirmBtn" HorizontalAlignment="Stretch" Cursor="Hand" Grid.Column="1" Grid.Row="3" Background="Transparent" Text="confirm" FontSize="20" Foreground="Blue" FontWeight="Bold" ButtonBase.Click="confirmBtn_Click_1" NavUri="Pages\Admin Panel.xaml" />
         <StackPanel Grid.Row="4" Grid.Column="1">
             <userControl:NavButton2  HorizontalAlignment="Center"  x:Name="signUpBtn" Text="sign up" Foreground="Red"  NavUri="/Pages/SignUp.xaml" Cursor="Hand" ButtonBase.Click="signUpBtn_Click" />
-            <ComboBox>
+            <ComboBox Background="#FF222222">
                 <ComboBoxItem PreviewMouseDown="customerCombo_Click" HorizontalAlignment="Center">
                     <Grid HorizontalAlignment="Stretch">
                         <TextBlock Text="Customer" HorizontalAlignment="Center"/>

@@ -20,9 +20,21 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
     /// </summary>
     public partial class OrderFood : UserControl
     {
-        public OrderFood()
+        CustomerPage page;
+        public OrderFood(CustomerPage _page)
         {
             InitializeComponent();
+            List<string> restaurants = DataWork.dataBase.Restaurants.Select(x => x.USERNAME).ToList();
+            myListBox.ItemsSource = restaurants;
+            page = _page;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as Button;
+            string RestaurantUserName = ClickedButton.Content.ToString();
+            page.NavigationToFoodList(RestaurantUserName);
+
         }
     }
 }
