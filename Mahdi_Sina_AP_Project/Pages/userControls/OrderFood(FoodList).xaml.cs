@@ -21,12 +21,26 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
     /// </summary>
     public partial class OrderFood_FoodList_ : UserControl
     {
-        
+        string Restaurant;
         public OrderFood_FoodList_(string resUserName)
         {
             InitializeComponent();
             List<Food> foods = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == resUserName).foodList;//never will be null
             myListBox.ItemsSource = foods.Select(x => x.NAME);
+            Restaurant = resUserName;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            var ClickedButton = e.OriginalSource as Button;
+            string FoodName = ClickedButton.Content.ToString();//unique food name must be considered
+            List<Food> foods = DataWork.CurrentCustomer.ORDERS[DataWork.CurrentCustomer.ORDERS.Count - 1].Foods;
+            foods.Add(DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).foodList.FirstOrDefault(x => x.NAME == FoodName));
+            List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+            orders[orders.Count - 1].Foods = foods;
+            DataWork.CurrentCustomer.ORDERS = orders;
+            DataWork.dataBase.SaveChanges();
         }
     }
 }
