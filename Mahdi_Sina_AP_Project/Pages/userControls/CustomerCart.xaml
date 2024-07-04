@@ -121,7 +121,16 @@
                             <Label VerticalAlignment="Center" Foreground="DarkRed" FontFamily="{StaticResource Vintage}" Content="Total cost:  " FontSize="20"/>
                             <TextBlock Foreground="DarkBlue" VerticalAlignment="Center" FontFamily="{StaticResource Vintage}" x:Name="costNum" FontSize="20" Text="{Binding Cost}"/>
                         </StackPanel>
-                    </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                            <Button x:Name="online" Grid.Column="1" Content="Online" Background="DarkGreen" Style="{StaticResource CustomButtonStyle}" Click="online_Click"/>
+                            <Button x:Name="cash" Grid.Column="2" Content="Cash" Background="DarkGreen" Style="{StaticResource CustomButtonStyle}" Click="cash_Click"/>
+                        </Grid>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -132,6 +141,8 @@
 
                     </Grid>
                 </StackPanel>
+                </StackPanel>
+
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -20,25 +20,47 @@ namespace Mahdi_Sina_AP_Project
     public partial class Confirming_email : Window
     {
         string verificationCode;
-        Page parent;
+        Page parent = null;
+        UserControl parent2 = null;
         public Confirming_email(string _verificationCode, Page _parent)
         {
             verificationCode = _verificationCode;
             parent = _parent;
             InitializeComponent();
         }
-
+        public Confirming_email(string _verificationCode, UserControl _parent)
+        {
+            verificationCode = _verificationCode;
+            parent2 = _parent;
+            InitializeComponent();
+        }
         private void confirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (txtBoxBlock.txtBox.Text == verificationCode)
+            if (parent!= null)
             {
-                Customer.EmailConfirmed = true;
-                this.Close();
+                if (txtBoxBlock.txtBox.Text == verificationCode)
+                {
+                    Customer.EmailConfirmed = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong verify code", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            else
+            else if (parent2 != null)
             {
-                MessageBox.Show("Wrong verify code", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (txtBoxBlock.txtBox.Text == verificationCode)
+                {
+                    Customer.EmailConfirmed = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong verify code", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
+ 
         }
     }
 }

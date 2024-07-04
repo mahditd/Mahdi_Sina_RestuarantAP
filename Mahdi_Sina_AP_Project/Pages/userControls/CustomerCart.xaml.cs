@@ -23,7 +23,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
     {
         private double cost;
         Order currentOrder;
-
+        int onlinePay = -1;
         public double Cost
         {
             get { return cost; }
@@ -53,11 +53,37 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void PayBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<Order> orders = DataWork.CurrentCustomer.ORDERS;
-            orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
-            DataWork.CurrentCustomer.ORDERS = orders;
-            DataWork.dataBase.SaveChanges();
-            MessageBox.Show("payed successfully");
+            if (sendingEmail())
+            {
+                List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+                orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
+                DataWork.CurrentCustomer.ORDERS = orders;
+                DataWork.dataBase.SaveChanges();
+            }
+
+        }
+
+        private void online_Click(object sender, RoutedEventArgs e)
+        {
+            onlinePay = 1;
+        }
+
+        private void cash_Click(object sender, RoutedEventArgs e)
+        {
+            onlinePay = 0;
+        }
+        private bool sendingEmail()
+        {
+           string verificationCode = Customer.SendVerificationEmail(DataWork.CurrentCustomer.EMAIL).ToString();
+            Customer.EmailConfirmed = false;
+            Window verificationWindow = new Confirming_email(verificationCode, this);
+            verificationWindow.ShowDialog();
+            if (Customer.EmailConfirmed == true)
+            {
+                MessageBox.Show("payed successfully");
+                return true;
+            }
+            return false;
         }
     }
 }
