@@ -46,31 +46,8 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
 
             InitializeComponent();
-            Food food1 = new Food("cheeseburger", 122.5, 4, "\\food_photos\\cheesburger.jpg", Restaurant.currentRestaurant, "  ");
-            Food food2 = new Food("pizza", 17, 5, "\\food_photos\\chickenburger.jpg", Restaurant.currentRestaurant, "  ");
-            Food food3 = new Food("hamburger", 11, 3, "", Restaurant.currentRestaurant, "  ");
-            Food food4 = new Food("lazania", 12.5, 4, "", Restaurant.currentRestaurant, "  ");
-            Food food5 = new Food("pasta", 100, 5, "", Restaurant.currentRestaurant, "  ");
-            Food food6 = new Food("water", 0.99, 2, "", Restaurant.currentRestaurant, "  ");
-            Food food7 = new Food("delester", 12, 1, "", Restaurant.currentRestaurant, "  ");
-            Food food8 = new Food("steak", 12.5, 1, "", Restaurant.currentRestaurant, "  ");
-            food1.FOODCOUNT = 1;
-            food2.FOODCOUNT = 112;
-            food3.FOODCOUNT = 12;
-            food4.FOODCOUNT = 10;
-            food5.FOODCOUNT = 14;
-            food6.FOODCOUNT = 18;
-            food7.FOODCOUNT = 123;
-            food8.FOODCOUNT = 23;
-            Foods.Add(food1);
-            Foods.Add(food2);
-            Foods.Add(food3);
-            Foods.Add(food4);
-            Foods.Add(food5);
-            Foods.Add(food6);
-            Foods.Add(food7);
-            Foods.Add(food8);
-            var foodNames = Foods.Select(x => x.NAME + SpaceMaker(x.NAME));
+           
+            var foodNames = DataWork.CurrentRestaurant.foodList.Select(x => x.NAME + SpaceMaker(x.NAME));
             myListBox.ItemsSource = foodNames;
             DataContext = this;
             ChangeImageButton.Visibility = Visibility.Hidden;
@@ -80,7 +57,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             TextBox1.Visibility = Visibility.Hidden;
             TextBox2.Visibility = Visibility.Hidden;
             TextBox3.Visibility = Visibility.Hidden;
-            TextBox4.Visibility = Visibility.Hidden;
+          
         }
 
         public string EditableText
@@ -121,36 +98,26 @@ namespace Mahdi_Sina_AP_Project.Pages
             }
             return spaces;
         }
-        List<Food> Foods = new List<Food>();
+       
         public Food ChosenFood;
 
         private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-       
-
-            
            
-
-            DataWork.CurrentRestaurant.foodList = Foods; 
-            //Restaurant.currentRestaurant.foodList = Foods;
             
-            string[] foodName = myListBox.SelectedItem.ToString().Split(" ");
-            int x = Foods.Count;
+            int x = DataWork.CurrentRestaurant.foodList.Count;
             for (int i = 0;i < x; i++)
             {
                 
-                List<Food> food = DataWork.CurrentRestaurant.foodList;
-                Food food9 = food[i];
-                
-                if (foodName[0] == food9.NAME)
+                if (myListBox.SelectedItem.ToString().Contains(DataWork.CurrentRestaurant.foodList[i].NAME))
                 {
                     ChosenFood = DataWork.CurrentRestaurant.foodList[i];
                     SetImage(ChosenFood.IMAGEPATH);
-                    TextBox1.Text = food9.Price.ToString();
-                    TextBox2.Text = food9.RATE.ToString();
-                    TextBox3.Text = food9.INGREDIENTS.ToString();
-                    TextBox4.Text = food9.FOODCOUNT.ToString();
-                    var foodNames = Foods.Select(x => x.NAME + SpaceMaker(x.NAME));
+                    TextBox1.Text = DataWork.CurrentRestaurant.foodList[i].Price.ToString();
+                    TextBox2.Text = DataWork.CurrentRestaurant.foodList[i].RATE.ToString();
+                    TextBox3.Text = DataWork.CurrentRestaurant.foodList[i].INGREDIENTS.ToString();
+                   
+                    var foodNames = DataWork.CurrentRestaurant.foodList.Select(x => x.NAME + SpaceMaker(x.NAME));
                     myListBox.ItemsSource = foodNames;
 
 
@@ -170,7 +137,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 TextBox1.Visibility = Visibility.Visible;
                 TextBox2.Visibility = Visibility.Visible;
                 TextBox3.Visibility = Visibility.Visible;
-                TextBox4.Visibility = Visibility.Visible;
+               
 
             }
             else
@@ -182,7 +149,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 TextBox1.Visibility = Visibility.Hidden;
                 TextBox2.Visibility = Visibility.Hidden;
                 TextBox3.Visibility = Visibility.Hidden;
-                TextBox4.Visibility = Visibility.Hidden;
+               
 
             }
             DataWork.dataBase.SaveChanges();
@@ -192,6 +159,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             Window UploadImage = new Upload_Image(this);
             UploadImage.Show();
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -205,14 +173,14 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void Delete_Food_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i <Foods.Count; i++)
+            for (int i = 0; i <DataWork.CurrentRestaurant.foodList.Count; i++)
             {
-                if(ChosenFood.NAME == Foods[i].NAME)
+                if(ChosenFood.NAME == DataWork.CurrentRestaurant.foodList[i].NAME)
                 {
                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this food?","",MessageBoxButton.YesNo,MessageBoxImage.Warning);
                     if(result == MessageBoxResult.Yes)
                     {
-                        Foods.RemoveAt(i);
+                        DataWork.CurrentRestaurant.foodList.RemoveAt(i);
                     }
                     
                 }
@@ -248,21 +216,6 @@ namespace Mahdi_Sina_AP_Project.Pages
                     }
                     DataWork.dataBase.SaveChanges();
                 }
-                if (ChosenFood != null && TextBox2.Text != "")
-                {
-                    ChosenFood.RATE = int.Parse(TextBox2.Text);
-                    for (int i = 0; i < DataWork.CurrentRestaurant.foodList.Count; i++)
-                    {
-                        if (ChosenFood.NAME == DataWork.CurrentRestaurant.foodList[i].NAME)
-                        {
-                            List<Food> foods = DataWork.CurrentRestaurant.foodList;
-                            foods[i].RATE = int.Parse(TextBox2.Text);
-                            DataWork.CurrentRestaurant.foodList = foods;
-
-                        }
-                    }
-                    DataWork.dataBase.SaveChanges();
-                }
                 if (ChosenFood != null && TextBox3.Text != "")
                 {
                     ChosenFood.INGREDIENTS = TextBox3.Text;
@@ -277,20 +230,8 @@ namespace Mahdi_Sina_AP_Project.Pages
                     }
                     DataWork.dataBase.SaveChanges();
                 }
-                if (ChosenFood != null && TextBox4.Text != "")
-                {
-                    ChosenFood.FOODCOUNT = int.Parse(TextBox4.Text);
-                    for (int i = 0; i < DataWork.CurrentRestaurant.foodList.Count; i++)
-                    {
-                        if (ChosenFood.NAME == DataWork.CurrentRestaurant.foodList[i].NAME)
-                        {
-                            List<Food> foods = DataWork.CurrentRestaurant.foodList;
-                            foods[i].FOODCOUNT = int.Parse(TextBox4.Text);
-                            DataWork.CurrentRestaurant.foodList = foods;
-                        }
-                    }
-                    DataWork.dataBase.SaveChanges();
-                }
+                
+                
             }
             catch
             {
@@ -298,6 +239,8 @@ namespace Mahdi_Sina_AP_Project.Pages
             }
 
         }
+
+       
     }
 
 }

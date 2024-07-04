@@ -47,6 +47,10 @@ namespace Mahdi_Sina_AP_Project.Pages
                 try
                 {
                     testCustomer = DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == userName);
+                    if(testCustomer == null) 
+                    {
+                        MessageBox.Show("Enter a correct username");
+                    }
                 }
                 catch (Exception)
                 {
@@ -57,6 +61,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 {
                     if (testCustomer.PASSWORD == password)
                     {
+                        DataWork.CurrentCustomer = testCustomer;
                         NavigationService.Navigate(new CustomerPage());
                     }
                     else
@@ -72,6 +77,10 @@ namespace Mahdi_Sina_AP_Project.Pages
                 try
                 {
                     testRestaurant = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == userName);
+                    if(testRestaurant == null)
+                    {
+                        MessageBox.Show("Enter a correct username");
+                    }
                 }
                 catch (Exception)
                 {
@@ -82,6 +91,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 {
                     if (testRestaurant.PASSWORD == password)
                     {
+                        DataWork.CurrentRestaurant = testRestaurant;
                         NavigationService.Navigate(new RestaurantPanel());
                     }
                     else
@@ -97,6 +107,10 @@ namespace Mahdi_Sina_AP_Project.Pages
                 try
                 {
                     testAdmin = DataWork.dataBase.Admins.FirstOrDefault(x => x.USERNAME == userName);
+                    if( testAdmin == null )
+                    {
+                        MessageBox.Show("Enter a correct username");
+                    }
                 }
                 catch (Exception)
                 {
@@ -107,6 +121,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 {
                     if (testAdmin.PASSWORD == password)
                     {
+                        DataWork.CurrentAdmin = testAdmin;
                         NavigationService.Navigate(new Admin_Panel());
                     }
                     else
@@ -115,6 +130,10 @@ namespace Mahdi_Sina_AP_Project.Pages
 
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Choose Which User you want to enter as");
             }
         }
 

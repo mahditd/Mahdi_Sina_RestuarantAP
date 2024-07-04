@@ -58,7 +58,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 string sourceFilePath = openFileDialog.FileName;
 
                 // Define the target folder and file name
-                string targetFolder = @"D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food_photos\"; // Local must change
+                string targetFolder = @"C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food_photos\"; // Local must change
                 string fileName = System.IO.Path.GetFileName(sourceFilePath);
                 string targetFilePath = System.IO.Path.Combine(targetFolder, fileName);
 
