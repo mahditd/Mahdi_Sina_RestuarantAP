@@ -36,8 +36,14 @@ namespace Mahdi_Sina_AP_Project.Pages
             }
             RateAverage /= (indexHolder + 1);
 
+
+
             DataWork.CurrentRestaurant.rate = RateAverage;
            
+            if(RateAverage < 4) 
+            {
+                CircleButton.Content = "Reserve OFF";
+            }
            
 
             if (DataWork.CurrentRestaurant.CanReserve == true)

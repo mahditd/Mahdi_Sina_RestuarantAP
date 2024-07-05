@@ -41,8 +41,15 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (DataWork.CurrentRestaurant.ORDERLIST[i].NAME.Contains(myListBox.SelectedItem.ToString()))
                 {
                     ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
+                    TextBox1.Text = DataWork.CurrentRestaurant.ORDERLIST[i].METHOD.ToString();
+                    TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].payed.ToString();
                 }
             }
+        }
+
+        private void TextBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
