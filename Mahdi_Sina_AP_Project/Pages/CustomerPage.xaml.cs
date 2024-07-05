@@ -65,6 +65,12 @@ namespace Mahdi_Sina_AP_Project.Pages
                 MessageBox.Show("There is no order to pay");
             }
         }
+
+        private void OrderHistory_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new userControls.OrderHistory();
+
+        }
     }
 
 

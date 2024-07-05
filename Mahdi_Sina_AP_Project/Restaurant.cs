@@ -76,7 +76,9 @@ namespace Sina_Mahdi_RestaurantAP
         }
         public string orderList { get; set; }//dataBase
         [NotMapped]
-        public List<Order> ORDERLIST { get => listConverterToOrder(orderList); set => orderList = stringConverterToOrder(value); }
+        public List<Order> ORDERLIST { 
+            get => listConverterToOrder(orderList); 
+            set => orderList = stringConverterToOrder(value); }
 
 
         public string Address { get; set; }//dataBase

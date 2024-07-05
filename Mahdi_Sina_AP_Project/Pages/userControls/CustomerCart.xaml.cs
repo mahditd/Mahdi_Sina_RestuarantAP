@@ -23,7 +23,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
     {
         private double cost;
         Order currentOrder;
-        int onlinePay = -1;
+        int onlinePay = 0;
         public double Cost
         {
             get { return cost; }
@@ -53,14 +53,26 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void PayBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (sendingEmail())
+            if (onlinePay == 1)
             {
+                if (sendingEmail())
+                {
+                    List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+                    orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
+                    DataWork.CurrentCustomer.ORDERS = orders;
+                    DataWork.dataBase.SaveChanges();
+                }
+            }
+
+            if (onlinePay == 0)
+            {
+                MessageBox.Show("cash accepted");
                 List<Order> orders = DataWork.CurrentCustomer.ORDERS;
                 orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
                 DataWork.CurrentCustomer.ORDERS = orders;
                 DataWork.dataBase.SaveChanges();
             }
-
+        
         }
 
         private void online_Click(object sender, RoutedEventArgs e)

@@ -63,8 +63,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
             else
             {
-                UserName.TikVis = Visibility.Hidden;
-                UserName.CrossVis = Visibility.Hidden;
+                Name.TikVis = Visibility.Hidden;
+                Name.CrossVis = Visibility.Hidden;
             }
             if (postalCode != "")
             {
@@ -74,8 +74,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
             else
             {
-                UserName.TikVis = Visibility.Hidden;
-                UserName.CrossVis = Visibility.Hidden;
+                PostalCode.TikVis = Visibility.Hidden;
+                PostalCode.CrossVis = Visibility.Hidden;
             }
             if (password != "")
             {
@@ -85,8 +85,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
             else
             {
-                UserName.TikVis = Visibility.Hidden;
-                UserName.CrossVis = Visibility.Hidden;
+                Password.TikVis = Visibility.Hidden;
+                Password.CrossVis = Visibility.Hidden;
             }
             if (phoneNumber != "")
             {
@@ -96,8 +96,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
             else
             {
-                UserName.TikVis = Visibility.Hidden;
-                UserName.CrossVis = Visibility.Hidden;
+                PhoneNumber.TikVis = Visibility.Hidden;
+                PhoneNumber.CrossVis = Visibility.Hidden;
             }
             if (email != "")
             {
@@ -118,8 +118,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
             else
             {
-                UserName.TikVis = Visibility.Hidden;
-                UserName.CrossVis = Visibility.Hidden;
+                Email.TikVis = Visibility.Hidden;
+                Email.CrossVis = Visibility.Hidden;
             }
         }
 

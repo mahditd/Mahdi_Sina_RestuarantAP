@@ -43,14 +43,24 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 var ClickedButton = e.OriginalSource as Button;
                 string RestaurantUserName = ClickedButton.Content.ToString();
                 Order order = new Order();
-                order.NAME = "first order";
 
-                order.RESTAURANT = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == RestaurantUserName);//never will be null
-                List<Order> orders = order.RESTAURANT.ORDERLIST;
+                Restaurant RESTAURANT = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == RestaurantUserName);//never will be null
+                List<Order> orders = RESTAURANT.ORDERLIST;
+                int x = orders.Count();
+                order.NAME = $"order {x}";
+                order.relatedRestaurant = RESTAURANT.USERNAME;
+                order.relatedCustomer = DataWork.CurrentCustomer.USERNAME;
+                //order.RESTAURANT = RESTAURANT;
                 orders.Add(order);
-                order.RESTAURANT.ORDERLIST = orders;
+                RESTAURANT.ORDERLIST = orders;
                 DataWork.dataBase.SaveChanges();
-                DataWork.CurrentCustomer.ORDERS = new List<Order> { order };//order must be filled
+                List<Order> cusOrders = DataWork.CurrentCustomer.ORDERS;
+                int y = cusOrders.Count();
+                order.NAME = $"order {y}";
+                cusOrders.Add(order);
+                DataWork.CurrentCustomer.ORDERS = cusOrders;             
+                DataWork.dataBase.SaveChanges();
+                //DataWork.CurrentCustomer.ORDERS = new List<Order> { order };//order must be filled
                 page.NavigationToFoodList(RestaurantUserName);
 
             }
