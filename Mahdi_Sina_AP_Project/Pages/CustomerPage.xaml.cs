@@ -52,6 +52,19 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             contentControl.Content = new userControls.OrderFood_FoodList_(UserName);
         }
+
+        private void Cart_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataWork.CurrentCustomer.ORDERS.Where(x => x.payed == 0).ToList().Count != 0)
+            {
+                contentControl.Content = new userControls.CustomerCart();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no order to pay");
+            }
+        }
     }
 
 

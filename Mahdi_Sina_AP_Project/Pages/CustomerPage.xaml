@@ -45,7 +45,8 @@
                 <userControl:NavButton3 x:Name="UserProfile" BorderBrush="Transparent" BorderThickness="3" Text="Profile" FontSize="20" FontFamily="{StaticResource Vintage}" NavUri="/Pages/UserProfile.xaml" ButtonBase.Click="UserProfile_Click"/>
                 <userControl:NavButton3 x:Name="restaurants" BorderBrush="Transparent" BorderThickness="3" Text="Restaurants" Click="restaurants_Click" FontSize="20" FontFamily="{StaticResource Vintage}"/>
                 <userControl:NavButton3 BorderBrush="Transparent" BorderThickness="3" Text="Orders History" FontSize="20" FontFamily="{StaticResource Vintage}"/>
-                <userControl:NavButton3 BorderBrush="Transparent" BorderThickness="3" Text="hello" FontSize="20" FontFamily="{StaticResource Vintage}"/>
+                <userControl:NavButton3 x:Name="Cart" BorderBrush="Transparent" BorderThickness="3" Text="Cart" FontSize="20" FontFamily="{StaticResource Vintage}" NavUri="/Pages/CustomerCart.xaml" ButtonBase.Click="Cart_Click"/>
+
             </StackPanel>
         </Grid>
         <ContentControl x:Name="contentControl" Grid.Column="1"/>
