@@ -29,6 +29,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             List<string> restaurants = DataWork.dataBase.Restaurants.Select(x => x.USERNAME).ToList();
             myListBox.ItemsSource = restaurants;
             page = _page;
+            comboBoxFilter.ItemsSource = new List<string> { "City Name", "Restaurant Name", "Serving Type", "Rating"};
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -67,6 +68,60 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
 
             
+
+        }
+        string filter;
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as Button;
+            txtBoxContent.Visibility = Visibility.Visible;
+            filter = ClickedButton.Content.ToString();
+            new List<string> { "City Name", "Restaurant Name", "Serving Type", "Rating" };
+            if (filter == "City Name")
+            {
+                txtBoxContent.Visibility = Visibility.Visible;
+                List<string> restaurants = DataWork.dataBase.Restaurants.Where(x => x.Address.Contains(txtBoxContent.Text)).Select(x => x.USERNAME).ToList();
+                myListBox.ItemsSource = restaurants;
+            }
+            else if (filter == "Restaurant Name")
+            {
+                txtBoxContent.Visibility = Visibility.Visible;
+                List<string> restaurants = DataWork.dataBase.Restaurants.Where(x => x.Name.Contains(txtBoxContent.Text)).Select(x => x.USERNAME).ToList();
+                myListBox.ItemsSource = restaurants;
+            }
+            else if (filter == "Serving Type")
+            {
+                //not implemented
+            }
+            else if (filter == "Rating")
+            {
+                List<string> restaurants = DataWork.dataBase.Restaurants.OrderBy(x =>x.rate).Select(x => x.USERNAME).ToList();
+                myListBox.ItemsSource = restaurants;
+                txtBoxContent.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtBoxContent.Visibility = Visibility.Hidden;
+        }
+
+        private void txtBoxContent_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (filter == "City Name")
+            {
+                List<string> restaurants = DataWork.dataBase.Restaurants.Where(x => x.Address.Contains(txtBoxContent.Text)).Select(x => x.USERNAME).ToList();
+                myListBox.ItemsSource = restaurants;
+            }
+            else if (filter == "Restaurant Name")
+            {
+                List<string> restaurants = DataWork.dataBase.Restaurants.Where(x => x.Name.Contains(txtBoxContent.Text)).Select(x => x.USERNAME).ToList();
+                myListBox.ItemsSource = restaurants;
+            }
+            else if (filter == "Serving Type")
+            {
+                //not implemented
+            }
 
         }
     }
