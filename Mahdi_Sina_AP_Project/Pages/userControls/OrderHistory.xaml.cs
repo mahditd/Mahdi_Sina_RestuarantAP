@@ -34,12 +34,13 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             commentSpace.Visibility = Visibility.Visible;
             var ClickedOrder = e.OriginalSource as Button;
             orderName = ClickedOrder.Content.ToString();//it will never be null
+            commentSpace.Visibility = Visibility.Visible;
 
         }
         
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            //commentSpace.Visibility = Visibility.Hidden;
+            commentSpace.Visibility = Visibility.Hidden;
         }
 
         private void submitBtn_Click(object sender, RoutedEventArgs e)
