@@ -16,6 +16,8 @@
     <None Remove="food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg" />
     <None Remove="food_photos\yellowbackground.jpg" />
     <None Remove="food_photos\yellowbackground2.jpg" />
+    <None Remove="Icons\icons8-cross-48.png" />
+    <None Remove="Icons\icons8-tick-box-48.png" />
     <None Remove="Icons\profile-user_64572.png" />
   </ItemGroup>
 
@@ -27,6 +29,10 @@
 	<ItemGroup>
 		<Resource Include="food_photos\*.png" />
 		<Resource Include="food_photos\*.jpg" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Icons\*.png" />
+		<Resource Include="Icons\*.jpg" />
 	</ItemGroup>
 
   <ItemGroup>
@@ -59,6 +65,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="food_photos\yellowbackground2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-cross-48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-tick-box-48.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\profile-user_64572.png" />
