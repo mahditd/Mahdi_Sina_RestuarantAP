@@ -103,7 +103,10 @@ namespace Sina_Mahdi_RestaurantAP
         //ommited name
         [JsonInclude]
         public int payed = 0;
-
+        [JsonInclude]
+        private string name;
+        [JsonInclude]
+        public string NAME { get => name; set => name = value; }
         [JsonInclude]
 
         private double price;

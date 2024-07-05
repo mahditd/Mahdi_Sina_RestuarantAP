@@ -64,6 +64,8 @@
     <Resource Include="Icons\profile-user_64572.png" />
   </ItemGroup>
 
+
+
   <ItemGroup>
     <Resource Update="food_photos\street-food-with-black-copy-space-background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

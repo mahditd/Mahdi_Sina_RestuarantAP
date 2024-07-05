@@ -93,7 +93,7 @@ namespace Mahdi_Sina_AP_Project
         }
         public string complaintJson { get; set; }
         [NotMapped]
-        public List<Complaint> COMPLAINTS { get => listConverterToComplaint(complaintJson); set => stringConverterToComplaint(value); }
+        public List<Complaint> COMPLAINTS { get => listConverterToComplaint(complaintJson); set => complaintJson = stringConverterToComplaint(value); }
 
         public int subscribtion { get; set; }//must be casted every time
 
@@ -123,10 +123,13 @@ namespace Mahdi_Sina_AP_Project
             this.email = email;
             subscribtion = (int)(Subscribtion.bronze);
             EmailConfirmed = false;
+            ORDERS = new List<Order>();
+            COMMENTS = new List<Comment>();
+            COMPLAINTS = new List<Complaint>();
             //customersJson = "";
-            orderlistjson = "";
-            commentJson = "";
-            complaintJson = "";
+            //orderlistjson = "";
+            //commentJson = "";
+            //complaintJson = "";
 
         }
         public static int AddNewCustomer(string _username, string _password, string _email, string _name, string _phoneNumber, string _postalCode, string _confirmPassword, Page parent)
@@ -160,7 +163,8 @@ namespace Mahdi_Sina_AP_Project
                 }
                 if (EmailConfirmed)
                 {
-                    DataWork.dataBase.Customers.Add(new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode));
+                    Customer customer = new Customer(_username, _password, _email, _name, _phoneNumber, _postalCode);
+                    DataWork.dataBase.Customers.Add(customer);
                     DataWork.dataBase.SaveChanges();
                     MessageBox.Show("successfully added the new user");
                     return 1;
