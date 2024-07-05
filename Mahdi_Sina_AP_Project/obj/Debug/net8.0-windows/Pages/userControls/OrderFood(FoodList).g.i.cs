@@ -63,13 +63,14 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.6.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;component/pages/usercontrols/orderfood(foodlist).xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;V1.0.0.0;component/pages/usercontrols/orderfood(foodlist)." +
+                    "xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\userControls\OrderFood(FoodList).xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -79,7 +80,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.6.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
@@ -98,7 +99,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.6.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]

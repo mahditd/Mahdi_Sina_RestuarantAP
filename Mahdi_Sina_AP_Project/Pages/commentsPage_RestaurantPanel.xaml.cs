@@ -33,11 +33,11 @@ namespace Mahdi_Sina_AP_Project.Pages
             myListBox3.Visibility = Visibility.Hidden;
             var CommentTexts = DataWork.CurrentRestaurant.ORDERLIST.Select(x => x.NAME);
             myListBox1.ItemsSource = CommentTexts;
-            List<Order> orders = DataWork.CurrentRestaurant.ORDERLIST;
-            List<Comment> comments = new List<Comment> { new Comment("very good", new Food(), DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == "sina2")), new Comment("very bad", new Food(), DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == "sina2")) };
-            orders[0].Comments = comments;
-            DataWork.CurrentRestaurant.ORDERLIST = orders;
-            DataWork.dataBase.SaveChanges();
+            //List<Order> orders = DataWork.CurrentRestaurant.ORDERLIST;
+            //List<Comment> comments = new List<Comment> { new Comment("very good"), new Comment("very bad"),  };
+            //orders[0].Comments = comments;
+            //DataWork.CurrentRestaurant.ORDERLIST = orders;
+            //DataWork.dataBase.SaveChanges();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,8 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             for(int i = 0; i < DataWork.CurrentRestaurant.ORDERLIST.Count(); i++)
             {
-                if (DataWork.CurrentRestaurant.ORDERLIST[i].NAME.Contains(myListBox1.SelectedItem.ToString()))
+                string name = DataWork.CurrentRestaurant.ORDERLIST[i].NAME;
+                if (name.Contains(myListBox1.SelectedItem.ToString()))
                 {
                     ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
                     myListBox2.ItemsSource = DataWork.CurrentRestaurant.ORDERLIST[i].Comments.Select(x => x.text);

@@ -398,7 +398,5 @@ D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\ob
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.g.cs
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ChangeProfile.baml
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ChangeProfile.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.g.cs
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ChangeProfile.baml
-C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderHistory.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderHistory.baml

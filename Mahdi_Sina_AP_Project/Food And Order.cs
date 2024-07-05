@@ -15,19 +15,13 @@ namespace Sina_Mahdi_RestaurantAP
 {
     public class Food
     {
+        
+
         [JsonInclude]
 
         private string name;
 
         [JsonInclude]
-
-        public string NAME
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        [JsonInclude]
-
         private double price;
         [JsonInclude]
 
@@ -35,6 +29,24 @@ namespace Sina_Mahdi_RestaurantAP
         {
             get { return price; }
             set { price = value; }
+        }
+
+        [JsonInclude]
+        
+        public string NAME
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        [JsonInclude]
+
+        private Restaurant Restaurant;
+        [JsonInclude]
+
+        public Restaurant restaurant
+        {
+            get { return Restaurant; }
+            set { Restaurant = value; }
         }
         [JsonInclude]
 
@@ -56,18 +68,8 @@ namespace Sina_Mahdi_RestaurantAP
             get { return imagePath; }
             set { imagePath = value; }
         }
-        [JsonInclude]
 
-        private Restaurant restaurant;
         [JsonInclude]
-
-        public Restaurant RESTAURANT
-        {
-            get { return restaurant; }
-            set {  restaurant = value; }
-        }
-        [JsonInclude]
-
         private string ingredients;
         [JsonInclude]
 
@@ -86,6 +88,7 @@ namespace Sina_Mahdi_RestaurantAP
             get { return foodCount; }
             set { foodCount = value; }
         }
+
 
         public Food() { }
         public Food(string name, double price, string imagePath, Restaurant restaurant, string ingredients)
@@ -129,7 +132,7 @@ namespace Sina_Mahdi_RestaurantAP
             set { if (value <= 5 && value >= 0) rate = value; }
         }
         [JsonInclude]
-        private DateTime orderDateTime = new DateTime();
+        public DateTime orderDateTime = new DateTime();
         [JsonInclude]
 
         private Restaurant restaurant;
@@ -155,12 +158,18 @@ namespace Sina_Mahdi_RestaurantAP
             }
         }
         [JsonInclude]
+        public string relatedRestaurant;
+        [JsonInclude]
+        public string relatedCustomer;
+        [JsonInclude]
         public List<Comment> Comments = new List<Comment>();
         [JsonInclude]
 
         public List<Food> Foods = new List<Food>();
 
-        public Order() { }
+        public Order() {
+            orderDateTime = DateTime.Now;
+        }
         public Order(string name, double price, Restaurant restaurant, PaymentMethod method)
             
         {
