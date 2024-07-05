@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sina_Mahdi_RestaurantAP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,121 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
         public ChangeProfile()
         {
             InitializeComponent();
+        }
+
+        private void confirmInforamtion_Click(object sender, RoutedEventArgs e)
+        {
+            string userName = UserName.txtBox.Text;
+            string name = Name.txtBox.Text;
+            string password = Password.txtBox.Text;
+            string email = Email.txtBox.Text;
+            string postalCode = PostalCode.txtBox.Text;
+            string phoneNumber = PhoneNumber.txtBox.Text;
+            if (userName != "")
+            {
+                if (DataWork.dataBase.Customers.FirstOrDefault(x => x.USERNAME == userName) == null)
+                {
+                    DataWork.CurrentCustomer.USERNAME = userName;
+                    DataWork.dataBase.SaveChanges();
+                    UserName.TikVis = Visibility.Visible;
+                    UserName.CrossVis = Visibility.Hidden;
+                }
+                else
+                {
+                    MessageBox.Show("Repetitious username", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    UserName.CrossVis = Visibility.Visible;
+                    UserName.TikVis = Visibility.Hidden;
+                }
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+            if (name != "")
+            {
+                DataWork.CurrentCustomer.NAME = name;
+                DataWork.dataBase.SaveChanges();
+                Name.TikVis = Visibility.Visible;
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+            if (postalCode != "")
+            {
+                DataWork.CurrentCustomer.POSTALCODE = postalCode;
+                DataWork.dataBase.SaveChanges();
+                PostalCode.TikVis = Visibility.Visible;
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+            if (password != "")
+            {
+                DataWork.CurrentCustomer.PASSWORD = password;
+                DataWork.dataBase.SaveChanges();
+                Password.TikVis = Visibility.Visible;
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+            if (phoneNumber != "")
+            {
+                DataWork.CurrentCustomer.PHONENUMBER = phoneNumber;
+                DataWork.dataBase.SaveChanges();
+                PhoneNumber.TikVis = Visibility.Visible;
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+            if (email != "")
+            {
+                if (sendingEmail())
+                {
+                    DataWork.CurrentCustomer.EMAIL = email;
+                    DataWork.dataBase.SaveChanges();
+                    Email.TikVis = Visibility.Visible;
+                    Email.CrossVis = Visibility.Hidden;
+                }
+                else
+                {
+                    MessageBox.Show("Wrong verification", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Email.CrossVis = Visibility.Visible;
+                    Email.TikVis = Visibility.Hidden;
+
+                }
+            }
+            else
+            {
+                UserName.TikVis = Visibility.Hidden;
+                UserName.CrossVis = Visibility.Hidden;
+            }
+        }
+
+        private bool sendingEmail()
+        {
+            string verificationCode = Customer.SendVerificationEmail(DataWork.CurrentCustomer.EMAIL).ToString();
+            Customer.EmailConfirmed = false;
+            Window verificationWindow = new Confirming_email(verificationCode, this);
+            verificationWindow.ShowDialog();
+            if (Customer.EmailConfirmed == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

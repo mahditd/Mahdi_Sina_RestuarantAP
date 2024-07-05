@@ -394,3 +394,7 @@ C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderFood(FoodList).baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderFood.baml
 C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\RestaurantInformations.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ChangeProfile.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ChangeProfile.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.baml

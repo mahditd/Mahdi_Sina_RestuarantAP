@@ -76,6 +76,9 @@
     <Compile Update="txtBoxWithTxtBlock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="txtBoxWithTxtBlock2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Upload Image.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -157,6 +160,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="txtBoxWithTxtBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="txtBoxWithTxtBlock2.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Upload Image.xaml">
