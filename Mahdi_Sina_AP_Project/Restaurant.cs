@@ -53,9 +53,9 @@ namespace Sina_Mahdi_RestaurantAP
         private string Name { get; set; }//dataBase
 
 
-        public int rate { get; set; } //from 0 to 5 dataBase
+        public float rate { get; set; } //from 0 to 5 dataBase
         [NotMapped]
-        public int Rate
+        public float Rate
         {
             get { return rate; }
             set { if(value<=5 && value >= 0)  rate = value; }

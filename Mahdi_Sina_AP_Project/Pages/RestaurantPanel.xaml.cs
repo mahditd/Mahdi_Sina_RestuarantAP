@@ -27,8 +27,18 @@ namespace Mahdi_Sina_AP_Project.Pages
         public RestaurantPanel()
         {
             InitializeComponent();
-            DataWork.CurrentRestaurant.rate = 4;
-            DataWork.CurrentRestaurant.CanReserve = true;
+            float RateAverage = 0;
+            int indexHolder = 0;
+            for(int i = 0;i < DataWork.CurrentRestaurant.foodList.Count;i++)
+            {
+                RateAverage += DataWork.CurrentRestaurant.foodList[i].RATE;
+                indexHolder = i;
+            }
+            RateAverage /= (indexHolder + 1);
+
+            DataWork.CurrentRestaurant.rate = RateAverage;
+           
+           
 
             if (DataWork.CurrentRestaurant.CanReserve == true)
             {

@@ -114,8 +114,8 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("rate")
-                        .HasColumnType("INTEGER");
+                    b.Property<float>("rate")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("reserveList")
                         .IsRequired()
