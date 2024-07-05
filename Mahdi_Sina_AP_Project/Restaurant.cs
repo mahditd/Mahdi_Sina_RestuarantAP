@@ -47,7 +47,7 @@ namespace Sina_Mahdi_RestaurantAP
         public bool CanReserve
         {
             get { return canReserve; }
-            set { if (rate >= 4) { canReserve = value; }}
+            set { if (rate >= 4) { canReserve = value; } else { canReserve = false; } }
         }
 
         private string Name { get; set; }//dataBase
@@ -105,6 +105,7 @@ namespace Sina_Mahdi_RestaurantAP
            
             Name = name;
             Address= address;
+            CanReserve = false;
             canReserve = false;
             ORDERLIST = new List<Order>();
             ReserveList = new List<Reserve>();

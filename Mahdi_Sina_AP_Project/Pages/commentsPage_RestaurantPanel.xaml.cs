@@ -68,6 +68,8 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (ChosenOrder.Comments[i].text.Contains(myListBox2.SelectedItem.ToString()))
                 {
                     ChosenComment = ChosenOrder.Comments[i];
+
+
                     myListBox3.ItemsSource = ChosenOrder.Comments[i].replyedTexts.Select(x => x);
                     myListBox3.Visibility=Visibility.Visible;
 
@@ -93,6 +95,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (TextBox.Text.Length > 0)
                 {
                     ChosenComment.replyedTexts.Add(TextBox.Text.ToString());
+                    DataWork.dataBase.SaveChanges();
                 }
             }
             else

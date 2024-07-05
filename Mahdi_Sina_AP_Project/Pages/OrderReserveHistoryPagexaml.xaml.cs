@@ -27,6 +27,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             InitializeComponent();
             var CommentTexts = DataWork.CurrentRestaurant.ORDERLIST.Select(x => x.NAME);
             myListBox.ItemsSource = CommentTexts;
+            myListBox2.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +44,9 @@ namespace Mahdi_Sina_AP_Project.Pages
                     ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
                     TextBox1.Text = DataWork.CurrentRestaurant.ORDERLIST[i].METHOD.ToString();
                     TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].payed.ToString();
+                    myListBox2.Visibility = Visibility.Visible;
+                    var foodNames = DataWork.CurrentRestaurant.ORDERLIST[i].Foods.Select(x => x.NAME);
+                    myListBox2.ItemsSource = foodNames;
                 }
             }
         }
@@ -50,6 +54,11 @@ namespace Mahdi_Sina_AP_Project.Pages
         private void TextBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void myListBox_SelectionChanged2(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

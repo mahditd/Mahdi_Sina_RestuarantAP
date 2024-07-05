@@ -117,6 +117,17 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1">
+            <ListBox Name="myListBox2" Background="Transparent" SelectionChanged="myListBox_SelectionChanged2" FontSize="30" BorderBrush="Black">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding}" Margin="5" VerticalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
         <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" Width="53" Background="Transparent" Click="Button_Click" Height="44" VerticalAlignment="Center"/>
 
         <Grid.ColumnDefinitions>

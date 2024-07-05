@@ -42,10 +42,12 @@ namespace Mahdi_Sina_AP_Project.Pages
            
             if(RateAverage < 4) 
             {
+                DataWork.CurrentRestaurant.CanReserve = false;
                 CircleButton.Content = "Reserve OFF";
+                
             }
-           
 
+            DataWork.dataBase.SaveChanges();
             if (DataWork.CurrentRestaurant.CanReserve == true)
             {
                 CircleButton.Content = "Reserve ON";
