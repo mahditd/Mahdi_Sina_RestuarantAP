@@ -28,13 +28,19 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             InitializeComponent();
             float RateAverage = 0;
-            int indexHolder = 0;
-            for(int i = 0;i < DataWork.CurrentRestaurant.foodList.Count;i++)
+            int indexHolder1 = 0;
+            int indexHolder2 = 0;
+            for (int i = 0;i < DataWork.CurrentRestaurant.foodList.Count;i++)
             {
                 RateAverage += DataWork.CurrentRestaurant.foodList[i].RATE;
-                indexHolder = i;
+                indexHolder1 = i;
             }
-            RateAverage /= (indexHolder + 1);
+            for(int i = 0;i < DataWork.CurrentRestaurant.ORDERLIST.Count;i++)
+            {
+                RateAverage += DataWork.CurrentRestaurant.ORDERLIST[i].RATE;
+
+            }
+            RateAverage /= (indexHolder1 + indexHolder2 + 1);
 
 
 
