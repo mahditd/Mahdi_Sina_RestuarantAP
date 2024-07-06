@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using Mahdi_Sina_AP_Project.Pages.userControls;
 using System;
+=======
+﻿using System;
+>>>>>>> bb08d69ff1589f0518d063cde96c712c4aafe738
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +28,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         public complaintHistory()
         {
             InitializeComponent();
+<<<<<<< HEAD
            List<Complaint> complaints = DataWork.CurrentCustomer.COMPLAINTS;
             foreach (var item in complaints)
             {
@@ -33,6 +38,8 @@ namespace Mahdi_Sina_AP_Project.Pages
         public void setContentToRespond(Complaint complaint)
         {
             content.Content = new ViewResponse(complaint);
+=======
+>>>>>>> bb08d69ff1589f0518d063cde96c712c4aafe738
         }
 
     }

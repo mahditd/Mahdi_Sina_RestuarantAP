@@ -49,8 +49,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void complaintHistory_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             CustomerPage.naviHistoryComplaint();
 
+=======
+>>>>>>> bb08d69ff1589f0518d063cde96c712c4aafe738
 
         }
     }

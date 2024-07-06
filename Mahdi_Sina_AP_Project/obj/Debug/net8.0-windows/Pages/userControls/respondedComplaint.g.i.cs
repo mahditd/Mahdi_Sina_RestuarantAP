@@ -77,7 +77,8 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;component/pages/usercontrols/respondedcomplaint.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;V1.0.0.0;component/pages/usercontrols/respondedcomplaint.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\userControls\respondedComplaint.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

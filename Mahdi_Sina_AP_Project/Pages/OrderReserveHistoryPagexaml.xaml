@@ -85,27 +85,63 @@
         <TextBox x:Name="TextBox1" IsReadOnly="True"  Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
      HorizontalAlignment="Center"
      VerticalAlignment="Top"
-     Width="50"
+     Width="72"
      Height="30"
      Grid.Column="2"
      Grid.Row="1"
      FontSize="15"
      HorizontalContentAlignment="Center"
      VerticalContentAlignment="Center"
-     Background="OrangeRed" TextChanged="TextBox1_TextChanged" Margin="0,105,0,0"
+     Background="OrangeRed" TextChanged="TextBox1_TextChanged" Margin="0,129,0,0"
     />
         <TextBox x:Name="TextBox2" IsReadOnly="True"  Text="{Binding EditableText1, UpdateSourceTrigger=PropertyChanged}"
  HorizontalAlignment="Center"
  VerticalAlignment="Top"
- Width="50"
+ Width="72"
  Height="30"
  Grid.Column="2"
  Grid.Row="1"
  FontSize="15"
  HorizontalContentAlignment="Center"
  VerticalContentAlignment="Center"
- Background="OrangeRed" TextChanged="TextBox1_TextChanged" Margin="0,205,0,0"
+ Background="OrangeRed" TextChanged="TextBox1_TextChanged" Margin="0,239,0,0"
 />
+        <TextBox x:Name="SearchBox"  Text="{Binding EditableTextSearch, UpdateSourceTrigger=PropertyChanged}"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Top"
+          Width="113"
+          Height="30"
+          Grid.Column="2"
+          Grid.Row="1"
+          FontSize="15"
+          HorizontalContentAlignment="Center"
+          VerticalContentAlignment="Center"
+          Background="White"
+          TextChanged="TextBox1_TextChanged" Margin="0,10,0,0"
+          />
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="FilterComboBox" Grid.Column="3" Grid.Row="0" Width="70" Margin="10 10 10 30" SelectionChanged="ComboBox_SelectionChanged" Visibility="Visible">
+                <ComboBoxItem Content="Username"/>
+                <ComboBoxItem Content="Phone Number"/>
+                <ComboBoxItem Content="Minimum Price"/>
+                <ComboBoxItem Content="Maximum Price"/>
+            </ComboBox>
+        </Grid>
+
+        <Button Style="{StaticResource CustomButtonStyle}" Name="SearchButton" BorderBrush="Black" FontSize="17" Background="White" Grid.Column="2" Grid.Row="1"  Click="SearchButton_Click" VerticalAlignment="Top" Margin="50 50 50 10">
+            Search
+        </Button>
+        <Button Style="{StaticResource CustomButtonStyle}" Name="ReportButton" FontSize="17" Background="Yellow" Grid.Column="2" Grid.Row="1"  Click="ReportButton_Click" VerticalAlignment="Top" Margin="47,324,53,0">
+            Report
+        </Button>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="0">
             <ListBox Name="myListBox" Background="Transparent" SelectionChanged="myListBox_SelectionChanged" FontSize="30" BorderBrush="Black">
                 <ListBox.ItemTemplate>
@@ -131,9 +167,9 @@
         <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" Width="53" Background="Transparent" Click="Button_Click" Height="44" VerticalAlignment="Center"/>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2.3*"/>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

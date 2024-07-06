@@ -24,8 +24,13 @@ namespace Mahdi_Sina_AP_Project.Pages
         public Log_In_Page()
         {
             InitializeComponent();
+<<<<<<< HEAD
             //DataWork.dataBase.Admins.Add(new Admin("sina", "sina006"));
             //DataWork.dataBase.SaveChanges();
+=======
+            DataWork.dataBase.Admins.Add(new Admin("sina", "sina006"));
+            DataWork.dataBase.SaveChanges();
+>>>>>>> bb08d69ff1589f0518d063cde96c712c4aafe738
         }
 
 
