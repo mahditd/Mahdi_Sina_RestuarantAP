@@ -37,6 +37,9 @@
     <Compile Update="Pages\Restaurant_Adding_Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Restaurant_Food_Adding.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\userControls\AddFood.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,6 +142,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Restaurant_Adding_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restaurant_Food_Adding.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\userControls\AddFood.xaml">
