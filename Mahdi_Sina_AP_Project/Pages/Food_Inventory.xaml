@@ -211,7 +211,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Name="MyImage" Grid.Row="0" Source="{Binding ImagePath}"/>
+            <Image x:Name="Image" Margin="10" Height="100" Source="{Binding ImagePath, UpdateSourceTrigger =PropertyChanged}" />
             <Button Style="{StaticResource CustomButtonStyle}" Name="ChangeImageButton" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="1"  Click="ChangeImageButton_Click" VerticalAlignment="Top">
                 Change
             </Button>

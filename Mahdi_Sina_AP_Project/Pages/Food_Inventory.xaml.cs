@@ -1,10 +1,12 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using Sina_Mahdi_RestaurantAP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,12 +15,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-
+using System.Windows.Shapes;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Mahdi_Sina_AP_Project.Pages
 {
@@ -29,13 +32,44 @@ namespace Mahdi_Sina_AP_Project.Pages
     {
         private ImageSource imagePath;
 
-        public ImageSource ImagePath
+        public ImageSource IMAGEPATH
         {
             get { return imagePath; }
-            set { imagePath = value;
-                
-                MyImage.Source = imagePath;
+            set
+            {
+                imagePath = value;
+
+                Image.Source = imagePath;
             }
+        }
+        private string shortPath;
+        private string _imagePath;
+        public string ImagePath
+        {
+            get => _imagePath;
+            set
+            {
+                _imagePath = value;
+                OnPropertyChanged();
+                Image.Source = converter(_imagePath);
+            }
+        }
+
+        public ImageSource converter(string path)
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(path, UriKind.Absolute); //in dahane mano servis kard
+            bitmap.EndInit();
+            return bitmap;
+        }
+        private void SetImage(string imagePath)
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
+            bitmap.EndInit();
+            IMAGEPATH = bitmap;
         }
 
         private string _editableText;
@@ -51,7 +85,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             myListBox.ItemsSource = foodNames;
             DataContext = this;
             ChangeImageButton.Visibility = Visibility.Hidden;
-            MyImage.Visibility = Visibility.Hidden;
+            Image.Visibility = Visibility.Hidden;
             MyDeleteButton.Visibility = Visibility.Hidden;
            
             TextBox1.Visibility = Visibility.Hidden;
@@ -80,14 +114,6 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        private void SetImage(string imagePath)
-        {
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
-            bitmap.EndInit();
-            ImagePath = bitmap;
-        }
         public string SpaceMaker(string foodName)
         {
             string spaces = "";
@@ -113,11 +139,10 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (myListBox.SelectedItem.ToString().Contains(DataWork.CurrentRestaurant.foodList[i].NAME))
                 {
                     ChosenFood = DataWork.CurrentRestaurant.foodList[i];
-                    SetImage(ChosenFood.IMAGEPATH);
                     TextBox1.Text = DataWork.CurrentRestaurant.foodList[i].Price.ToString();
                     TextBox2.Text = DataWork.CurrentRestaurant.foodList[i].RATE.ToString();
                     TextBox3.Text = DataWork.CurrentRestaurant.foodList[i].INGREDIENTS.ToString();
-
+                    SetImage(ChosenFood.IMAGEPATH);
                     var foodNames = DataWork.CurrentRestaurant.foodList.Select(x => x.NAME + SpaceMaker(x.NAME));
                     myListBox.ItemsSource = foodNames;
 
@@ -132,7 +157,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             if (ChosenFood != null)
             {
                 ChangeImageButton.Visibility = Visibility.Visible;
-                MyImage.Visibility = Visibility.Visible;
+                Image.Visibility = Visibility.Visible;
                 MyDeleteButton.Visibility = Visibility.Visible;
                 MySaveButton.Visibility = Visibility.Visible;
                 TextBox1.Visibility = Visibility.Visible;
@@ -144,7 +169,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             else
             {
                 ChangeImageButton.Visibility = Visibility.Hidden;
-                MyImage.Visibility = Visibility.Hidden;
+                Image.Visibility = Visibility.Hidden;
                 MyDeleteButton.Visibility = Visibility.Hidden;
                 MySaveButton.Visibility = Visibility.Hidden;
                 TextBox1.Visibility = Visibility.Hidden;
@@ -157,7 +182,48 @@ namespace Mahdi_Sina_AP_Project.Pages
         }
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            string imagePath;//it is short for the Food Inventory class
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Get the selected file path
+                string sourceFilePath = openFileDialog.FileName;
+
+                // Define the target folder and file name
+                string targetFolder = @"C:\Users\mahditd\source\repos\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\food_photos\"; // Local must change
+                string fileName = System.IO.Path.GetFileName(sourceFilePath);
+                string targetFilePath = System.IO.Path.Combine(targetFolder, fileName);
+
+                // Ensure the target folder exists
+                if (!Directory.Exists(targetFolder))
+                {
+                    Directory.CreateDirectory(targetFolder);
+                }
+
+                // Copy the selected file to the target folder
+                File.Copy(sourceFilePath, targetFilePath, true);
+                shortPath = "\\food_photos\\" + fileName;
+                ImagePath = sourceFilePath;
+                ChosenFood.IMAGEPATH = shortPath;
+                List<Food> Foods = DataWork.CurrentRestaurant.foodList;
+                for(int i = 0;i < Foods.Count;i++)
+                {
+                    if (Foods[i].NAME == ChosenFood.NAME)
+                    {
+                        Foods[i] = ChosenFood;
+                        DataWork.CurrentRestaurant.foodList = Foods;
+                        break;
+                    }
+                }
+                
+
+                // Optional: Inform the user
+                MessageBox.Show("Image copied to " + targetFilePath);
+            }
         }
 
 
