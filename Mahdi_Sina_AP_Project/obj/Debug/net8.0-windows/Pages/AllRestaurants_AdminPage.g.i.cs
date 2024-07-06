@@ -85,7 +85,7 @@ namespace Mahdi_Sina_AP_Project.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;V1.0.0.0;component/pages/allrestaurants_adminpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mahdi_Sina_AP_Project;component/pages/allrestaurants_adminpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AllRestaurants_AdminPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
