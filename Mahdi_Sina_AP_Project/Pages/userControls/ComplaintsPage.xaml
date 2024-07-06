@@ -26,5 +26,6 @@
             <userControl:txtBoxWithTxtBlock x:Name="restaurantName" Grid.Row="1" Grid.Column="0" Foreground="YellowGreen" Background="Transparent" FontSize="20" VerticalAlignment="Center" PlaceHolder="restaurantName"/>
             <Button x:Name="SubmitComplaint" Click="SubmitComplaint_Click" Style="{StaticResource CustomButtonStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="YellowGreen" Content="Submit complaint" FontSize="20" FontFamily="{StaticResource Vintage}" Foreground="DarkRed"/>
         </Grid>
+        <Button x:Name="complaintHistory" Style="{StaticResource CustomButtonStyle}" FontSize="30" Width="200" Height="100" Content="History"  FontFamily="{StaticResource Vintage}" Click="complaintHistory_Click" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </UserControl>

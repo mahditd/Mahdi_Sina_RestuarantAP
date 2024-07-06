@@ -41,6 +41,12 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             orders[orders.Count - 1].Foods = foods;
             DataWork.CurrentCustomer.ORDERS = orders;
             DataWork.dataBase.SaveChanges();
+            foods = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).ORDERLIST[DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).ORDERLIST.Count -1].Foods;
+            foods.Add(DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).foodList.FirstOrDefault(x => x.NAME == FoodName));
+            orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).ORDERLIST;
+            orders[orders.Count -1 ].Foods = foods;
+            DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).ORDERLIST = orders;
+            DataWork.dataBase.SaveChanges();
         }
     }
 }

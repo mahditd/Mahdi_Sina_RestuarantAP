@@ -19,9 +19,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
     public partial class ComplaintsPage : UserControl
     {
-        public ComplaintsPage()
+        CustomerPage CustomerPage;
+        public ComplaintsPage(CustomerPage customerPage)
         {
             InitializeComponent();
+            CustomerPage = customerPage;
         }
 
         private void SubmitComplaint_Click(object sender, RoutedEventArgs e)
@@ -45,5 +47,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             }
         }
 
+        private void complaintHistory_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerPage.naviHistoryComplaint();
+
+
+        }
     }
 }
