@@ -29,15 +29,21 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             InitializeComponent();
             DataContext = this;
-            List1 = DataWork.dataBase.Admins.ToList()[0].complaints.Select(x => x.text).ToList();
+            foreach (var item in DataWork.dataBase.Admins.ToList()[0].complaints)
+            {
+                ComplaintsStackPanel.Children.Add(new userControls.replyedComplaint(item, this));
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(string x, userControls.replyedComplaint replyedComplaint)
         {
-            selectedComplaint =  (e.OriginalSource as Button).Content.ToString();
-            contentControl.Content = new userControls.ReplyComplaintByAdmin(selectedComplaint);
+            selectedComplaint = x;
+            contentControl.Content = new userControls.ReplyComplaintByAdmin(selectedComplaint , replyedComplaint);
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

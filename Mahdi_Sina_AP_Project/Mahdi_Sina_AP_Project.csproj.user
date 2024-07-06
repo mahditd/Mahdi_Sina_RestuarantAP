@@ -58,6 +58,9 @@
     <Compile Update="Pages\userControls\ReplyComplaintByAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\userControls\replyedComplaint.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\userControls\RestaurantInformations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -148,6 +151,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\userControls\ReplyComplaintByAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\replyedComplaint.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\userControls\RestaurantInformations.xaml">

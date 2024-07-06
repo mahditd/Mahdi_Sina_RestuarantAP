@@ -98,9 +98,15 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click_1"/>
+
             <ScrollViewer Grid.Row="1" Grid.Column="0">
 
-                    <ListBox x:Name="myListBox" Background="#FF222222" BorderThickness="0" Height="900">
+                    <!--<ListBox x:Name="myListBox" Background="#FF222222" BorderThickness="0" Height="900">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -115,10 +121,13 @@
                             </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
-                    </ListBox>
-                
+                    </ListBox>-->
+                <StackPanel x:Name="ComplaintsStackPanel">
+                    
+                </StackPanel>
             </ScrollViewer>
-            <ContentControl Grid.Column="1" x:Name="contentControl"/>
+            <ContentControl Grid.Column="1" Grid.Row="1" x:Name="contentControl"/>
+            
 
         </Grid>
     </Grid>

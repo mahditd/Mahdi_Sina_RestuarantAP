@@ -34,6 +34,10 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 complaints.Add(complaint);
                 DataWork.dataBase.Admins.ToList()[0].complaints = complaints;
                 DataWork.dataBase.SaveChanges();
+                complaints = DataWork.CurrentCustomer.COMPLAINTS;
+                complaints.Add(complaint);
+                DataWork.CurrentCustomer.COMPLAINTS = complaints;
+                DataWork.dataBase.SaveChanges();
             }
             else
             {
