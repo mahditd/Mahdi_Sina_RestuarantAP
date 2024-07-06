@@ -1,31 +1,87 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net8.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<UseWPF>true</UseWPF>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\Vintage.otf" />
+    <None Remove="food_photos\cheesburger.jpg" />
+    <None Remove="food_photos\chickenburger.jpg" />
+    <None Remove="food_photos\pexels-robinstickel-70497.jpg" />
+    <None Remove="food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg" />
+    <None Remove="food_photos\yellowbackground.jpg" />
+    <None Remove="food_photos\yellowbackground2.jpg" />
+    <None Remove="Icons\icons8-cross-48.png" />
+    <None Remove="Icons\icons8-tick-box-48.png" />
+    <None Remove="Icons\profile-user_64572.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="food photos\" />
+	  <Folder Include="Icons\" />
+	  <Folder Include="Migrations\" />
+  </ItemGroup>
 	<ItemGroup>
-	  <None Remove="food_photos\Log_In.jpg" />
+		<Resource Include="food_photos\*.png" />
+		<Resource Include="food_photos\*.jpg" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Icons\*.png" />
+		<Resource Include="Icons\*.jpg" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.5.24306.3" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0-preview.5.24306.3">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0-preview.5.24306.3" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-preview.5.24306.3" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0-preview.5.24306.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0-preview.5.24306.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0-preview.5.24306.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
-	<ItemGroup>
-	  <Resource Include="food_photos\Log_In.jpg">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Resource>
-	</ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Vintage.otf" />
+    <Resource Include="food_photos\cheesburger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\chickenburger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\pexels-robinstickel-70497.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\tasty-tortilla-pieces-with-dips-fried-chicken.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\yellowbackground.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="food_photos\yellowbackground2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-cross-48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icons8-tick-box-48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\profile-user_64572.png" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Resource Update="food_photos\street-food-with-black-copy-space-background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 
 </Project>

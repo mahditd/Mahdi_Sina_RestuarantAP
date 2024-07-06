@@ -93,7 +93,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void confirmBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
             string Name = name.txtBox.Text;
             double Price;
             string RestaurantUsername = restaurantUserName.txtBox.Text;

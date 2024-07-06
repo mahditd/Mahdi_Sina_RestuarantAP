@@ -64,27 +64,27 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void myListBox_SelectionChanged2(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            if(FilterComboBox.SelectedIndex == 0)
+            if (FilterComboBox.SelectedIndex == 0)
             {
                 var OrderNames = DataWork.CurrentRestaurant.ORDERLIST.Where(x => x.relatedCustomer.Contains(SearchBox.Text)).Select(x => x.NAME);
                 var Orders = DataWork.CurrentRestaurant.ORDERLIST.Where(x => x.relatedCustomer.Contains(SearchBox.Text));
                 myListBox.ItemsSource = OrderNames;
                 OrderList = Orders.ToList();
-                
+
             }
-            else if(FilterComboBox.SelectedIndex == 1)
+            else if (FilterComboBox.SelectedIndex == 1)
             {
                 var OrderNames = DataWork.dataBase.Customers.Where(x => x.PHONENUMBER.Contains(SearchBox.Text)).Select(x => x.ORDERS).ToList();
 
                 List<Order> orderTotal = new List<Order>();
-                for(int i = 0;i < OrderNames.Count; i++)
+                for (int i = 0; i < OrderNames.Count; i++)
                 {
-                   orderTotal = orderTotal.Concat(OrderNames[i]).ToList();
+                    orderTotal = orderTotal.Concat(OrderNames[i]).ToList();
                 }
                 List<Order> names = new List<Order>();
                 if (orderTotal != null)
@@ -103,13 +103,13 @@ namespace Mahdi_Sina_AP_Project.Pages
                 myListBox.ItemsSource = names.Select(x => x.NAME);
                 OrderList = names.ToList();
             }
-            else if(FilterComboBox.SelectedIndex == 2)
+            else if (FilterComboBox.SelectedIndex == 2)
             {
                 var OrderNames = DataWork.CurrentRestaurant.ORDERLIST.OrderBy(x => x.Price).Select(x => x.NAME);
                 OrderList = DataWork.CurrentRestaurant.ORDERLIST.OrderBy(x => x.Price).ToList();
                 myListBox.ItemsSource = OrderNames;
             }
-            else if(FilterComboBox.SelectedIndex == 3)
+            else if (FilterComboBox.SelectedIndex == 3)
             {
                 var OrderNames = DataWork.CurrentRestaurant.ORDERLIST.OrderByDescending(x => x.Price).Select(x => x.NAME);
                 OrderList = DataWork.CurrentRestaurant.ORDERLIST.OrderByDescending(x => x.Price).ToList();
@@ -119,7 +119,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             {
                 MessageBox.Show("Select something on filter box first");
             }
-            
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -129,7 +129,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void ReportButton_Click(object sender, RoutedEventArgs e)
         {
-            double sale=0;
+            double sale = 0;
             int onlineCount = 0;
             int offlineCount = 0;
             double OnlinePercentage;
@@ -138,7 +138,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             CSVstring.Add("Name, Price, Rate, Method, CustomerUsername, OrderTime");
             for (int i = 0; i < OrderList.Count; i++)
             {
-                CSVstring.Add(OrderList[i].NAME + ", " + OrderList[i].Price + ", " + OrderList[i].RATE +", " + OrderList[i].METHOD+", " + OrderList[i].relatedCustomer+", " + OrderList[i].orderDateTime.ToString());
+                CSVstring.Add(OrderList[i].NAME + ", " + OrderList[i].Price + ", " + OrderList[i].RATE + ", " + OrderList[i].METHOD + ", " + OrderList[i].relatedCustomer + ", " + OrderList[i].orderDateTime.ToString());
                 sale += OrderList[i].Price;
                 orderCounts++;
                 if (OrderList[i].METHOD == PaymentMethod.OnDelivery)
@@ -159,7 +159,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                     {
                         writer.WriteLine(line);
                     }
-                    writer.WriteLine("All sale profit : "+sale+ " online payed orders percentage : "+OnlinePercentage+"% order counts : "+orderCounts);
+                    writer.WriteLine("All sale profit : " + sale + " online payed orders percentage : " + OnlinePercentage + "% order counts : " + orderCounts);
                     MessageBox.Show("CSV file created!");
                 }
             }

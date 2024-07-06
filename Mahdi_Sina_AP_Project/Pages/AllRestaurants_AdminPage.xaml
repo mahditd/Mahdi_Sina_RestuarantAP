@@ -83,7 +83,7 @@
     <Grid>
         
         <Grid.Background>
-            <ImageBrush ImageSource="\food_photos\dark-surface-with-blank-space-fast-food-menu.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="\food_photos\top-view-frame-with-fries-black-background.jpg" Opacity="1"/>
         </Grid.Background>
         <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click">
         </Button>

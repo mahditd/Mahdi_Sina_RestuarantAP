@@ -135,7 +135,7 @@
                 <ComboBoxItem Content="Maximum Price"/>
             </ComboBox>
         </Grid>
-       
+
         <Button Style="{StaticResource CustomButtonStyle}" Name="SearchButton" BorderBrush="Black" FontSize="17" Background="White" Grid.Column="2" Grid.Row="1"  Click="SearchButton_Click" VerticalAlignment="Top" Margin="50 50 50 10">
             Search
         </Button>
