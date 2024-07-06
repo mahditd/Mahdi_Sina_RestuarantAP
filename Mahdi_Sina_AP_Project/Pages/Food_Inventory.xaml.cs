@@ -234,7 +234,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void New_Food_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Restaurant_Food_Adding());
         }
 
         private void Delete_Food_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,8 @@
 Name, Price, Rate, Method, CustomerUsername, OrderTime
-order 0, 0, 0, Online, mahdi, 7/6/2024 4:38:32 PM
+order 0, 0, 5, Online, mahdi, 7/6/2024 4:38:32 PM
 order 1, 0, 0, Online, mahdi, 7/6/2024 4:38:51 PM
-All sale profit : 0 online payed orders percentage : 100% order counts : 2
+order 2, 0, 0, Online, mahdi, 7/6/2024 10:22:26 PM
+order 3, 0, 0, Online, mahdi, 7/6/2024 10:27:31 PM
+order 4, 0, 0, Online, mahdi, 7/6/2024 10:28:37 PM
+order 5, 0, 0, Online, mahdi, 7/6/2024 10:30:43 PM
+All sale profit : 0 online payed orders percentage : 100% order counts : 6
