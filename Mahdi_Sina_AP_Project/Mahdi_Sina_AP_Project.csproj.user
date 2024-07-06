@@ -64,7 +64,13 @@
     <Compile Update="Pages\userControls\replyedComplaint.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\userControls\respondedComplaint.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\userControls\RestaurantInformations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\ViewResponse.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\UserProfile.xaml.cs">
@@ -162,7 +168,13 @@
     <Page Update="Pages\userControls\replyedComplaint.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\userControls\respondedComplaint.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\userControls\RestaurantInformations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\ViewResponse.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UserProfile.xaml">

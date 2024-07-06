@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mahdi_Sina_AP_Project.Pages.userControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace Mahdi_Sina_AP_Project.Pages
         public complaintHistory()
         {
             InitializeComponent();
+           List<Complaint> complaints = DataWork.CurrentCustomer.COMPLAINTS;
+            foreach (var item in complaints)
+            {
+                stackPanel.Children.Add(new userControls.respondedComplaint(item,this));
+            }
+        }
+        public void setContentToRespond(Complaint complaint)
+        {
+            content.Content = new ViewResponse(complaint);
         }
 
     }
