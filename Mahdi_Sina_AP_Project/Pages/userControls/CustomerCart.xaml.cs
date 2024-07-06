@@ -66,9 +66,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
             if (onlinePay == 0)
             {
+
                 MessageBox.Show("cash accepted");
                 List<Order> orders = DataWork.CurrentCustomer.ORDERS;
                 orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
+                //orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).//change the enum
                 DataWork.CurrentCustomer.ORDERS = orders;
                 DataWork.dataBase.SaveChanges();
             }

@@ -1,6 +1,7 @@
 ﻿using Sina_Mahdi_RestaurantAP;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,24 +46,46 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
 
         private void submitBtn_Click(object sender, RoutedEventArgs e)
         {
-            Order selectedOrder = DataWork.CurrentCustomer.ORDERS.FirstOrDefault(order => order.NAME == orderName);
-            List<Order> orders = DataWork.CurrentCustomer.ORDERS;
-            Comment comment = new Comment(commentText.txtBox.Text, DataWork.CurrentCustomer.USERNAME);
-            selectedOrder.Comments.Add(comment);
-            for (int i = 0; i < orders.Count; i++)
+            if (rateTxtBox.Text == "" || commentText.txtBox.Text == "" )
             {
-                if (orders[i].NAME == selectedOrder.NAME)
-                {
-                    orders[i] = selectedOrder;
-                    break;
-                }
-
+                MessageBox.Show("please fill all the fields", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            DataWork.CurrentCustomer.ORDERS = orders;
-            orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST;
-            orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).Comments.Add(comment);
-            DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST = orders;
-            DataWork.dataBase.SaveChanges();
+            else
+            {
+                float rate;
+                try
+                {
+                    rate = float.Parse(rateTxtBox.Text);
+                }
+                catch 
+                {
+                    MessageBox.Show("enter a float number in the Rate box", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                Order selectedOrder = DataWork.CurrentCustomer.ORDERS.FirstOrDefault(order => order.NAME == orderName);
+                selectedOrder.RATE = rate;
+                List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+
+                Comment comment = new Comment(commentText.txtBox.Text, DataWork.CurrentCustomer.USERNAME);
+                selectedOrder.Comments.Add(comment);
+                for (int i = 0; i < orders.Count; i++)
+                {
+                    if (orders[i].NAME == selectedOrder.NAME)
+                    {
+                        orders[i] = selectedOrder;
+                        break;
+                    }
+
+                }
+                DataWork.CurrentCustomer.ORDERS = orders;
+                orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST;
+                
+                orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).Comments.Add(comment);
+                orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).RATE = rate;
+                DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST = orders;
+                DataWork.dataBase.SaveChanges();
+            }
+
         }
     }
 }

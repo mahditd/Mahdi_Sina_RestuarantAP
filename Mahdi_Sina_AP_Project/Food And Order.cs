@@ -132,6 +132,8 @@ namespace Sina_Mahdi_RestaurantAP
             set { if (value <= 5 && value >= 0) rate = value; }
         }
         [JsonInclude]
+        int ratedTimes = 1;
+        [JsonInclude]
         public DateTime orderDateTime = new DateTime();
         [JsonInclude]
 
@@ -178,6 +180,10 @@ namespace Sina_Mahdi_RestaurantAP
             this.restaurant = restaurant;
             this.orderDateTime = DateTime.Now;
             this.method = method;
+        }
+        public void updateRate(float rate)
+        {
+
         }
 
     }

@@ -36,6 +36,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             var ClickedButton = e.OriginalSource as NavButton3;
             NavigationService.Navigate(ClickedButton.NavUri);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -74,7 +75,13 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void Complaints_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new userControls.ComplaintsPage();
+            contentControl.Content = new userControls.ComplaintsPage(this);
+
+        }
+        public void naviHistoryComplaint()
+        {
+            //NavigationService.Navigate(new complaintHistory());
+            NavigationService.Navigate(new complaintHistory());
 
         }
     }

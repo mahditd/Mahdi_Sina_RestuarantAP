@@ -100,12 +100,12 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Row="1" Grid.Column="0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
+            
                 <ListBox x:Name="myListBox" Background="#FF222222" BorderThickness="0">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
@@ -119,9 +119,21 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ContentControl Grid.Row="1" Grid.Column="1" x:Name="contentControl"/>
-            </Grid>
         </ScrollViewer>
+        <StackPanel x:Name="foodInformationStack" Grid.Row="1" Grid.Column="1">
+            <Image x:Name="foodImage" HorizontalAlignment="Left" Width="150" Height="150"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ingredients" FontSize="20" FontFamily="{StaticResource Vintage}" Margin="0,0,5,0" Foreground="YellowGreen"/>
+                <Label Name="ingredients" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Rate" FontSize="20" FontFamily="{StaticResource Vintage}" Margin="0,0,5,0" Foreground="YellowGreen"/>
+                <Label Name="Rate" FontSize="20"/>
+            </StackPanel>
+            <Button Content="Add to cart" Width="200" Background="Transparent" FontFamily="{StaticResource Vintage}" FontSize="20" Foreground="Yellow" Click="AddToCart"/>
+
+        </StackPanel>
+
 
     </Grid>
 </UserControl>

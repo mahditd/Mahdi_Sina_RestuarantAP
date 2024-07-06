@@ -91,7 +91,7 @@
             </Style>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid>
+    <Grid Background="#FF222222">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -99,6 +99,8 @@
         <ScrollViewer Grid.Column="0" >
             <StackPanel x:Name="stackPanel"/>
         </ScrollViewer>
-        
+        <ContentControl Grid.Column="1" Name="content"/>
+        <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent"/>
+
     </Grid>
 </Page>
