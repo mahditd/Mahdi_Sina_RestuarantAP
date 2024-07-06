@@ -45,14 +45,17 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
             for (int i = 0; i < DataWork.CurrentRestaurant.ORDERLIST.Count(); i++)
             {
-                if (DataWork.CurrentRestaurant.ORDERLIST[i].NAME.Contains(myListBox.SelectedItem.ToString()))
+                if (myListBox.SelectedItem != null)
                 {
-                    ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
-                    TextBox1.Text = DataWork.CurrentRestaurant.ORDERLIST[i].METHOD.ToString();
-                    TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].payed.ToString();
-                    myListBox2.Visibility = Visibility.Visible;
-                    var foodNames = DataWork.CurrentRestaurant.ORDERLIST[i].Foods.Select(x => x.NAME);
-                    myListBox2.ItemsSource = foodNames;
+                    if (DataWork.CurrentRestaurant.ORDERLIST[i].NAME.Contains(myListBox.SelectedItem.ToString()))
+                    {
+                        ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
+                        TextBox1.Text = DataWork.CurrentRestaurant.ORDERLIST[i].METHOD.ToString();
+                        TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].payed.ToString();
+                        myListBox2.Visibility = Visibility.Visible;
+                        var foodNames = DataWork.CurrentRestaurant.ORDERLIST[i].Foods.Select(x => x.NAME);
+                        myListBox2.ItemsSource = foodNames;
+                    }
                 }
             }
         }
@@ -150,11 +153,14 @@ namespace Mahdi_Sina_AP_Project.Pages
                     onlineCount++;
                 }
             }
-            OnlinePercentage = (onlineCount / (onlineCount + offlineCount)) * 100;
+            
             try
             {
+                OnlinePercentage = (onlineCount / (onlineCount + offlineCount)) * 100;
+                
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
+                    
                     foreach (string line in CSVstring)
                     {
                         writer.WriteLine(line);
