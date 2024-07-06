@@ -80,6 +80,10 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("complaintListJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ID");
 
                     b.ToTable("Admins");

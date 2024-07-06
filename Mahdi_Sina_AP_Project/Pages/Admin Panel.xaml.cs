@@ -38,12 +38,10 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void Complaints_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ComplaintAdminPage());
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

@@ -6,6 +6,7 @@ FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\P
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\Admin Panel.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\AllRestaurants_AdminPage.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\commentsPage_RestaurantPanel.xaml;;
+FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\ComplaintAdminPage.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\Complaints_AdminPage.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\CustomerPage.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\Food_Inventory.xaml;;
@@ -17,10 +18,12 @@ FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\P
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\SignUp.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\AddFood.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\ChangeProfile.xaml;;
+FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\ComplaintsPage.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\CustomerCart.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\OrderFood(FoodList).xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\OrderFood.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\OrderHistory.xaml;;
+FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\ReplyComplaintByAdmin.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\userControls\RestaurantInformations.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\Pages\UserProfile.xaml;;
 FD:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\PasswordWithTextBlock.xaml;;

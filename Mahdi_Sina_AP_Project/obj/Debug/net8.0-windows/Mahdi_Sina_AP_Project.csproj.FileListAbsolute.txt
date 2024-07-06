@@ -400,3 +400,9 @@ D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\ob
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\txtBoxWithTxtBlock2.baml
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderHistory.g.cs
 D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\OrderHistory.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ComplaintsPage.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ComplaintsPage.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\ComplaintAdminPage.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\ComplaintAdminPage.baml
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ReplyComplaintByAdmin.g.cs
+D:\elmos\AP\project\new project\Mahdi_Sina_RestuarantAP\Mahdi_Sina_AP_Project\obj\Debug\net8.0-windows\Pages\userControls\ReplyComplaintByAdmin.baml

@@ -69,7 +69,7 @@ namespace Mahdi_Sina_AP_Project
         public string text;
 
         [JsonInclude]
-        public string? replyedText;
+        public string replyedText;
 
         [JsonInclude]
         private Order relatedOrder;
@@ -82,10 +82,15 @@ namespace Mahdi_Sina_AP_Project
 
         [JsonInclude]
         public Customer RELATEDCUSTOMER { get { return relatedCustomer; } }
+        [JsonInclude]
+        private Restaurant relatedRestaurant;
+
+        [JsonInclude]
+        public Restaurant RelateRestaurant { get { return relatedRestaurant; } }
 
         [JsonInclude]
         private bool isChecked;
-
+        [JsonInclude]
         public bool ISCHECKED
         {
             get { return isChecked; }
@@ -109,7 +114,14 @@ namespace Mahdi_Sina_AP_Project
             createdTime = DateTime.Now;
             isChecked = false;
         }
-
+        public Complaint(string Text, Customer RelatedCustomer)
+        {
+            this.text = Text;
+            this.relatedCustomer = RelatedCustomer;
+            replyedText = null;
+            createdTime = DateTime.Now;
+            isChecked = false;
+        }
         public void Check()
         {
             isChecked = true;

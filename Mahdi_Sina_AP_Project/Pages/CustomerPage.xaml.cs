@@ -71,6 +71,12 @@ namespace Mahdi_Sina_AP_Project.Pages
             contentControl.Content = new userControls.OrderHistory();
 
         }
+
+        private void Complaints_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new userControls.ComplaintsPage();
+
+        }
     }
 
 
