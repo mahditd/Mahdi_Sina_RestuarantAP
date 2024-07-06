@@ -157,8 +157,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         }
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
         {
-            Window UploadImage = new Upload_Image(this);
-            UploadImage.Show();
+           
         }
 
 
