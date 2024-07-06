@@ -155,6 +155,26 @@ namespace Mahdi_Sina_AP_Project
                     MessageBox.Show("Enter a valid email", "", MessageBoxButton.OK, MessageBoxImage.Error);
                     return 0;
                 }
+                if (!ValidateName(_name))
+                {
+                    MessageBox.Show("Enter a valid Name", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
+                if (!ValidatePhoneNumber(_phoneNumber))
+                {
+                    MessageBox.Show("Enter a Valid Phone Number", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
+                if (!ValidatePassword(_password))
+                {
+                    MessageBox.Show("Enter a Valid Password with atleast one uppercase letter one lower case letter and one number", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
+                if (!ValidateUsername(_username))
+                {
+                    MessageBox.Show("user name should be at least 3 characters long", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return 0;
+                }
                 int verifyCode = SendVerificationEmail(_email);
                 if (verifyCode != 0)//when it will be 0??
                 {
@@ -182,9 +202,31 @@ namespace Mahdi_Sina_AP_Project
 
         public static bool EmailConfirmed { get; set; }
 
+        public static bool ValidateUsername(string username)
+        {
+            string pattern = @".{3,}";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(username);
+        }
+        public static bool ValidatePassword(string password)
+        {
+            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,32}$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(password);
+        }
+        public static bool ValidatePhoneNumber(string phoneNumber)
+        {
+            string pattern = @"^09\d{9}$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(phoneNumber);
+        }
 
-
-
+        public static bool ValidateName(string Name)
+        {
+            string pattern = @"^[a-zA-Z]{3,32}$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(Name);
+        }
 
 
 
@@ -195,6 +237,8 @@ namespace Mahdi_Sina_AP_Project
             Regex regex = new Regex(reg_pattern);
             return regex.IsMatch(Email_Address);
         }
+
+
 
         public static int SendVerificationEmail(string CustomerEmail)
         {
