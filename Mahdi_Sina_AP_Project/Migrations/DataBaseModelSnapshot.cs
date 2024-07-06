@@ -95,6 +95,10 @@ namespace Mahdi_Sina_AP_Project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PASSWORD")
                         .IsRequired()
                         .HasColumnType("TEXT");

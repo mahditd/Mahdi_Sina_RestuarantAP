@@ -19,9 +19,9 @@ namespace Mahdi_Sina_AP_Project
         [JsonInclude]
         public Food RELATEDFOOD { get { return relatedFood; } }
         [JsonInclude]
-        private Customer relatedCustomer;
+        public string relatedCustomer;//username
         [JsonInclude]
-        public Customer RELATEDCUSTOMER { get { return relatedCustomer; } }
+        public string relatedRestaurant;
         [JsonInclude]
         private bool isEdited;
         [JsonInclude]
@@ -39,13 +39,14 @@ namespace Mahdi_Sina_AP_Project
         public DateTime CREATEDTIME { get { return createdTime; } }
 
         public Comment() { }
-        public Comment(string Text, Food RelatedFood, Customer RelatedCustomer)
+        public Comment(string Text, string relatedCustomer)
         {
             this.text = Text;
-            this.relatedFood = RelatedFood;
-            this.relatedCustomer = RelatedCustomer;
+            //this.relatedFood = RelatedFood;
+            //this.relatedCustomer = RelatedCustomer;
             createdTime = DateTime.Now;
             isEdited = false;
+            this.relatedCustomer = relatedCustomer;
         }
 
         public void Edit(string newText)

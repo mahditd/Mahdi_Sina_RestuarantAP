@@ -50,7 +50,7 @@ namespace Sina_Mahdi_RestaurantAP
             set { if (rate >= 4) { canReserve = value; } else { canReserve = false; } }
         }
 
-        private string Name { get; set; }//dataBase
+        public string Name { get; set; }//dataBase //changed to public may cause error?
 
 
         public float rate { get; set; } //from 0 to 5 dataBase
@@ -76,7 +76,9 @@ namespace Sina_Mahdi_RestaurantAP
         }
         public string orderList { get; set; }//dataBase
         [NotMapped]
-        public List<Order> ORDERLIST { get => listConverterToOrder(orderList); set => orderList = stringConverterToOrder(value); }
+        public List<Order> ORDERLIST { 
+            get => listConverterToOrder(orderList); 
+            set => orderList = stringConverterToOrder(value); }
 
 
         public string Address { get; set; }//dataBase

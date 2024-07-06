@@ -10,11 +10,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="*"/>-->
         </Grid.ColumnDefinitions>
         <TextBlock Name="txtBlock" Text="{Binding PlaceHolder}" FontSize="20" Margin="2,0,0,0" Foreground="Yellow" Panel.ZIndex="0" VerticalAlignment="Center" />
         <TextBox x:Name="txtBox" Foreground="Red" Background="Transparent" VerticalContentAlignment="Center" FontSize="20" Panel.ZIndex="1" TextChanged="TextBox_TextChanged"/>
         <Image Name="tik" Grid.Column="1" Source="/Icons/icons8-tick-box-48.png" Visibility="{Binding TikVis}"/>
-        <Image Name="cross" Grid.Column="2" Source="/Icons/icons8-cross-48.png" Visibility="{Binding CrossVis}"/>
+        <Image Name="cross" Grid.Column="1" Source="/Icons/icons8-cross-48.png" Visibility="{Binding CrossVis}"/>
     </Grid>
 </UserControl>
