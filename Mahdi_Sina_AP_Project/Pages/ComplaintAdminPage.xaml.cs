@@ -45,5 +45,10 @@ namespace Mahdi_Sina_AP_Project.Pages
         {
 
         }
+
+        private void Comments_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Complaints_Search_Filter());
+        }
     }
 }
