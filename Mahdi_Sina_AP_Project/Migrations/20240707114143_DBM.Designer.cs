@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mahdi_Sina_AP_Project.Migrations
 {
     [DbContext(typeof(DataBase))]
-    [Migration("20240706130336_DBM1")]
-    partial class DBM1
+    [Migration("20240707114143_DBM")]
+    partial class DBM
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

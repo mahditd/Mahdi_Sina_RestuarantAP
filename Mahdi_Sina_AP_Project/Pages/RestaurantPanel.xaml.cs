@@ -38,9 +38,10 @@ namespace Mahdi_Sina_AP_Project.Pages
             for(int i = 0;i < DataWork.CurrentRestaurant.ORDERLIST.Count;i++)
             {
                 RateAverage += DataWork.CurrentRestaurant.ORDERLIST[i].RATE;
+                indexHolder2 = i;
 
             }
-            RateAverage /= (indexHolder1 + indexHolder2 + 1);
+            RateAverage /= (indexHolder1 + indexHolder2 + 2);
 
 
 

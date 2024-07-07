@@ -83,9 +83,24 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST;
                 
                 orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).Comments.Add(comment);
-                orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).RATE = rate;
+                orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).refreshRate(rate);
+                List<Food> foods = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).foodList;
+                foreach (Food food in foods)
+                {
+                    foreach (var food1 in orders.FirstOrDefault(x => x.orderDateTime == selectedOrder.orderDateTime).Foods)
+                    {
+                        if (food.NAME==food1.NAME)
+                        {
+                            food.refreshRate(rate);
+                        }
+                    }
+                }
+                DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).foodList = foods;
                 DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).ORDERLIST = orders;
+                DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == selectedOrder.relatedRestaurant).refreshRate();
+
                 DataWork.dataBase.SaveChanges();
+
             }
 
         }

@@ -2,6 +2,7 @@
 using Mahdi_Sina_AP_Project;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -97,6 +98,14 @@ namespace Sina_Mahdi_RestaurantAP
             get { return ratescount; }
             set { ratescount = value; }
         }
+        public void refreshRate(float rate)
+        {
+            float sum = RATE * RatesCount;
+            sum += rate;
+            RatesCount++;
+            RATE = sum / ratescount;
+    
+        }
 
         public Food() { }
         public Food(string name, double price, string imagePath, Restaurant restaurant, string ingredients)
@@ -107,6 +116,7 @@ namespace Sina_Mahdi_RestaurantAP
             this.imagePath = imagePath;
             this.restaurant = restaurant;
             this.ingredients = ingredients;
+            this.RATE = 0;
 
         }
     }
@@ -138,6 +148,15 @@ namespace Sina_Mahdi_RestaurantAP
         {
             get { return rate; }
             set { if (value <= 5 && value >= 0) rate = value; }
+        }
+        public void refreshRate(float rate)
+        {
+            float sum = RATE * RatesCount;
+            sum+= rate;
+            RatesCount++;
+
+            float x = sum / ratescount;
+            RATE = x;
         }
         [JsonInclude]
         int ratedTimes = 1;
@@ -198,6 +217,8 @@ namespace Sina_Mahdi_RestaurantAP
             this.restaurant = restaurant;
             this.orderDateTime = DateTime.Now;
             this.method = method;
+            this.RatesCount = 0;
+            this.RATE = 0;
         }
         public void updateRate(float rate)
         {

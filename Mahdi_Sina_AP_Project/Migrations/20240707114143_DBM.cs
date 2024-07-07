@@ -5,7 +5,7 @@
 namespace Mahdi_Sina_AP_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class DBM1 : Migration
+    public partial class DBM : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

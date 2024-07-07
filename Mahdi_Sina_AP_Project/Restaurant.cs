@@ -100,6 +100,25 @@ namespace Sina_Mahdi_RestaurantAP
         [NotMapped]
         public List<Reserve> ReserveList { get => listConverterToReserve(reserveList); set => reserveList = stringConverterToReserve(value); }
 
+        public void refreshRate()
+        {
+            float RateAverage = 0;
+            int indexHolder1 = 0;
+            int indexHolder2 = 0;
+            for (int i = 0; i < ORDERLIST.Count; i++)
+            {
+                RateAverage += ORDERLIST[i].RATE;
+                indexHolder1 = ORDERLIST.Count;
+            }
+            for (int i = 0; i < foodList.Count; i++)
+            {
+                RateAverage += foodList[i].RATE;
+                indexHolder2 = foodList.Count;
+            }
+            RateAverage /= (indexHolder1 + indexHolder2);
+            rate = RateAverage;
+           
+        }
 
         public Restaurant() { }
         public Restaurant(string username, string password, string name, string address) : base(username, password)

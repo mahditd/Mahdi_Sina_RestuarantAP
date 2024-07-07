@@ -24,6 +24,7 @@
   <ItemGroup>
     <Folder Include="food photos\" />
 	  <Folder Include="Icons\" />
+	  <Folder Include="Migrations\" />
   </ItemGroup>
 	<ItemGroup>
 		<Resource Include="food_photos\*.png" />
