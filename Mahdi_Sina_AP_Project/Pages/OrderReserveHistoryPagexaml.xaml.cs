@@ -157,7 +157,7 @@ namespace Mahdi_Sina_AP_Project.Pages
             
             try
             {
-                OnlinePercentage = (onlineCount / (onlineCount + offlineCount)) * 100;
+                OnlinePercentage = ((double)onlineCount / (double)(onlineCount + offlineCount)) * 100;
                 
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {

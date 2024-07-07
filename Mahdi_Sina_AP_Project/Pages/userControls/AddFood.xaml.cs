@@ -117,10 +117,15 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 Restaurant restaurant = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == RestaurantUsername);
                 if (restaurant == null)
                 {
-                MessageBox.Show("enter a correct userN=name", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("enter a correct userName", "", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 List<Food> foods = restaurant.foodList;
+                if (foods.FirstOrDefault(x => x.NAME == Name)!= null)
+                {
+                MessageBox.Show("this name already exists", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
                 foods.Add(new Food(Name, Price, shortPath, restaurant, Ingredients));
                 restaurant.foodList = foods;
                 DataWork.dataBase.SaveChanges();

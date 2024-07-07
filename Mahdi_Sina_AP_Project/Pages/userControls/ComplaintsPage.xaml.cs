@@ -32,6 +32,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             if (restaurant != null)
             {
                 Complaint complaint = new Complaint(complaintText.Text, DataWork.CurrentCustomer);
+                complaint.RelateRestaurant = restaurant;
                 List<Complaint> complaints = DataWork.dataBase.Admins.ToList()[0].complaints;
                 complaints.Add(complaint);
                 DataWork.dataBase.Admins.ToList()[0].complaints = complaints;

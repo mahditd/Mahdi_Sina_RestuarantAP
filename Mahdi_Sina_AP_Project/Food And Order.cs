@@ -15,8 +15,9 @@ namespace Sina_Mahdi_RestaurantAP
 {
     public class Food
     {
-        
 
+        [JsonInclude]
+        public List<Comment> comments = new List<Comment>();
         [JsonInclude]
 
         private string name;
@@ -32,7 +33,7 @@ namespace Sina_Mahdi_RestaurantAP
         }
 
         [JsonInclude]
-        
+
         public string NAME
         {
             get { return name; }
@@ -88,21 +89,28 @@ namespace Sina_Mahdi_RestaurantAP
             get { return foodCount; }
             set { foodCount = value; }
         }
-
+        [JsonInclude]
+        private int ratescount;
+        [JsonInclude]
+        public int RatesCount
+        {
+            get { return ratescount; }
+            set { ratescount = value; }
+        }
 
         public Food() { }
         public Food(string name, double price, string imagePath, Restaurant restaurant, string ingredients)
         {
             this.name = name;
             this.price = price;
-            
+
             this.imagePath = imagePath;
             this.restaurant = restaurant;
             this.ingredients = ingredients;
 
         }
     }
-    public class Order 
+    public class Order
     {
         //ommited name
         [JsonInclude]
@@ -137,6 +145,7 @@ namespace Sina_Mahdi_RestaurantAP
         public DateTime orderDateTime = new DateTime();
         [JsonInclude]
 
+
         private Restaurant restaurant;
         [JsonInclude]
 
@@ -144,6 +153,14 @@ namespace Sina_Mahdi_RestaurantAP
         {
             get { return restaurant; }
             set { restaurant = value; }
+        }
+        [JsonInclude]
+        private int ratescount;
+        [JsonInclude]
+        public int RatesCount
+        {
+            get { return ratescount; }
+            set { ratescount = value; }
         }
         [JsonInclude]
         private PaymentMethod method;
@@ -169,11 +186,12 @@ namespace Sina_Mahdi_RestaurantAP
 
         public List<Food> Foods = new List<Food>();
 
-        public Order() {
+        public Order()
+        {
             orderDateTime = DateTime.Now;
         }
         public Order(string name, double price, Restaurant restaurant, PaymentMethod method)
-            
+
         {
             this.name = name;
             this.price = price;

@@ -58,21 +58,79 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 if (sendingEmail())
                 {
                     List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+                    Order order = orders.FirstOrDefault(currentOrder => currentOrder.payed == 0);
+
+
                     orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
+                    order.payed = 1;
+
+                    //orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).//change the enum
                     DataWork.CurrentCustomer.ORDERS = orders;
                     DataWork.dataBase.SaveChanges();
+                    string restaurant = DataWork.CurrentCustomer.ORDERS.FirstOrDefault(x => x.orderDateTime == order.orderDateTime).relatedRestaurant;
+                    orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant).ORDERLIST;
+                    orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).payed = 1;
+                    orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).Price = Cost;
+                    orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).METHOD = PaymentMethod.Online;
+                    DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant).ORDERLIST = orders;
+                    DataWork.dataBase.SaveChanges();
+                    Restaurant restaurant1 = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant);
+                    List<Food> foods = restaurant1.foodList;
+                    foreach (Food food in foods)
+                    {
+                        foreach (Food food1 in order.Foods)
+                        {
+                            if (food.NAME == food1.NAME)
+                            {
+                                food.FOODCOUNT--;
+                            }
+                        }
+                    }
+                    restaurant1.foodList = foods;
+                    DataWork.dataBase.SaveChanges();
+
                 }
             }
 
             if (onlinePay == 0)
             {
-
+                if (DataWork.CurrentCustomer.ORDERS.FirstOrDefault(currentOrder => currentOrder.payed == 0) == null)
+                {
+                    MessageBox.Show("no order to pay");
+                    return;
+                }
                 MessageBox.Show("cash accepted");
                 List<Order> orders = DataWork.CurrentCustomer.ORDERS;
+                Order order = orders.FirstOrDefault(currentOrder => currentOrder.payed == 0);
+
                 orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).payed = 1;
+                order.payed = 1;
+
                 //orders.FirstOrDefault(currentOrder => currentOrder.payed == 0).//change the enum
                 DataWork.CurrentCustomer.ORDERS = orders;
                 DataWork.dataBase.SaveChanges();
+                string restaurant = DataWork.CurrentCustomer.ORDERS.FirstOrDefault(x => x.orderDateTime == order.orderDateTime).relatedRestaurant;
+                orders = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant).ORDERLIST;
+                orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).payed = 1;
+                orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).Price = Cost;
+                orders.FirstOrDefault(currentOrder => currentOrder.orderDateTime == order.orderDateTime).METHOD = PaymentMethod.OnDelivery;
+                DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant).ORDERLIST = orders;
+                DataWork.dataBase.SaveChanges();
+                Restaurant restaurant1 = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == restaurant);
+                List<Food> foods = restaurant1.foodList;
+                foreach (Food food in foods)
+                {
+                    foreach (Food food1 in order.Foods)
+                    {
+                        if (food.NAME == food1.NAME)
+                        {
+                            food.FOODCOUNT--;
+                        }
+                    }
+                }
+                restaurant1.foodList = foods;
+                DataWork.dataBase.SaveChanges();
+
             }
         
         }

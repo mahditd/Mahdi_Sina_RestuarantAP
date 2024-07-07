@@ -52,6 +52,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
         private void AddToCart(object sender, RoutedEventArgs e)
         {
             //unique food name must be considered
+            if (DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).foodList.FirstOrDefault(x => x.NAME == FoodName).FOODCOUNT<= 0)
+            {
+                MessageBox.Show("this food does not exist");
+                return;
+            }
             List<Food> foods = DataWork.CurrentCustomer.ORDERS[DataWork.CurrentCustomer.ORDERS.Count - 1].Foods;
             foods.Add(DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).foodList.FirstOrDefault(x => x.NAME == FoodName));
             List<Order> orders = DataWork.CurrentCustomer.ORDERS;

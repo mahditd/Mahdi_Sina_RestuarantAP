@@ -84,12 +84,12 @@
     </Page.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="\food_photos\burger-french-fries-plate-with-copy-space.jpg" Opacity="1"/>
+            <ImageBrush ImageSource="\food_photos\fast-food-dish-blue.jpg" Opacity="1"/>
         </Grid.Background>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="1.6*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -105,18 +105,18 @@
             <Button Style="{StaticResource NoHoverButtonStyle}" Cursor="Hand" Content="⬅" FontSize="30"  Command="NavigationCommands.BrowseBack"  Padding="5" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="45" Background="Transparent" Click="Button_Click">
                 
             </Button>
-            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="1" Margin ="5 15 5 15"  Click="Changing_Menu_Click" Cursor="Hand">
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Grid.Column="1" Grid.Row="1" Margin ="5 15 5 15"  Click="Changing_Menu_Click" Cursor="Hand">
                 Changing Menu
             </Button>
 
 
-            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="2" Margin ="5 15 5 15"  Click="Food_Inventory_Click" Cursor="Hand">
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Grid.Column="1" Grid.Row="2" Margin ="5 15 5 15"  Click="Food_Inventory_Click" Cursor="Hand">
                 Food Inventory
             </Button>
 
             <!--<Button x:Name="InventoryButton" Grid.Column="0" Grid.Row="2" Content="Food inventory"  Margin="40,30,40,30" Background="OrangeRed" Click="FoodInventoryButton_Click"/>-->
 
-            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="OrangeRed" Grid.Column="1" Grid.Row="3" Margin ="5 15 5 15"  Click="History_Button_Click" Cursor="Hand">
+            <Button Style="{StaticResource CustomButtonStyle}" BorderBrush="Black" FontSize="17" Background="Yellow" Grid.Column="1" Grid.Row="3" Margin ="5 15 5 15"  Click="History_Button_Click" Cursor="Hand">
                 Order and Reserve History
             </Button>
             <Button x:Name="CircleButton" Margin="30 15 30 15" Grid.Column="2" Grid.Row="2" Click="CircleButton_Click" Loaded="CircleButton_Loaded" Cursor="Hand">

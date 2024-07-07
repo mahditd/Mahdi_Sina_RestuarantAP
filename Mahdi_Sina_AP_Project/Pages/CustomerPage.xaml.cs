@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void OrderHistory_Click(object sender, RoutedEventArgs e)
         {
-            contentControl.Content = new userControls.OrderHistory();
+            contentControl.Content = new userControls.OrderHistory(this);
 
         }
 
@@ -83,6 +84,21 @@ namespace Mahdi_Sina_AP_Project.Pages
             //NavigationService.Navigate(new complaintHistory());
             NavigationService.Navigate(new complaintHistory());
 
+        }
+
+
+        float oldRate;
+        int count;
+        public float rateChecker(float newRate)
+        {
+            oldRate *= count;
+            count++;
+            oldRate += newRate;
+            return (oldRate / count);
+        }
+        public void navigateToRateFood(string order)
+        {
+            contentControl.Content = new userControls.RateFoodsOfOrders(order);
         }
     }
 

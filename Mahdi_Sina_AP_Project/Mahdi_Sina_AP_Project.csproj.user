@@ -49,6 +49,9 @@
     <Compile Update="Pages\userControls\ChangeProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\userControls\commentPlace.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\userControls\ComplaintsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\userControls\OrderHistory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\RateFoodsOfOrders.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\userControls\ReplyComplaintByAdmin.xaml.cs">
@@ -159,6 +165,9 @@
     <Page Update="Pages\userControls\ChangeProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\userControls\commentPlace.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\userControls\ComplaintsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -172,6 +181,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\userControls\OrderHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\RateFoodsOfOrders.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\userControls\ReplyComplaintByAdmin.xaml">

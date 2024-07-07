@@ -23,6 +23,7 @@ namespace Mahdi_Sina_AP_Project.Pages
         public Restaurant_Food_Adding()
         {
             InitializeComponent();
+            contentControl.Content = new userControls.AddFood();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

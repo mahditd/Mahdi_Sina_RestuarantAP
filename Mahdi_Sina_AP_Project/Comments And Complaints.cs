@@ -86,7 +86,7 @@ namespace Mahdi_Sina_AP_Project
         private Restaurant relatedRestaurant;
 
         [JsonInclude]
-        public Restaurant RelateRestaurant { get { return relatedRestaurant; } }
+        public Restaurant RelateRestaurant { get { return relatedRestaurant; } set => relatedRestaurant = value; }
 
         [JsonInclude]
         private bool isChecked;

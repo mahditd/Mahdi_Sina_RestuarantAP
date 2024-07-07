@@ -23,11 +23,13 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
     public partial class OrderHistory : UserControl
     {
         string orderName;
-        public OrderHistory()
+        CustomerPage CustomerPage;
+        public OrderHistory(CustomerPage customerPage)
         {
             InitializeComponent();
             List<string> orders = DataWork.CurrentCustomer.ORDERS.Where(order => order.payed == 1).Select(order => order.NAME).ToList();
             myListBox.ItemsSource = DataWork.CurrentCustomer.ORDERS.Where(order => order.payed == 1).Select(order => order.NAME).ToList();
+            CustomerPage = customerPage;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -86,6 +88,11 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                 DataWork.dataBase.SaveChanges();
             }
 
+        }
+
+        private void rateFood_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerPage.navigateToRateFood(orderName);
         }
     }
 }
