@@ -87,7 +87,8 @@ namespace Mahdi_Sina_AP_Project.Pages
             ChangeImageButton.Visibility = Visibility.Hidden;
             Image.Visibility = Visibility.Hidden;
             MyDeleteButton.Visibility = Visibility.Hidden;
-           
+            RateText.Visibility = Visibility.Hidden;
+            priceText.Visibility = Visibility.Hidden;
             TextBox1.Visibility = Visibility.Hidden;
             TextBox2.Visibility = Visibility.Hidden;
             TextBox3.Visibility = Visibility.Hidden;
@@ -163,7 +164,9 @@ namespace Mahdi_Sina_AP_Project.Pages
                 TextBox1.Visibility = Visibility.Visible;
                 TextBox2.Visibility = Visibility.Visible;
                 TextBox3.Visibility = Visibility.Visible;
-               
+                RateText.Visibility = Visibility.Visible;
+                priceText.Visibility = Visibility.Visible;
+
 
             }
             else
@@ -175,7 +178,9 @@ namespace Mahdi_Sina_AP_Project.Pages
                 TextBox1.Visibility = Visibility.Hidden;
                 TextBox2.Visibility = Visibility.Hidden;
                 TextBox3.Visibility = Visibility.Hidden;
-               
+                RateText.Visibility = Visibility.Hidden;
+                priceText.Visibility = Visibility.Hidden;
+
 
             }
             DataWork.dataBase.SaveChanges();

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,6 +39,14 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             {
                 MessageBox.Show("fill all fields", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            else if (!ValidatePassword(Password))
+            {
+                MessageBox.Show("Your password should be 8 characters long and you can only use numbers", "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (!ValidateUsername(UserName))
+            {
+                MessageBox.Show("Your username should be at least 3 character long", "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             else
             {
                 if (DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == UserName) == null)
@@ -59,6 +68,19 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
                     MessageBox.Show("repetitious username", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+        public static bool ValidatePassword(string password)
+        {
+            string pattern = @"^\d{8}$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(password);
+        }
+
+        public static bool ValidateUsername(string username)
+        {
+            string pattern = @".{3,}";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(username);
         }
     }
 }

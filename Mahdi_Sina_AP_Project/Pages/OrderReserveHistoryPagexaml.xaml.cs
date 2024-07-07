@@ -51,7 +51,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                     {
                         ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
                         TextBox1.Text = DataWork.CurrentRestaurant.ORDERLIST[i].METHOD.ToString();
-                        TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].payed.ToString();
+                        TextBox2.Text = DataWork.CurrentRestaurant.ORDERLIST[i].Price.ToString();
                         myListBox2.Visibility = Visibility.Visible;
                         var foodNames = DataWork.CurrentRestaurant.ORDERLIST[i].Foods.Select(x => x.NAME);
                         myListBox2.ItemsSource = foodNames;
@@ -72,6 +72,7 @@ namespace Mahdi_Sina_AP_Project.Pages
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            myListBox2.Visibility=Visibility.Hidden;
             if (FilterComboBox.SelectedIndex == 0)
             {
                 var OrderNames = DataWork.CurrentRestaurant.ORDERLIST.Where(x => x.relatedCustomer.Contains(SearchBox.Text)).Select(x => x.NAME);

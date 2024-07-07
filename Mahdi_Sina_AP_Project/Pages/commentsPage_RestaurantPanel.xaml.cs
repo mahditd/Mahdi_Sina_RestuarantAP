@@ -53,6 +53,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (name.Contains(myListBox1.SelectedItem.ToString()))
                 {
                     ChosenOrder = DataWork.CurrentRestaurant.ORDERLIST[i];
+                    myListBox3.Visibility= Visibility.Hidden;
                     myListBox2.ItemsSource = DataWork.CurrentRestaurant.ORDERLIST[i].Comments.Select(x => x.text);
                     myListBox2.Visibility=Visibility.Visible;
                    
@@ -69,9 +70,7 @@ namespace Mahdi_Sina_AP_Project.Pages
                 if (ChosenOrder.Comments[i].text.Contains(myListBox2.SelectedItem.ToString()))
                 {
                     ChosenComment = ChosenOrder.Comments[i];
-
-
-                    myListBox3.ItemsSource = ChosenOrder.Comments[i].replyedTexts.Select(x => x);
+                    myListBox3.ItemsSource = ChosenOrder.Comments[i].replyedTexts;
                     myListBox3.Visibility=Visibility.Visible;
 
 
@@ -95,7 +94,26 @@ namespace Mahdi_Sina_AP_Project.Pages
             {
                 if (TextBox.Text.Length > 0)
                 {
+                    
                     ChosenComment.replyedTexts.Add(TextBox.Text.ToString());
+                    
+                    List<Order> orders = new List<Order>();
+                    orders = DataWork.CurrentRestaurant.ORDERLIST;
+                    for (int i = 0; i < DataWork.CurrentRestaurant.ORDERLIST.Count; i++)
+                    {
+                        if (DataWork.CurrentRestaurant.ORDERLIST[i].NAME == ChosenOrder.NAME)
+                        {
+                            for (int j = 0; j < ChosenOrder.Comments.Count(); j++)
+                            {
+                                if (ChosenOrder.Comments[j].CREATEDTIME == ChosenComment.CREATEDTIME)
+                                {
+                                    orders[i].Comments[j] = ChosenComment;
+                                }
+                            }
+                        }
+                    }
+                   DataWork.CurrentRestaurant.ORDERLIST = orders;
+                    myListBox3.ItemsSource = ChosenComment.replyedTexts;
                     DataWork.dataBase.SaveChanges();
                 }
             }
