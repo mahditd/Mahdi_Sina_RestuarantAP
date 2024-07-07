@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Sina_Mahdi_RestaurantAP;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,24 @@ namespace Mahdi_Sina_AP_Project
         public MainWindow()
         {
             InitializeComponent();
+            //Customer customer = new Customer("Mahdi", "mahdi006", "mahdi005@gmail.com", "mahdi", "0912", "");
+            //DataWork.dataBase.Customers.Add(customer);
+            //customer.ORDERS = new List<Order>() { new Order("first", 0.2, (float)0.3, "", new Restaurant(), "ingredient", PaymentMethod.Online) };
+            //DataWork.dataBase.Add(customer);
+            //List<Order> customers = DataWork.dataBase.Customers.FirstOrDefault(x => x.ID == 3).ORDERS;
+            //DataWork.dataBase.SaveChanges();
+            //DataWork.dataBase.Admins.Add(new Admin("sina", "sina006"));
+            DataWork.dataBase.SaveChanges();
+        }
+
+        private void Button_Click_SignUp(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void confirmBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

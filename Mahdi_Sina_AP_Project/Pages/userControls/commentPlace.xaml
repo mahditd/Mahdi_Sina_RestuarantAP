@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Mahdi_Sina_AP_Project.Pages.userControls.commentPlace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mahdi_Sina_AP_Project.Pages.userControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF222222">
+        <StackPanel >
+            <StackPanel Orientation="Horizontal" >
+                <Label FontSize="20" FontFamily="{StaticResource Vintage}" VerticalContentAlignment="Center" Foreground="YellowGreen" Content="Comment"/>
+                <TextBox VerticalContentAlignment="Center" Foreground="DarkBlue" Margin="50,0,0,0" x:Name="txtBox" FontSize="20" Background="Transparent" Width="400" />
+            </StackPanel>
+            <Button x:Name="submitBtn" Content="Submit" Style="{StaticResource CustomButtonStyle}" Background="DarkRed" FontFamily="{StaticResource Vintage}" Width="200" Click="submitBtn_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

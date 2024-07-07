@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Mahdi_Sina_AP_Project.Pages.userControls.replyedComplaint"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mahdi_Sina_AP_Project.Pages.userControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txtBlock" Foreground="White" FontSize="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Visibility="{Binding Visibility}" x:Name="label" Content="Checked" Foreground="YellowGreen" FontFamily="{StaticResource Vintage}" FontSize="20" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="reply" Grid.Column="2" FontSize="20" Content="Reply" Background="Transparent" Foreground="White" Click="reply_Click" FontFamily="{StaticResource Vintage}"/>
+    </Grid>
+</UserControl>

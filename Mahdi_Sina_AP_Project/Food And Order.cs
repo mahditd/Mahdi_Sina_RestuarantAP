@@ -1,49 +1,228 @@
-﻿using System;
+﻿
+using Mahdi_Sina_AP_Project;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 public enum PaymentMethod { Online, OnDelivery }
 
 
 namespace Sina_Mahdi_RestaurantAP
 {
-    class Food
+    public class Food
     {
+
+        [JsonInclude]
+        public List<Comment> comments = new List<Comment>();
+        [JsonInclude]
+
         private string name;
 
+        [JsonInclude]
         private double price;
+        [JsonInclude]
+
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        [JsonInclude]
+
+        public string NAME
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        [JsonInclude]
+
+        private Restaurant Restaurant;
+        [JsonInclude]
+
+        public Restaurant restaurant
+        {
+            get { return Restaurant; }
+            set { Restaurant = value; }
+        }
+        [JsonInclude]
 
         private float rate;  // from 0 to 5
+        [JsonInclude]
+
+        public float RATE
+        {
+            get { return rate; }
+            set { if (value <= 5 && value >= 0) rate = value; }
+        }
+        [JsonInclude]
 
         private string imagePath;
+        [JsonInclude]
 
-        private Restaurant restaurant;
+        public string IMAGEPATH
+        {
+            get { return imagePath; }
+            set { imagePath = value; }
+        }
 
+        [JsonInclude]
         private string ingredients;
+        [JsonInclude]
 
+        public string INGREDIENTS
+        {
+            get { return ingredients; }
+            set { ingredients = value; }
+        }
+        [JsonInclude]
 
-        public Food(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients)
+        private int foodCount;
+        [JsonInclude]
+
+        public int FOODCOUNT
+        {
+            get { return foodCount; }
+            set { foodCount = value; }
+        }
+        [JsonInclude]
+        private int ratescount;
+        [JsonInclude]
+        public int RatesCount
+        {
+            get { return ratescount; }
+            set { ratescount = value; }
+        }
+        public void refreshRate(float rate)
+        {
+            float sum = RATE * RatesCount;
+            sum += rate;
+            RatesCount++;
+            RATE = sum / ratescount;
+    
+        }
+
+        public Food() { }
+        public Food(string name, double price, string imagePath, Restaurant restaurant, string ingredients)
         {
             this.name = name;
             this.price = price;
-            this.rate = rate;
+
             this.imagePath = imagePath;
             this.restaurant = restaurant;
             this.ingredients = ingredients;
+            this.RATE = 0;
 
         }
     }
-    class Order : Food
+    public class Order
     {
-        public DateTime orderDateTime = new DateTime();
+        //ommited name
+        [JsonInclude]
+        public int payed = 0;
+        [JsonInclude]
+        private string name;
+        [JsonInclude]
+        public string NAME { get => name; set => name = value; }
+        [JsonInclude]
 
-        PaymentMethod method;
-        public Order(string name, double price, float rate, string imagePath, Restaurant restaurant, string ingredients, PaymentMethod method)
-            : base(name, price, rate, imagePath, restaurant, ingredients)
+        private double price;
+        [JsonInclude]
+
+        public double Price
         {
+            get { return price; }
+            set { price = value; }
+        }
+        [JsonInclude]
+
+        private float rate;  // from 0 to 5
+        [JsonInclude]
+
+        public float RATE
+        {
+            get { return rate; }
+            set { if (value <= 5 && value >= 0) rate = value; }
+        }
+        public void refreshRate(float rate)
+        {
+            float sum = RATE * RatesCount;
+            sum+= rate;
+            RatesCount++;
+
+            float x = sum / ratescount;
+            RATE = x;
+        }
+        [JsonInclude]
+        int ratedTimes = 1;
+        [JsonInclude]
+        public DateTime orderDateTime = new DateTime();
+        [JsonInclude]
+
+
+        private Restaurant restaurant;
+        [JsonInclude]
+
+        public Restaurant RESTAURANT
+        {
+            get { return restaurant; }
+            set { restaurant = value; }
+        }
+        [JsonInclude]
+        private int ratescount;
+        [JsonInclude]
+        public int RatesCount
+        {
+            get { return ratescount; }
+            set { ratescount = value; }
+        }
+        [JsonInclude]
+        private PaymentMethod method;
+        [JsonInclude]
+        public PaymentMethod METHOD
+        {
+            get
+            {
+                return method;
+            }
+            set
+            {
+                method = value;
+            }
+        }
+        [JsonInclude]
+        public string relatedRestaurant;
+        [JsonInclude]
+        public string relatedCustomer;
+        [JsonInclude]
+        public List<Comment> Comments = new List<Comment>();
+        [JsonInclude]
+
+        public List<Food> Foods = new List<Food>();
+
+        public Order()
+        {
+            orderDateTime = DateTime.Now;
+        }
+        public Order(string name, double price, Restaurant restaurant, PaymentMethod method)
+
+        {
+            this.name = name;
+            this.price = price;
+            this.restaurant = restaurant;
             this.orderDateTime = DateTime.Now;
             this.method = method;
+            this.RatesCount = 0;
+            this.RATE = 0;
+        }
+        public void updateRate(float rate)
+        {
+
         }
 
     }

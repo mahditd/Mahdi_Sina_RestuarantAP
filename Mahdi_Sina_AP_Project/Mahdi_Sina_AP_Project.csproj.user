@@ -7,7 +7,237 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Confirming email.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AddRestaurant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AllRestaurants_AdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\commentsPage_RestaurantPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ComplaintAdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\complaintHistory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Complaints_AdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Complaints_Search_Filter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CustomerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\OrderReserveHistoryPagexaml.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Restaurant_Adding_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Restaurant_Food_Adding.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\AddFood.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\ChangeProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\commentPlace.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\ComplaintsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\OrderFood%28FoodList%29.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\OrderFood.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\CustomerCart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\OrderHistory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\RateFoodsOfOrders.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\ReplyComplaintByAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\replyedComplaint.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\respondedComplaint.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\RestaurantInformations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\userControls\ViewResponse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\UserProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Admin Panel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Food_Inventory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Log_In_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RestaurantMenuChanging.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RestaurantPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PasswordWithTextBlock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="txtBoxWithTxtBlock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="txtBoxWithTxtBlock2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Upload Image.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Confirming email.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fonts\Dictionaries\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AddRestaurant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AllRestaurants_AdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\commentsPage_RestaurantPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ComplaintAdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\complaintHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Complaints_AdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Complaints_Search_Filter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CustomerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\OrderReserveHistoryPagexaml.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restaurant_Adding_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restaurant_Food_Adding.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\AddFood.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\ChangeProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\commentPlace.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\ComplaintsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\OrderFood%28FoodList%29.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\OrderFood.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\CustomerCart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\OrderHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\RateFoodsOfOrders.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\ReplyComplaintByAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\replyedComplaint.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\respondedComplaint.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\RestaurantInformations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\userControls\ViewResponse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UserProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Admin Panel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Food_Inventory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Log_In_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RestaurantMenuChanging.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RestaurantPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PasswordWithTextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="txtBoxWithTxtBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="txtBoxWithTxtBlock2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Upload Image.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
