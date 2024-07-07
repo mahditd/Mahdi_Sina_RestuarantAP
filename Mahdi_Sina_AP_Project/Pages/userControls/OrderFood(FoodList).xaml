@@ -130,9 +130,24 @@
                 <Label Content="Rate" FontSize="20" FontFamily="{StaticResource Vintage}" Margin="0,0,5,0" Foreground="YellowGreen"/>
                 <Label Name="Rate" FontSize="20"/>
             </StackPanel>
-            
+            <Button x:Name="viewComments" Content=" View comments" Style="{StaticResource CustomButtonStyle}" FontFamily="{StaticResource Vintage}" Width="200" Click="viewComments_Click"/>
             <Button Content="Add to cart" Width="200" Background="Transparent" FontFamily="{StaticResource Vintage}" FontSize="20" Foreground="Yellow" Click="AddToCart"/>
             
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <ListBox x:Name="commentListBox" Background="#FF222222" BorderThickness="0">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Background="#FF222222" Content="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Red"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
 
 

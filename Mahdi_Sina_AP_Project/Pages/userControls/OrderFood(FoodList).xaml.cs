@@ -31,6 +31,7 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             myListBox.ItemsSource = foods.Select(x => x.NAME);
             Restaurant = resUserName;
             foodInformationStack.Visibility = Visibility.Hidden;
+            commentListBox.Visibility = Visibility.Hidden;
 
         }
 
@@ -71,5 +72,12 @@ namespace Mahdi_Sina_AP_Project.Pages.userControls
             DataWork.dataBase.SaveChanges();
         }
 
+        private void viewComments_Click(object sender, RoutedEventArgs e)
+        {
+            commentListBox.ItemsSource = DataWork.dataBase.Restaurants.FirstOrDefault(x => x.USERNAME == Restaurant).foodList.FirstOrDefault(x => x.NAME == FoodName).comments.Select(x => x.text).ToList();
+            foodInformationStack.Visibility = Visibility.Hidden;
+            commentListBox.Visibility = Visibility.Visible;
+
+        }
     }
 }

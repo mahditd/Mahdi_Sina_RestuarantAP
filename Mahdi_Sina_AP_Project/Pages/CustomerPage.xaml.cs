@@ -96,9 +96,14 @@ namespace Mahdi_Sina_AP_Project.Pages
             oldRate += newRate;
             return (oldRate / count);
         }
+
         public void navigateToRateFood(string order)
         {
             contentControl.Content = new userControls.RateFoodsOfOrders(order);
+        }
+        public void navigateToFoodComments()
+        {
+
         }
     }
 
