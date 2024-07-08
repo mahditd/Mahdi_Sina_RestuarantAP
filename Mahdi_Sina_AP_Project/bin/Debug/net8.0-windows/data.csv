@@ -1,14 +1,15 @@
 Name, Price, Rate, Method, CustomerUsername, OrderTime
-order 7, 44, 4, Online, sina, 7/7/2024 4:37:05 PM
-order 6, 30, 0, Online, mahditd, 7/7/2024 3:51:48 PM
-order 2, 20, 2, OnDelivery, sina, 7/7/2024 3:36:42 PM
-order 1, 10, 0, OnDelivery, sina, 7/7/2024 3:32:03 PM
-order 4, 10, 0, OnDelivery, mahditd, 7/7/2024 3:44:00 PM
 order 0, 0, 0, OnDelivery, sina, 7/7/2024 3:30:34 PM
+order 1, 10, 0, OnDelivery, sina, 7/7/2024 3:32:03 PM
+order 2, 20, 2, OnDelivery, sina, 7/7/2024 3:36:42 PM
 order 3, 0, 0, OnDelivery, sina, 7/7/2024 3:38:46 PM
+order 4, 10, 0, OnDelivery, mahditd, 7/7/2024 3:44:00 PM
 order 5, 0, 0, OnDelivery, mahditd, 7/7/2024 3:44:53 PM
-order 8, 0, 0, OnDelivery, sina, 7/7/2024 4:42:28 PM
+order 6, 30, 0, Online, mahditd, 7/7/2024 3:51:48 PM
+order 7, 44, 4, Online, sina, 7/7/2024 4:37:05 PM
+order 8, 0, 2, OnDelivery, sina, 7/7/2024 4:42:28 PM
 order 9, 0, 0, OnDelivery, sina, 7/7/2024 4:48:16 PM
 order 10, 0, 0, Online, mahditd, 7/7/2024 4:51:24 PM
 order 11, 0, 0, Online, sina, 7/7/2024 4:52:56 PM
-All sale profit : 114 online payed orders percentage : 33.33333333333333% order counts : 12
+order 12, 32, 0, OnDelivery, ehsan, 7/8/2024 1:13:11 PM
+All sale profit : 146 online payed orders percentage : 30.76923076923077% order counts : 13
